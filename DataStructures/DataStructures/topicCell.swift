@@ -11,16 +11,14 @@ import UIKit
 
 class topicCell: UITableViewCell {
     
-    @IBOutlet weak var thumb: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var details: UILabel!
     
-    func configureCell(item: Topic) {
-        
-        title.text = item.title
-        details.text = item.details
-        thumb.image = item.toImage?.image as? UIImage
-        
-    }
+    @IBOutlet weak var thumb: UIImageView!
+    @IBOutlet weak var title: UITextView!
+    @IBOutlet weak var details: UITextView!
+    
+    
+}
+
+class topicTableVC: UITableViewController {
     
 }
