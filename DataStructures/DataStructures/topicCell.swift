@@ -1,11 +1,3 @@
-//
-//  topicCell.swift
-//  DataStructures
-//
-//  Created by Skimmy Chan on 2017-11-06.
-//  Copyright © 2017 Ethan. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -19,6 +11,3 @@ class topicCell: UITableViewCell {
     
 }
 
-class topicTableVC: UITableViewController {
-    
-}

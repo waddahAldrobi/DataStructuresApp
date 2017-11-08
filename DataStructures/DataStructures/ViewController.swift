@@ -1,11 +1,8 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class ViewController: UIViewController {
     
-//    var controller: NSFetchedResultsController<Topic>!
-    
-//    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +11,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        tableView.delegate = self
 //        tableView.dataSource = self
         
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,16 +30,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell", for: indexPath) as! topicCell
         print("successful")
-        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
+        cell.title.text = "Pointers Test"
+        cell.details.text = "This is a test"
+        cell.thumb.image = UIImage(named: "test")
+//        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
     
     
-    func configureCell(cell: topicCell, indexPath: NSIndexPath) {
-        cell.title.text = "Pointers Test"
-        cell.details.text = "This is a test"
-        cell.thumb.image = UIImage(named: "test")
-    }
+//    func configureCell(cell: topicCell, indexPath: NSIndexPath) {
+        
+//    }
     
 
 
