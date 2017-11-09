@@ -9,5 +9,7 @@ class topicCell: UITableViewCell {
     @IBOutlet weak var details: UITextView!
     
     
+    
+    
 }
 

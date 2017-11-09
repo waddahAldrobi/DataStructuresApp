@@ -1,15 +1,16 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 //
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
     }
     
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
 //            return sectionInfo.numberOfObjects
 //        }
 //
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,6 +34,9 @@ class ViewController: UIViewController {
         cell.title.text = "Pointers Test"
         cell.details.text = "This is a test"
         cell.thumb.image = UIImage(named: "test")
+        
+        cell.title.isEditable = false
+        cell.details.isEditable = false
 //        configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
         return cell
     }
