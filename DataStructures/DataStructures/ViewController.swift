@@ -1,6 +1,14 @@
 import UIKit
 import CoreData
 
+//www.youtube.com/watch?v=A6Wl8ySrOZI << watch that video if you're confused about the refactoring of the code. Also watch it just so you understand identifies of Segues (transitions) and how they work.... Delete this comment once you read it OR add a new .txt file for these useful comments especially when there are links involved.
+
+// Intiliazing all the components of a sub app
+var subApp = ["Pointers Test" , "Linked"]
+var subAppDetails = ["Ethan delete the second cell when you see it, ran into the problem of the cells updating to not be identical" , "This is a test" ]
+var subAppImage = ["test", "test"]
+var myIndex = 0
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -8,32 +16,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//
         tableView.delegate = self
         tableView.dataSource = self
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let sections = controller.sections {
-//            let sectionInfo = sections[section]
-//
-//            return sectionInfo.numberOfObjects
-//        }
-//
-        return 1
+//    Automatically will return the numbe of subApps
+        return subApp.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "topicCell", for: indexPath) as! topicCell
+        
+        // They have changed into
         print("successful")
-        cell.title.text = "Pointers Test"
-        cell.details.text = "This is a test"
-        cell.thumb.image = UIImage(named: "test")
+        cell.title.text = subApp[myIndex]
+        cell.details.text = subAppDetails[myIndex]
+        cell.thumb.image = UIImage(named: subAppImage[myIndex])
         
         cell.title.isEditable = false
         cell.details.isEditable = false
@@ -41,15 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    
-//    func configureCell(cell: topicCell, indexPath: NSIndexPath) {
-        
-//    }
-    
-
-
-  
-
+    // Listens to the tap of a button and prodocues sets myIndex to the index of the tapped cell
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        myIndex = indexPath.row
+        performSegue(withIdentifier: "mainTransiton", sender: self)
+    }
 
 }
 
