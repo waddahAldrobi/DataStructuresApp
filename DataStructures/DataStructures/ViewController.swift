@@ -6,7 +6,7 @@ import CoreData
 // Intiliazing all the components of a sub app
 var subApp = ["Pointers Test" , "Linked"]
 var subAppDetails = ["Ethan delete the second cell when you see it, ran into the problem of the cells updating to not be identical" , "This is a test" ]
-var subAppImage = ["test", "test"]
+var subAppImage = ["test", "tesla"]
 var myIndex = 0
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -31,9 +31,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // They have changed into
         print("successful")
-        cell.title.text = subApp[myIndex]
-        cell.details.text = subAppDetails[myIndex]
-        cell.thumb.image = UIImage(named: subAppImage[myIndex])
+        cell.title.text = subApp[indexPath.item]
+        cell.details.text = subAppDetails[indexPath.item]
+        cell.thumb.image = UIImage(named: subAppImage[indexPath.item])
         
         cell.title.isEditable = false
         cell.details.isEditable = false
@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // Listens to the tap of a button and prodocues sets myIndex to the index of the tapped cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
-        performSegue(withIdentifier: "mainTransiton", sender: self)
+        performSegue(withIdentifier: "mainTransition", sender: self)
     }
 
 }
