@@ -58,6 +58,7 @@
                                             <outlet property="details" destination="PYy-92-eg2" id="h6x-SL-9YQ"/>
                                             <outlet property="thumb" destination="Te0-qT-O4C" id="deM-p3-vca"/>
                                             <outlet property="title" destination="3L3-0O-uP5" id="ysT-gU-gfw"/>
+                                            <segue destination="IND-La-pBd" kind="show" id="6E2-KJ-yJS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,7 +75,6 @@
                     <navigationItem key="navigationItem" id="Ow9-o6-HEG"/>
                     <connections>
                         <outlet property="tableView" destination="6MK-wX-x7A" id="4LR-MP-tJG"/>
-                        <segue destination="IND-La-pBd" kind="show" identifier="mainTransition" id="gra-xo-fZl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

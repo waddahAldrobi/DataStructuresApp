@@ -7,7 +7,6 @@ import CoreData
 var subApp = ["Pointers Test" , "Linked"]
 var subAppDetails = ["Ethan delete the second cell when you see it, ran into the problem of the cells updating to not be identical" , "This is a test" ]
 var subAppImage = ["test", "tesla"]
-var myIndex = 0
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -41,11 +40,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    // Listens to the tap of a button and prodocues sets myIndex to the index of the tapped cell
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        myIndex = indexPath.row
-        performSegue(withIdentifier: "mainTransition", sender: self)
-    }
+//    // Listens to the tap of a button and prodocues sets myIndex to the index of the tapped cell
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//            performSegue(withIdentifier: "mainTransition", sender: self)
+//    }
 
 }
 
