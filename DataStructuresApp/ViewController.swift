@@ -14,6 +14,8 @@ var tab3arr = ["Memory3" , "Linked Pointers3"]
 
 
 class ViewController: UIViewController {
+
+    
     @IBOutlet weak var tab1: UIButton!
     @IBOutlet weak var tab2: UIButton!
     @IBOutlet weak var tab3: UIButton!
@@ -37,9 +39,9 @@ class ViewController: UIViewController {
 
 // For passing data into next VC (replace XXXX with the vc class name and specify segue
     
-    override func prepare(for segue: , sender: Self) {
+    /*override func prepare(for segue: , sender: Self) {
         var destVC: XXXX = segue.destinationViewController as XXXXX
             destVC.myIndex = myIndex
-    }
+    }*/
 }
 

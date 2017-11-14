@@ -10,7 +10,7 @@ import UIKit
 
 var myIndex = 0
 
-var subApp = ["Pointers Test" , "Linked"]
+var subApp = ["Pointers" , "Linked"]
 var subAppDetails = ["Ethan delete the second cell when you see it, ran into the problem of the cells updating to not be identical" , "This is a test" ]
 
 class TableViewController: UITableViewController {
@@ -24,9 +24,11 @@ class TableViewController: UITableViewController {
     
     // Same as before
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
         
-        cell.textLabel?.text = subApp[indexPath.row]
+        cell.subAppTitle.text = subApp[indexPath.row]
+        cell.subAppIcon.image = UIImage (named: (subApp[indexPath.row] + ".png"))
+        //cell.textLabel?.text = subApp[indexPath.row]
         
         return cell
     }
