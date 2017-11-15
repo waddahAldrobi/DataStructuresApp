@@ -19,8 +19,6 @@
 		D4B9E53A1FB98AE200EA7B59 /* DataStructuresAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E5391FB98AE200EA7B59 /* DataStructuresAppUITests.swift */; };
 		D4B9E5481FB98C1B00EA7B59 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E5471FB98C1B00EA7B59 /* TableViewController.swift */; };
 		D4EA978F1FBAB0FB00F93BCC /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA978E1FBAB0FB00F93BCC /* TopicCell.swift */; };
-		D4EA97921FBAB76C00F93BCC /* Pointers.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EA97901FBAB76C00F93BCC /* Pointers.png */; };
-		D4EA97931FBAB76C00F93BCC /* Linked.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EA97911FBAB76C00F93BCC /* Linked.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +57,6 @@
 		D4B9E53B1FB98AE200EA7B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B9E5471FB98C1B00EA7B59 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D4EA978E1FBAB0FB00F93BCC /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
-		D4EA97901FBAB76C00F93BCC /* Pointers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pointers.png; path = ../../Pointers.png; sourceTree = "<group>"; };
-		D4EA97911FBAB76C00F93BCC /* Linked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Linked.png; path = ../../Linked.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,17 +109,15 @@
 			children = (
 				D4B9E5191FB98AE200EA7B59 /* AppDelegate.swift */,
 				D4B9E51B1FB98AE200EA7B59 /* ViewController.swift */,
-				852B1D011FBBB43B0093A857 /* CodeVC.swift */,
+				D4B9E5471FB98C1B00EA7B59 /* TableViewController.swift */,
+				D4EA978E1FBAB0FB00F93BCC /* TopicCell.swift */,
+				D4B9E51D1FB98AE200EA7B59 /* Main.storyboard */,
 				852B1CFC1FBBB4170093A857 /* SummaryVC.swift */,
 				852B1CFE1FBBB4250093A857 /* VisuaizationVC.swift */,
-				D4B9E5471FB98C1B00EA7B59 /* TableViewController.swift */,
-				D4B9E51D1FB98AE200EA7B59 /* Main.storyboard */,
-				D4EA978E1FBAB0FB00F93BCC /* TopicCell.swift */,
+				852B1D011FBBB43B0093A857 /* CodeVC.swift */,
 				D4B9E5201FB98AE200EA7B59 /* Assets.xcassets */,
 				D4B9E5221FB98AE200EA7B59 /* LaunchScreen.storyboard */,
 				D4B9E5251FB98AE200EA7B59 /* Info.plist */,
-				D4EA97911FBAB76C00F93BCC /* Linked.png */,
-				D4EA97901FBAB76C00F93BCC /* Pointers.png */,
 			);
 			path = DataStructuresApp;
 			sourceTree = "<group>";
@@ -256,8 +250,6 @@
 				D4B9E5241FB98AE200EA7B59 /* LaunchScreen.storyboard in Resources */,
 				D4B9E5211FB98AE200EA7B59 /* Assets.xcassets in Resources */,
 				D4B9E51F1FB98AE200EA7B59 /* Main.storyboard in Resources */,
-				D4EA97921FBAB76C00F93BCC /* Pointers.png in Resources */,
-				D4EA97931FBAB76C00F93BCC /* Linked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

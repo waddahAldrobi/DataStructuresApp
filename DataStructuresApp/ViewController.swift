@@ -39,8 +39,9 @@ class ViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Hit Here")
-        if segue.identifier == "singlePointerSegue" {
-            var destVC: SummaryVC = segue.destination as! SummaryVC
+        let tabCtrl = segue.destination as! UITabBarController // This to indicate that these are
+        if (segue.identifier == "firstTabSegue") {
+            let destVC = tabCtrl.viewControllers![0] as! SummaryVC
             destVC.myIndex = myIndex
         }
     }
