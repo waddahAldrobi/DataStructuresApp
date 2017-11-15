@@ -37,11 +37,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-// For passing data into next VC (replace XXXX with the vc class name and specify segue
-    
-    /*override func prepare(for segue: , sender: Self) {
-        var destVC: XXXX = segue.destinationViewController as XXXXX
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Hit Here")
+        if segue.identifier == "singlePointerSegue" {
+            var destVC: SummaryVC = segue.destination as! SummaryVC
             destVC.myIndex = myIndex
-    }*/
+        }
+    }
 }
 

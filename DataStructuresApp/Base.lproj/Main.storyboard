@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1eX-1d-BXN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1eX-1d-BXN">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,28 +15,20 @@
         <scene sceneID="LIZ-bM-iW0">
             <objects>
                 <tableViewController id="nKW-xP-2nw" customClass="TableViewController" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9gI-Ir-SZU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9gI-Ir-SZU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="157" id="bAF-nv-fxR" customClass="ViewControllerTableViewCell" customModule="DataStructuresApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="157"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="160" id="bAF-nv-fxR" customClass="TopicCell" customModule="DataStructuresApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bAF-nv-fxR" id="JFf-VP-EFb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="156.66666666666666"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bAF-nv-fxR" id="JFf-VP-EFb" customClass="TopicCell" customModule="DataStructuresApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-4i-6A1">
-                                            <rect key="frame" x="8" y="0.0" width="130" height="124"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RaW-te-5mk">
-                                            <rect key="frame" x="8" y="-1" width="130" height="124"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8g-FA-2xp">
-                                            <rect key="frame" x="146" y="30" width="193" height="64"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8g-FA-2xp">
+                                            <rect key="frame" x="170" y="49" width="176" height="58.333333333333343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="J8g-FA-2xp" secondAttribute="height" multiplier="193:64" id="cPh-mj-r5D"/>
                                             </constraints>
@@ -44,7 +36,12 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-4i-6A1">
+                                            <rect key="frame" x="16" y="16" width="130" height="124"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.10528071728959021" green="0.056472627615381188" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="J8g-FA-2xp" secondAttribute="bottom" constant="54.670000000000002" id="JXB-gt-pC5"/>
                                         <constraint firstItem="J8g-FA-2xp" firstAttribute="top" secondItem="JFf-VP-EFb" secondAttribute="topMargin" constant="22" id="dH6-hm-EXp"/>
@@ -52,7 +49,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="subAppIcon" destination="RaW-te-5mk" id="eGn-LY-yLR"/>
+                                    <outlet property="subAppIcon" destination="44Q-4i-6A1" id="a0l-R7-uY2"/>
                                     <outlet property="subAppTitle" destination="J8g-FA-2xp" id="iSc-FK-2lL"/>
                                 </connections>
                             </tableViewCell>
@@ -100,7 +97,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Single Pointers"/>
                                 <connections>
-                                    <segue destination="wto-5X-WcY" kind="show" id="E7d-GD-xxg"/>
+                                    <segue destination="wto-5X-WcY" kind="show" identifier="singlePointerSegue" id="E7d-GD-xxg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,10 +114,10 @@
             </objects>
             <point key="canvasLocation" x="124" y="23.645320197044335"/>
         </scene>
-        <!--Visiulization-->
+        <!--Visualization-->
         <scene sceneID="EpP-oV-bzu">
             <objects>
-                <viewController id="QmG-dk-JYH" sceneMemberID="viewController">
+                <viewController id="QmG-dk-JYH" customClass="VisualizationVC" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="POI-yc-OQW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +133,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="q31-h9-pxB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Visiulization" id="8lP-u2-9oh"/>
+                    <tabBarItem key="tabBarItem" title="Visualization" id="8lP-u2-9oh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vve-Yw-fJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,7 +142,7 @@
         <!--Summary-->
         <scene sceneID="n13-9i-fm9">
             <objects>
-                <viewController id="eG8-cl-OCT" sceneMemberID="viewController">
+                <viewController id="eG8-cl-OCT" customClass="SummaryVC" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t9b-Ti-cIw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +159,9 @@
                         <viewLayoutGuide key="safeArea" id="pQu-JM-s1Q"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Summary" id="Y0x-w8-hVb"/>
+                    <connections>
+                        <outlet property="textfield" destination="arp-Y6-lAl" id="N3v-EX-gb3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1o-mM-Fj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +189,7 @@
         <!--Code-->
         <scene sceneID="uHC-Fq-Ic8">
             <objects>
-                <viewController id="THX-KV-61p" sceneMemberID="viewController">
+                <viewController id="THX-KV-61p" customClass="CodeVC" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hYB-Bs-45G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

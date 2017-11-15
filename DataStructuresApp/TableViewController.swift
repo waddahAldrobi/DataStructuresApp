@@ -24,10 +24,10 @@ class TableViewController: UITableViewController {
     
     // Same as before
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TopicCell
         
-        cell.subAppTitle.text = subApp[indexPath.row]
-        cell.subAppIcon.image = UIImage (named: (subApp[indexPath.row] + ".png"))
+        cell.subAppTitle.text = subApp[indexPath.item]
+        cell.subAppIcon.image = UIImage(named: subApp[indexPath.item])
         //cell.textLabel?.text = subApp[indexPath.row]
         
         return cell
@@ -39,5 +39,6 @@ class TableViewController: UITableViewController {
         myIndex = indexPath.row
         performSegue(withIdentifier: "segue", sender: self)
     }
+    
 }
 
