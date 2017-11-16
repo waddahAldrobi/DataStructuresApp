@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class CodeVC: UIViewController {
+class VisualizationVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
     
@@ -11,5 +11,4 @@ class CodeVC: UIViewController {
     override func viewDidLoad() {
         textfield.text = "\(myIndex) \(mySecondIndex)"
     }
-    
 }

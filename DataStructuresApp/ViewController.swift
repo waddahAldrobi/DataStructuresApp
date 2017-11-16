@@ -7,8 +7,8 @@
 //
 
 import UIKit
-var tab1arr = ["Single Pointer!" , "Linked Pointers"]
-var tab2arr = ["Double Pointer23" , "Linked Pointers2"]
+var tab1arr = ["Single Pointers" , "Linked Pointers"]
+var tab2arr = ["Double Pointer2" , "Linked Pointers2"]
 var tab3arr = ["Memory3" , "Linked Pointers3"]
 
 
@@ -40,10 +40,32 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Hit Here")
         let tabCtrl = segue.destination as! UITabBarController // This to indicate that these are
-        if (segue.identifier == "firstTabSegue") {
-            let destVC = tabCtrl.viewControllers![0] as! SummaryVC
-            destVC.myIndex = myIndex
+
+// sets index depending on the topic chosen
+            let destVC1 = tabCtrl.viewControllers![0] as! SummaryVC
+            destVC1.myIndex = myIndex
+        
+            let destVC2 = tabCtrl.viewControllers![1] as! VisualizationVC
+            destVC2.myIndex = myIndex
+        
+            let destVC3 = tabCtrl.viewControllers![2] as! CodeVC
+            destVC3.myIndex = myIndex
+        
+//sets second index depending on button pressed
+// need to create data set that loads appropriate information.
+            if (segue.identifier == "firstTabSegue") {
+                destVC1.mySecondIndex = 1
+                destVC2.mySecondIndex = 1
+                destVC3.mySecondIndex = 1
+            } else if (segue.identifier == "secondTabSegue") {
+                destVC1.mySecondIndex = 2
+                destVC2.mySecondIndex = 2
+                destVC3.mySecondIndex = 2
+            } else if (segue.identifier == "thirdTabSegue") {
+                destVC1.mySecondIndex = 3
+                destVC2.mySecondIndex = 3
+                destVC3.mySecondIndex = 3
+            }
         }
-    }
 }
 
