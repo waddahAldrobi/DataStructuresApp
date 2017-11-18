@@ -3,7 +3,7 @@ import UIKit
 
 class SummaryVC: UIViewController {
     var myIndex = 5
-    var mySecondIndex = 5
+    var mySecondIndex = ""
     
     @IBOutlet weak var textfield: UILabel!
         
@@ -11,5 +11,9 @@ class SummaryVC: UIViewController {
     override func viewDidLoad() {
         textfield.text = "\(myIndex) \(mySecondIndex)"
     }
+    
+    
+    
+    // fetch form this array with these indexes
     
 }

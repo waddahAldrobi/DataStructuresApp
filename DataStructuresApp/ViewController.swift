@@ -54,18 +54,19 @@ class ViewController: UIViewController {
 //sets second index depending on button pressed
 // need to create data set that loads appropriate information.
             if (segue.identifier == "firstTabSegue") {
-                destVC1.mySecondIndex = 1
-                destVC2.mySecondIndex = 1
-                destVC3.mySecondIndex = 1
+                destVC1.mySecondIndex = "First Button"
+                destVC2.mySecondIndex = "First Button2"
+                destVC3.mySecondIndex = "First Button3"
             } else if (segue.identifier == "secondTabSegue") {
-                destVC1.mySecondIndex = 2
-                destVC2.mySecondIndex = 2
-                destVC3.mySecondIndex = 2
+                destVC1.mySecondIndex = "Second Button"
+                destVC2.mySecondIndex = "Second Button2"
+                destVC3.mySecondIndex = "Second Button3"
             } else if (segue.identifier == "thirdTabSegue") {
-                destVC1.mySecondIndex = 3
-                destVC2.mySecondIndex = 3
-                destVC3.mySecondIndex = 3
+                destVC1.mySecondIndex = "Third Button"
+                destVC2.mySecondIndex = "Third Button2"
+                destVC3.mySecondIndex = "Third Button3"
             }
         }
 }
 
+ // fetch form this array with these indexes

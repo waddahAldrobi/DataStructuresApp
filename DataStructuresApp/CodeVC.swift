@@ -3,7 +3,7 @@ import UIKit
 
 class CodeVC: UIViewController {
     var myIndex = 5
-    var mySecondIndex = 5
+    var mySecondIndex = ""
     
     @IBOutlet weak var textfield: UILabel!
     
