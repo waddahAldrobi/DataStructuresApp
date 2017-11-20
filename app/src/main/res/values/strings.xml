@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataStructuresApp</string>
+    <string name="title_activity_lesson_activity">LessonActivity</string>
+    <string name="title_home">Summary</string>
+    <string name="title_dashboard">Visualization</string>
+    <string name="title_notifications">Code</string>
+</resources>
