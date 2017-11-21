@@ -18,17 +18,21 @@
             android:orientation="vertical"
             android:layout_centerInParent="true">
 
+            <TextView
+                android:id="@+id/nameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:textColor="#000"
+                android:text="Title Page"/>
+
             <Button
                 android:id="@+id/firstActivityButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Employer Activity" />
+                android:text="Start"
+                android:visibility="invisible"/>
 
-            <Button
-                android:id="@+id/secondActivityButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Employee Activity" />
         </LinearLayout>
     </RelativeLayout>
 </layout>

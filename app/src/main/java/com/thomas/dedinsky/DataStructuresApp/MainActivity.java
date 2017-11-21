@@ -36,6 +36,8 @@ class MyAppApplication extends Application {
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
         mApp.setChapterName("default");
         mApp.setLessonID(-1);
         checkData();
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.firstActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, com.thomas.dedinsky.DataStructuresApp.OverviewActivity.class));
+            }
+        });
+        binding.firstActivityButton.setVisibility(View.VISIBLE);
         startActivity(new Intent(MainActivity.this, com.thomas.dedinsky.DataStructuresApp.OverviewActivity.class));
     }
 

@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@drawable/relative_layout_background">
 
         <TextView
             android:id="@+id/nameLabel"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:textSize="30sp"
+            android:textColor="#000"/>
 
         <Button
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="30dp"
-            android:text=">" />
+            android:layout_alignParentRight="true"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:text=">"/>
 
-
-
-    </LinearLayout>
+    </RelativeLayout>
 </layout>
