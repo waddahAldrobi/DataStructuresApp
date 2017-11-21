@@ -1,0 +1,23 @@
+{
+  "name": "course",
+  "data": [
+    {
+      "name" : "jim",
+      "chapter" : "jom",
+      "summary" : "jam",
+      "code" : "jem"
+    },
+    {
+      "name" : "bim",
+      "chapter" : "jom",
+      "summary" : "bam",
+      "code" : "bem"
+    },
+    {
+      "name" : "cim",
+      "chapter" : "jom",
+      "summary" : "cam",
+      "code" : "cem"
+    }
+  ]
+}
