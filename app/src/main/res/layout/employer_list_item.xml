@@ -2,6 +2,7 @@
 <layout>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/nextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -13,15 +14,16 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:textSize="30sp"
-            android:textColor="#000"/>
+            android:textColor="@color/colorPrimary"/>
 
-        <Button
-            android:id="@+id/nextButton"
+        <TextView
+            android:id="@+id/otherLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:minHeight="0dp"
-            android:minWidth="0dp"
+            android:textSize="30sp"
+            android:textColor="@color/colorPrimaryLight"
+            android:paddingRight="8dp"
             android:text=">"/>
 
     </RelativeLayout>

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.thomas.dedinsky.DataStructuresApp.LessonActivity">
+    tools:context="com.thomas.dedinsky.DataStructuresApp.LessonActivity"
+    android:background="@color/colorAccent">
 
     <LinearLayout
         android:id="@+id/content"
@@ -14,19 +15,23 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <LinearLayout android:id="@+id/section1" android:layout_weight="1" android:layout_height="fill_parent" android:layout_width="0dp">
+        <LinearLayout android:id="@+id/section1" android:layout_weight="1" android:layout_height="fill_parent" android:layout_width="0dp" android:paddingLeft="6dp">
             <TextView
                 android:id="@+id/text1"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="test" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="26dp"
+                android:text="test"/>
         </LinearLayout>
-        <LinearLayout android:id="@+id/section2" android:layout_weight="0" android:layout_height="fill_parent" android:layout_width="0dp">
+        <LinearLayout android:id="@+id/section2" android:layout_weight="0" android:layout_height="fill_parent" android:layout_width="0dp" android:paddingRight="6dp">
             <TextView
                 android:id="@+id/text2"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="test" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="26dp"
+                android:text="test"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -37,6 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation"
+        app:itemBackground="@drawable/drawable_selector"
+        app:itemIconTint="@color/color_selector"
+        app:itemTextColor="@color/color_selector"/>
 
 </LinearLayout>

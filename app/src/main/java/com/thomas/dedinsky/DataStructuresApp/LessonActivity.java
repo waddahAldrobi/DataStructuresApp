@@ -38,7 +38,6 @@ public class LessonActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) section2.getLayoutParams();
-            readFromDB();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     text1.setText(summary);
@@ -68,9 +67,11 @@ public class LessonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson);
+        readFromDB();
         section1 = (LinearLayout) findViewById(R.id.section1);
         section2 = (LinearLayout) findViewById(R.id.section2);
         text1 = (TextView) findViewById(R.id.text1);
+        text1.setText(summary);
         text2 = (TextView) findViewById(R.id.text2);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

@@ -10,6 +10,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
+        android:background="@color/colorAccent"
         tools:context="com.thomas.dedinsky.DataStructuresApp.MainActivity">
 
         <LinearLayout
@@ -23,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
-                android:textColor="#000"
+                android:textColor="@color/colorPrimary"
                 android:text="Title Page"/>
 
             <Button
@@ -31,6 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Start"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorAccent"
                 android:visibility="invisible"/>
 
         </LinearLayout>
