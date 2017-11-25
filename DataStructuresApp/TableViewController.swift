@@ -15,6 +15,7 @@ var subAppDetails = ["Ethan delete the second cell when you see it, ran into the
 
 class TableViewController: UITableViewController {
     
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

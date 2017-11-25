@@ -23,6 +23,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //json stuff
+        let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let json = try JSONSerialization.jsonObject(with: data , options: .mutableContainers)
+//           print (json)
+            guard let array = json as? [Any] else { return }
+            print (array)
+            
+            for lesson in array {
+                guard let lessonDict = lesson as? [String : Any] else { return }
+                
+//                guard let lessonTitle = lessonDict["Single Pointers"] as? [Any] else { return }
+//                guard let code = lessonTitle[0] as? [String : Any] else{ return }
+//                guard let codeImage = code["image"] as? String else { return }
+//                print(codeImage)
+            }
+            
+        } catch {
+            print(error)
+        }
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         print(myIndex)
         
