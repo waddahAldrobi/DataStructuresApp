@@ -12,21 +12,20 @@ class VisualizationVC: UIViewController {
         
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
-        AppUtility.lockOrientation(.portrait, andRotateTo: .landscapeRight)
-        
+        AppUtility.lockOrientation(.landscapeLeft , andRotateTo: .landscapeRight)
     }
     
+    
+    // Controls orientation
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Don't forget to reset when view is being removed
-        AppUtility.lockOrientation(.all)
+        AppUtility.lockOrientation(.all) 
     }
     
     override func viewDidLoad() {
         textfield.text = "\(myIndex) \(mySecondIndex)"
     }
    
-    
-     // fetch form another array with these indexes
 }
