@@ -17,6 +17,12 @@ class TableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // This will remove extra separators from tableview
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return subApp.count
