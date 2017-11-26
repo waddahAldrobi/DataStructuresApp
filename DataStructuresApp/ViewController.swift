@@ -9,9 +9,12 @@
 import UIKit
 var tab1arr = ["Single Pointers" , "Linked Pointers"]
 var tab2arr = ["Double Pointer2" , "Linked Pointers2"]
-var tab3arr = ["Memory3" , ""]
+var tab3arr = ["Memory3" , "Linked Pointers3"]
 
 
+// Add more buttons, if one has more than the other
+// Then, set in the array string to "", and use the isEnbaled function
+// and set it to false
 
 class ViewController: UIViewController {
 
@@ -60,7 +63,7 @@ class ViewController: UIViewController {
         tab1.setTitle(tab1arr[myIndex], for: UIControlState.normal)
         tab2.setTitle(tab2arr[myIndex], for: UIControlState.normal)
         tab3.setTitle(tab3arr[myIndex], for: UIControlState.normal)
-        tab3.isEnabled = false
+        //tab3.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
