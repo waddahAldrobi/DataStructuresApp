@@ -9,7 +9,7 @@
 import UIKit
 var tab1arr = ["Single Pointers" , "Linked Pointers"]
 var tab2arr = ["Double Pointer2" , "Linked Pointers2"]
-var tab3arr = ["Memory3" , "Linked Pointers3"]
+var tab3arr = ["Memory3" , ""]
 
 
 
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         //json stuff
-        let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
+        /*let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
         let url = URL(fileURLWithPath: path!)
         
         do {
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
             
         } catch {
             print(error)
-        }
+        }*/
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         tab1.setTitle(tab1arr[myIndex], for: UIControlState.normal)
         tab2.setTitle(tab2arr[myIndex], for: UIControlState.normal)
         tab3.setTitle(tab3arr[myIndex], for: UIControlState.normal)
+        tab3.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {

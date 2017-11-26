@@ -11,7 +11,6 @@ import UIKit
 var myIndex = 0
 
 var subApp = ["Pointers" , "Linked"]
-var subAppDetails = ["Ethan delete the second cell when you see it, ran into the problem of the cells updating to not be identical" , "This is a test" ]
 
 class TableViewController: UITableViewController {
     
