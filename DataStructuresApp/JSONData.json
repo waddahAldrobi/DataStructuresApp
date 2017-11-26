@@ -15,5 +15,23 @@
                 "text" : "Pointers store the addresss of an object rather than the value itself. Pointers store the address in the stack and point to values stored in the heap."
             }    
         
-    ]
+    ],
+    
+    "Double Pointers":
+    [
+     {
+     "image" : "code pic",
+     "text": "code"
+     },
+     
+     {
+     "images" : "visualization pic",
+     "text" : "code"
+     },
+     
+     {
+     "text" : "Pointers store the addresss of an object rather than the value itself. Pointers store the address in the stack and point to values stored in the heap."
+     }
+     
+     ]
 }

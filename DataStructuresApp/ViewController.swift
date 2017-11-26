@@ -32,28 +32,35 @@ class ViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         //json stuff
-        /*let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
+        let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
         let url = URL(fileURLWithPath: path!)
         
         do {
             let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data , options: .mutableContainers)
 //           print (json)
-            guard let array = json as? [Any] else { return }
-            print (array)
+            guard let lessons = json as? [String: Any] else { print("error444"); return }
+//            let codetab = tabs["Single Pointers"] as? [Any]
+//            let codetabs1 = codetab![1]
+
             
-            for lesson in array {
-                guard let lessonDict = lesson as? [String : Any] else { return }
-                
-//                guard let lessonTitle = lessonDict["Single Pointers"] as? [Any] else { return }
-//                guard let code = lessonTitle[0] as? [String : Any] else{ return }
-//                guard let codeImage = code["image"] as? String else { return }
-//                print(codeImage)
+            for (key, value) in lessons {
+                guard let codetab = lessons[key] as? [Any] else { return }
+                for object in codetab {
+                    guard let lessonDetails = object as? [String: Any] else { return }
+                    
+                    for (key, value) in lessonDetails {
+                        print(value)
+                    }
+
+                }
+//                print(codetab)
+                print("-----------------------------")
             }
             
         } catch {
             print(error)
-        }*/
+        }
         
         
         // Do any additional setup after loading the view, typically from a nib.
