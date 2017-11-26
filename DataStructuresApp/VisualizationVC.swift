@@ -15,7 +15,7 @@ class VisualizationVC: UIViewController {
         super.viewDidAppear(animated)
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
-        AppUtility.lockOrientation(.landscapeLeft , andRotateTo: .landscapeRight)
+        AppUtility.lockOrientation(.landscape , andRotateTo: .landscapeRight)
         
         //Sets title of tab
           self.tabBarController?.navigationItem.title = "Visualization";
