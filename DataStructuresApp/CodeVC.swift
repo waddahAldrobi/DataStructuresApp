@@ -19,6 +19,9 @@ class CodeVC: UIViewController {
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
         AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
+        
+        //Sets title of tab
+         self.tabBarController?.navigationItem.title = "Code";
     }
     
     override func viewWillDisappear(_ animated: Bool) {

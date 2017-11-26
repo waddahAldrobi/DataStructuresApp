@@ -7,12 +7,18 @@ class VisualizationVC: UIViewController {
     
     @IBOutlet weak var textfield: UILabel!
     
+    override func viewDidLoad() {
+        textfield.text = "\(myIndex) \(mySecondIndex)"
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
         AppUtility.lockOrientation(.landscapeLeft , andRotateTo: .landscapeRight)
+        
+        //Sets title of tab
+          self.tabBarController?.navigationItem.title = "Visualization";
     }
     
     
@@ -22,10 +28,6 @@ class VisualizationVC: UIViewController {
         
         // Don't forget to reset when view is being removed
         AppUtility.lockOrientation(.all) 
-    }
-    
-    override func viewDidLoad() {
-        textfield.text = "\(myIndex) \(mySecondIndex)"
     }
    
 }
