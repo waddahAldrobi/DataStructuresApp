@@ -20,6 +20,10 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Makes the text of back button "Back" for the NEXT VC
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        
         // This will remove extra separators from tableview
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }

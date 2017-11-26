@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Makes the text of back button "Back" for the NEXT VC
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         //json stuff
         let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
