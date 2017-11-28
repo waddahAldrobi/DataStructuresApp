@@ -18,8 +18,8 @@ class SummaryVC: UIViewController {
     // Controls orientation
    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
+        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
         AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
     
       //Sets title of tab
