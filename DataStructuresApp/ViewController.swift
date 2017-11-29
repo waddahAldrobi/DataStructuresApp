@@ -116,6 +116,7 @@ class ViewController: UIViewController {
         
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
+        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
         AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
     }
     

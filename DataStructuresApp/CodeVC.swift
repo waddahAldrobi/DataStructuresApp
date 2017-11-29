@@ -18,6 +18,7 @@ class CodeVC: UIViewController {
         
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
+        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
         AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
         
         //Sets title of tab
