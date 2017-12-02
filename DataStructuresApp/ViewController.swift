@@ -37,26 +37,28 @@ class ViewController: UIViewController {
         
         do {
             let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data , options: .mutableContainers)
-//           print (json)
-            guard let lessons = json as? [String: Any] else { print("error444"); return }
-//            let codetab = tabs["Single Pointers"] as? [Any]
-//            let codetabs1 = codetab![1]
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+//          print (json)
+            guard let subAppArray = json as? [Any] else { print("error444"); return }
 
-            
-            for (key, value) in lessons {
-                guard let codetab = lessons[key] as? [Any] else { return }
-                for object in codetab {
-                    guard let lessonDetails = object as? [String: Any] else { return }
-                    
-                    for (key, value) in lessonDetails {
-                        print(value)
-                    }
+            //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
+            for subApp in subAppArray {
+                guard let subAppDict = subApp as? [String:Any] else { return }
+                guard let subAppName = subAppDict["SubApp"] as? String else {return}
+                guard let lesson = subAppDict["Lesson"] as? String else {return}
+                guard let summary = subAppDict["Summary"] as? String else {return}
+                guard let code = subAppDict["Code"] as? String else {return}
+                guard let visualization = subAppDict["Visualization"] as? [String:String] else {return}
+                guard let visualizationCode = visualization["VisulizationCode"] else { return}
+                
+                print(subAppName)
+                print (lesson)
+                print (summary)
+                print (code)
+                print (visualizationCode)
 
                 }
-//                print(codetab)
                 print("-----------------------------")
-            }
             
         } catch {
             print(error)
