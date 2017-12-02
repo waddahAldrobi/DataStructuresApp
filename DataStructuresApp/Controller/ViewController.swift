@@ -13,7 +13,7 @@ var tab3arr = ["Memory3" , "Linked Pointers3"]
 
 
 // Add more buttons, if one has more than the other
-// Then, set in the array string to "", and use the isEnbaled function
+// Then, set in the array string to "", and use the isEnabled function
 // and set it to false
 
 class ViewController: UIViewController {
@@ -30,39 +30,6 @@ class ViewController: UIViewController {
         
         // Makes the text of back button "Back" for the NEXT VC
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-        
-        //json stuff
-        let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-//          print (json)
-            guard let subAppArray = json as? [Any] else { print("error444"); return }
-
-            //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
-            for subApp in subAppArray {
-                guard let subAppDict = subApp as? [String:Any] else { return }
-                guard let subAppName = subAppDict["SubApp"] as? String else {return}
-                guard let lesson = subAppDict["Lesson"] as? String else {return}
-                guard let summary = subAppDict["Summary"] as? String else {return}
-                guard let code = subAppDict["Code"] as? String else {return}
-                guard let visualization = subAppDict["Visualization"] as? [String:String] else {return}
-                guard let visualizationCode = visualization["VisulizationCode"] else { return}
-                
-                print(subAppName)
-                print (lesson)
-                print (summary)
-                print (code)
-                print (visualizationCode)
-
-                }
-                print("-----------------------------")
-            
-        } catch {
-            print(error)
-        }
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -84,7 +51,7 @@ class ViewController: UIViewController {
         print("Hit Here")
         let tabCtrl = segue.destination as! UITabBarController // This to indicate that these are
 
-// sets index depending on the topic chosen
+            // sets index depending on the topic chosen
             let destVC1 = tabCtrl.viewControllers![0] as! SummaryVC
             destVC1.myIndex = myIndex
         
@@ -94,21 +61,36 @@ class ViewController: UIViewController {
             let destVC3 = tabCtrl.viewControllers![2] as! CodeVC
             destVC3.myIndex = myIndex
         
-//sets second index depending on button pressed
-// need to create data set that loads appropriate information.
+            //sets second index depending on button pressed
+            // need to create data set that loads appropriate information.
             if (segue.identifier == "firstTabSegue") {
-                destVC1.mySecondIndex = "First Button"
-                destVC2.mySecondIndex = "First Button2"
-                destVC3.mySecondIndex = "First Button3"
+                destVC1.mySecondIndex = 0
+                destVC2.mySecondIndex = 0
+                destVC3.mySecondIndex = 0
             } else if (segue.identifier == "secondTabSegue") {
-                destVC1.mySecondIndex = "Second Button"
-                destVC2.mySecondIndex = "Second Button2"
-                destVC3.mySecondIndex = "Second Button3"
+                destVC1.mySecondIndex = 1
+                destVC2.mySecondIndex = 1
+                destVC3.mySecondIndex = 1
             } else if (segue.identifier == "thirdTabSegue") {
-                destVC1.mySecondIndex = "Third Button"
-                destVC2.mySecondIndex = "Third Button2"
-                destVC3.mySecondIndex = "Third Button3"
+                destVC1.mySecondIndex = 2
+                destVC2.mySecondIndex = 2
+                destVC3.mySecondIndex = 2
             }
+        
+        //old style
+//        if (segue.identifier == "firstTabSegue") {
+//            destVC1.mySecondIndex = "First Button"
+//            destVC2.mySecondIndex = "First Button2"
+//            destVC3.mySecondIndex = "First Button3"
+//        } else if (segue.identifier == "secondTabSegue") {
+//            destVC1.mySecondIndex = "Second Button"
+//            destVC2.mySecondIndex = "Second Button2"
+//            destVC3.mySecondIndex = "Second Button3"
+//        } else if (segue.identifier == "thirdTabSegue") {
+//            destVC1.mySecondIndex = "Third Button"
+//            destVC2.mySecondIndex = "Third Button2"
+//            destVC3.mySecondIndex = "Third Button3"
+//        }
         }
     
     

@@ -9,7 +9,7 @@
 import UIKit
 
 var myIndex = 0
-
+var mySecondIndex = 0
 var subApp = ["Pointers" , "Linked"]
 
 class TableViewController: UITableViewController {
@@ -25,6 +25,9 @@ class TableViewController: UITableViewController {
         
         // This will remove extra separators from tableview
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

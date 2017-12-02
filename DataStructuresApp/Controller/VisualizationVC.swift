@@ -1,9 +1,9 @@
 import Foundation
 import UIKit
 
-class CodeVC: UIViewController {
+class VisualizationVC: UIViewController {
     var myIndex = 5
-    var mySecondIndex = ""
+    var mySecondIndex = 5
     
     @IBOutlet weak var textfield: UILabel!
     
@@ -11,25 +11,22 @@ class CodeVC: UIViewController {
         textfield.text = "\(myIndex) \(mySecondIndex)"
     }
     
-    
-    // Controls orientation
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
-        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
-        AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
+        AppUtility.lockOrientation(.landscape , andRotateTo: .landscapeRight)
         
         //Sets title of tab
-         self.tabBarController?.navigationItem.title = "Code";
+          self.tabBarController?.navigationItem.title = "Visualization";
     }
     
+    
+    // Controls orientation
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         // Don't forget to reset when view is being removed
-        AppUtility.lockOrientation(.portrait)
+        AppUtility.lockOrientation(.portrait) 
     }
-    
-}
+   }

@@ -86,6 +86,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAD521A11FD319BD00ECA99C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				852B1CFC1FBBB4170093A857 /* SummaryVC.swift */,
+				852B1CFE1FBBB4250093A857 /* VisualizationVC.swift */,
+				852B1D011FBBB43B0093A857 /* CodeVC.swift */,
+				D4B9E5191FB98AE200EA7B59 /* AppDelegate.swift */,
+				D4B9E5471FB98C1B00EA7B59 /* TableViewController.swift */,
+				D4B9E51B1FB98AE200EA7B59 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AAD521A21FD31A7C00ECA99C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AADBEFAB1FCA24D1005A3492 /* JSONData.json */,
+				D4EA978E1FBAB0FB00F93BCC /* TopicCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AAD521A31FD31A8700ECA99C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9E51D1FB98AE200EA7B59 /* Main.storyboard */,
+				D4B9E5201FB98AE200EA7B59 /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D4B9E50D1FB98AE200EA7B59 = {
 			isa = PBXGroup;
 			children = (
@@ -109,16 +140,9 @@
 		D4B9E5181FB98AE200EA7B59 /* DataStructuresApp */ = {
 			isa = PBXGroup;
 			children = (
-				AADBEFAB1FCA24D1005A3492 /* JSONData.json */,
-				D4B9E5191FB98AE200EA7B59 /* AppDelegate.swift */,
-				D4B9E51B1FB98AE200EA7B59 /* ViewController.swift */,
-				D4B9E5471FB98C1B00EA7B59 /* TableViewController.swift */,
-				D4EA978E1FBAB0FB00F93BCC /* TopicCell.swift */,
-				D4B9E51D1FB98AE200EA7B59 /* Main.storyboard */,
-				852B1CFC1FBBB4170093A857 /* SummaryVC.swift */,
-				852B1CFE1FBBB4250093A857 /* VisualizationVC.swift */,
-				852B1D011FBBB43B0093A857 /* CodeVC.swift */,
-				D4B9E5201FB98AE200EA7B59 /* Assets.xcassets */,
+				AAD521A31FD31A8700ECA99C /* View */,
+				AAD521A21FD31A7C00ECA99C /* Model */,
+				AAD521A11FD319BD00ECA99C /* Controller */,
 				D4B9E5221FB98AE200EA7B59 /* LaunchScreen.storyboard */,
 				D4B9E5251FB98AE200EA7B59 /* Info.plist */,
 			);
@@ -451,7 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPB3854KB6;
+				DEVELOPMENT_TEAM = 33K52ZD6RY;
 				INFOPLIST_FILE = DataStructuresApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = waddah.DataStructuresApp;
@@ -466,7 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RPB3854KB6;
+				DEVELOPMENT_TEAM = 33K52ZD6RY;
 				INFOPLIST_FILE = DataStructuresApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = waddah.DataStructuresApp;
