@@ -4,12 +4,13 @@ import UIKit
 class SummaryVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
-    
+    var text = ""
     @IBOutlet weak var textfield: UILabel!
+    @IBOutlet weak var textview: UITextView!
     
     override func viewDidLoad() {
-        textfield.text = "\(myIndex) \(mySecondIndex)"
         
+//        "\(myIndex) \(mySecondIndex)"
         //This makes the title not flash DO NOT remove, should only be in default Tab
         self.tabBarController?.navigationItem.title = "Summary";
         
@@ -22,7 +23,7 @@ class SummaryVC: UIViewController {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             //          print (json)
             guard let subAppArray = json as? [Any] else { print("error444"); return }
-            
+        
             //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
             
             guard let subAppDict = subAppArray[myIndex] as? [Any] else { return }
@@ -34,6 +35,9 @@ class SummaryVC: UIViewController {
             guard let visualization = subAppDict1["Visualization"] as? [String:String] else {return}
             guard let visualizationCode = visualization["VisulizationCode"] else {return}
             
+            text = summary
+            // for info on allowed character in json: https://stackoverflow.com/questions/2392766/multiline-strings-in-json
+            
             print(subAppName)
             print (lesson)
             print (summary)
@@ -41,11 +45,17 @@ class SummaryVC: UIViewController {
             print (visualizationCode)
             
             
+            
             print("-----------------------------")
             
         } catch {
             print(error)
         }
+        
+        textfield.text = text
+        textview.text = text
+        
+        print(text)
         
     }
     
@@ -69,3 +79,4 @@ class SummaryVC: UIViewController {
     }
     
 }
+

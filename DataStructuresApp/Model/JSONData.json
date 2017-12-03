@@ -3,8 +3,8 @@
       {
         "SubApp": "Pointers",
         "Lesson" : "Single Pointers",
-        "Summary" : "Whatever",
-        "Code" : "Code goes here",
+        "Summary" : "Whatever\nthis is a new line\t\tthis should be tabbed",
+        "Code" : "Code goes here \n this is a new line \t this should be tabbed",
         "Visualization" : {
                   "VisulizationCode" : "Some Code in Vis",
                   "image1" : "Some Image"
