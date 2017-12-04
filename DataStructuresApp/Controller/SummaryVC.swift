@@ -1,11 +1,12 @@
 import Foundation
 import UIKit
 
+
 class SummaryVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
     var text = ""
-    @IBOutlet weak var textfield: UILabel!
+
     @IBOutlet weak var textview: UITextView!
     
     override func viewDidLoad() {
@@ -51,10 +52,8 @@ class SummaryVC: UIViewController {
         } catch {
             print(error)
         }
-        
-        textfield.text = text
+    
         textview.text = text
-        
         print(text)
         
     }

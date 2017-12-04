@@ -3,7 +3,7 @@
       {
         "SubApp": "Pointers",
         "Lesson" : "Single Pointers",
-        "Summary" : "Whatever\nthis is a new line\t\tthis should be tabbed",
+        "Summary" : "Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
         "Code" : "Code goes here \n this is a new line \t this should be tabbed",
         "Visualization" : {
                   "VisulizationCode" : "Some Code in Vis",
