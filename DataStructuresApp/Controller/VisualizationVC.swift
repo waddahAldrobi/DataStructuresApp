@@ -5,7 +5,7 @@ class VisualizationVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
     
-    @IBOutlet weak var textfield: UILabel!
+    @IBOutlet weak var textfield: UITextView!
     
     override func viewDidLoad() {
         textfield.text = "\(myIndex) \(mySecondIndex)"
