@@ -8,7 +8,7 @@ class VisualizationVC: UIViewController {
     @IBOutlet weak var textfield: UITextView!
     
     override func viewDidLoad() {
-        textfield.text = "\(myIndex) \(mySecondIndex)"
+//        textfield.text = "\(myIndex) \(mySecondIndex)"
     }
     
     override func viewDidAppear(_ animated: Bool) {

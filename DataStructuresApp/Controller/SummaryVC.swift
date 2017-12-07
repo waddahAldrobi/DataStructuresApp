@@ -15,7 +15,7 @@ class SummaryVC: UIViewController {
         //This makes the title not flash DO NOT remove, should only be in default Tab
         self.tabBarController?.navigationItem.title = "Summary";
         
-        //json stuff
+        // MARK: JSON Parsing
         let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
         let url = URL(fileURLWithPath: path!)
         
