@@ -1,31 +1,56 @@
-{
-  "Pointers":{
-      "Single Pointers":{
-          "Summary" : "Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
-          "Code" : "Code goes here \n this is a new line \t this should be tabbed",
-          "Visualization" : {
-              "VisulizationCode" : "Some Code in Vis",
-              "image1" : "Some Image"
-          },
-          "Single Pointers":{
-              "Summary" : "Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
-              "Code" : "Code goes here \n this is a new line \t this should be tabbed",
-              "Visualization" : {
-                  "VisulizationCode" : "Some Code in Vis",
-                  "image1" : "Some Image"
-              }
-
-      }
-  }
-    "Linked-List":{
-        "Single Pointers":{
-            "Summary" : "Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
-            "Code" : "Code goes here \n this is a new line \t this should be tabbed",
-            "Visualization" : {
-                "VisulizationCode" : "Some Code in Vis",
-                "image1" : "Some Image"
-            }
-
+[
+  [
+      {
+      "Summary" : "This is the summary for Single pointers. Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+      "Code" : "Single pointers Code. Code goes here \n this is a new line \t this should be tabbed",
+      "Visualization" : {
+          "VisulizationCode" : "single pointers visualization. Some Code in Vis",
+          "image1" : "Some Image"
         }
-    }
-}
+      },
+      {
+      "Summary" : "This is the summary for Double pointers. Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+      "Code" : "Double pointers Code. Code goes here \n this is a new line \t this should be tabbed",
+      "Visualization" : {
+          "VisulizationCode" : "double pointers visualization. Some Code in Vis",
+          "image1" : "Some Image"
+        }
+      },
+      {
+      "Summary" : "This is the summary for Memory Management. Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+      "Code" : "memory management Code. Code goes here \n this is a new line \t this should be tabbed",
+      "Visualization" : {
+          "VisulizationCode" : "memory management visualization. Some Code in Vis",
+          "image1" : "Some Image"
+        }
+      }
+  ],
+
+  [
+      {
+      "Summary" : "This is the summary for First lesson Linked. Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+      "Code" : "First lesson Linked Code. Code goes here \n this is a new line \t this should be tabbed",
+      "Visualization" : {
+          "VisulizationCode" : "First lesson Linked visualization. Some Code in Vis",
+          "image1" : "Some Image"
+        }
+      },
+      {
+      "Summary" : "This is the summary for Second lesson Linked. Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+      "Code" : "Second lesson Linked Code. Code goes here \n this is a new line \t this should be tabbed",
+      "Visualization" : {
+          "VisulizationCode" : "Second lesson Linked visualization. Some Code in Vis",
+          "image1" : "Some Image"
+        }
+      },
+      {
+      "Summary" : "This is the summary for Third lesson Linked. Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+      "Code" : "Third lesson Linked Code. Code goes here \n this is a new line \t this should be tabbed",
+      "Visualization" : {
+          "VisulizationCode" : "Third lesson Linked visualization. Some Code in Vis",
+          "image1" : "Some Image"
+        }
+      }
+  ]
+
+]

@@ -6,6 +6,7 @@ class SummaryVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
     var text = ""
+    var subLessonData : String = ""
 
     @IBOutlet weak var textview: UITextView!
     
@@ -16,8 +17,10 @@ class SummaryVC: UIViewController {
         self.tabBarController?.navigationItem.title = "Summary";
         
     
-        textview.text = text
-        print(text)
+        textview.text = subLessonData
+        
+        print("in summary vc")
+        print(subLessonData)
         
         // var trial = "• This is a list item! \n• This is too! " copy and paste 
     }

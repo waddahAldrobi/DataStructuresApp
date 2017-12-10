@@ -65,7 +65,7 @@
         <!--Lessons-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LessonOptions" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LessonOptions" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ddH-4G-cR9"/>
                         <viewControllerLayoutGuide type="bottom" id="VD3-3o-A6N"/>
@@ -251,6 +251,9 @@ hello</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Visualization" id="8lP-u2-9oh"/>
                     <size key="freeformSize" width="812" height="1000"/>
+                    <connections>
+                        <outlet property="secondScrollView" destination="326-av-kqJ" id="cNY-Rb-dhI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vve-Yw-fJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -320,7 +323,7 @@ hello</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-ni-A7B">
-                                <rect key="frame" x="123" y="243" width="156" height="73"/>
+                                <rect key="frame" x="52" y="208" width="286" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

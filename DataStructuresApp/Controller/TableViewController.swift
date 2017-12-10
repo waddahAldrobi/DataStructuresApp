@@ -45,12 +45,15 @@ class TableViewController: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabCtrl = segue.destination as! UITabBarController // This to indicate that these are
+        let lessonOptionsVC = segue.destination as! LessonOptions // This to indicate that these are
+        lessonOptionsVC.myIndex = myIndex
+        lessonOptionsVC.lessonData = lessonData
         
-        // sets index depending on the topic chosen
-        let destVC1 = tabCtrl.viewControllers![0] as! SummaryVC
-        destVC1.myIndex = myIndex
+        
     }
+    
+    
+    
     // Listens to the tap, that seugue is necessary for index update
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
@@ -65,12 +68,12 @@ class TableViewController: UITableViewController {
         do {
             let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            //          print (json)
+//                      print (json)
             guard let lessonDataArray = json as? [Any] else { print("error444"); return }
             
             //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
             
-            guard let lessonData = lessonDataArray[myIndex] as? [Any] else { return }
+            guard let lessonData = lessonDataArray[myIndex] as? [Any] else { print("error888"); return }
             
             // for info on allowed characters in json: https://stackoverflow.com/questions/2392766/multiline-strings-in-json
             

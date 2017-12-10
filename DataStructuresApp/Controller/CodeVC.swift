@@ -4,11 +4,15 @@ import UIKit
 class CodeVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
+    var subLessonData : String = ""
     
     @IBOutlet weak var textfield: UILabel!
     
     override func viewDidLoad() {
-        textfield.text = "\(myIndex) \(mySecondIndex)"
+//        textfield.text = "\(myIndex) \(mySecondIndex)"
+        print("in code vc")
+        print(subLessonData)
+        textfield.text = subLessonData
     }
     
     
