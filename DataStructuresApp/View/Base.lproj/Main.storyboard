@@ -74,30 +74,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfk-Ed-KxX">
-                                <rect key="frame" x="62" y="314" width="251" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfk-Ed-KxX">
+                                <rect key="frame" x="43" y="312" width="289" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Double Pointers">
+                                <state key="normal" image="blueIcon">
                                     <color key="titleColor" red="0.0098434723910000004" green="0.33478814359999998" blue="0.70115500689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="wto-5X-WcY" kind="push" identifier="secondTabSegue" id="pEO-lL-MFm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5I-Ap-euq">
-                                <rect key="frame" x="107" y="497" width="161" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5I-Ap-euq">
+                                <rect key="frame" x="108" y="495" width="160" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Memory">
+                                <state key="normal" image="blueIcon">
                                     <color key="titleColor" red="0.0098434723910000004" green="0.33478814359999998" blue="0.70115500689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="wto-5X-WcY" kind="push" identifier="thirdTabSegue" id="5Yi-Rc-Tcb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dq-kt-pZm">
-                                <rect key="frame" x="84" y="160" width="207" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dq-kt-pZm">
+                                <rect key="frame" x="47" y="163" width="281" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Single Pointers">
+                                <state key="normal" image="blueIcon">
                                     <color key="titleColor" red="0.0098434723910000004" green="0.33478814359999998" blue="0.70115500689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -364,6 +364,9 @@ hello</string>
             <point key="canvasLocation" x="-1165.625" y="32.479999999999997"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blueIcon" width="160" height="40"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="pEO-lL-MFm"/>
     </inferredMetricsTieBreakers>
