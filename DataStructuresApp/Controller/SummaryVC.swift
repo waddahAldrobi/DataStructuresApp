@@ -19,6 +19,7 @@ class SummaryVC: UIViewController {
         textview.text = text
         print(text)
         
+        // var trial = "• This is a list item! \n• This is too! " copy and paste 
     }
     
     
