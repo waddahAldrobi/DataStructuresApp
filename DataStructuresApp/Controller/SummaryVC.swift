@@ -15,43 +15,6 @@ class SummaryVC: UIViewController {
         //This makes the title not flash DO NOT remove, should only be in default Tab
         self.tabBarController?.navigationItem.title = "Summary";
         
-        // MARK: JSON Parsing
-        let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            //          print (json)
-            guard let subAppArray = json as? [Any] else { print("error444"); return }
-        
-            //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
-            
-            guard let subAppDict = subAppArray[myIndex] as? [Any] else { return }
-            guard let subAppDict1 = subAppDict[mySecondIndex] as? [String:Any] else { return }
-            guard let subAppName = subAppDict1["SubApp"] as? String else {return}
-            guard let lesson = subAppDict1["Lesson"] as? String else {return}
-            guard let summary = subAppDict1["Summary"] as? String else {return}
-            guard let code = subAppDict1["Code"] as? String else {return}
-            guard let visualization = subAppDict1["Visualization"] as? [String:String] else {return}
-            guard let visualizationCode = visualization["VisulizationCode"] else {return}
-            
-            text = summary
-            // for info on allowed character in json: https://stackoverflow.com/questions/2392766/multiline-strings-in-json
-            
-            print(subAppName)
-            print (lesson)
-            print (summary)
-            print (code)
-            print (visualizationCode)
-            
-            
-            
-            print("-----------------------------")
-            
-        } catch {
-            print(error)
-        }
     
         textview.text = text
         print(text)

@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         // Makes the text of back button "Back" for the NEXT VC
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
+        print(subAppData1)
         
         // Do any additional setup after loading the view, typically from a nib.
         print(myIndex)

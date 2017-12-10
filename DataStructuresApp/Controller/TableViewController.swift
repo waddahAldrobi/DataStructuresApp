@@ -8,12 +8,12 @@
 
 import UIKit
 
-var myIndex = 0
-var mySecondIndex = 0
-var subApp = ["Pointers" , "Linked"]
-
 class TableViewController: UITableViewController {
     
+    var myIndex = 0
+    var mySecondIndex = 0
+    var subApp = ["Pointers" , "Linked"]
+    var subAppData : [Any] = []
     
     // MARK: - Table view data source
     
@@ -25,8 +25,6 @@ class TableViewController: UITableViewController {
         
         // This will remove extra separators from tableview
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
-        
         
     }
     
@@ -50,6 +48,34 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         myIndex = indexPath.row
+        
+        
+        
+        // MARK: JSON Parsing
+        let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+            //          print (json)
+            guard let subAppArray = json as? [Any] else { print("error444"); return }
+            
+            //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
+            
+            guard let subAppDict = subAppArray[myIndex] as? [Any] else { return }
+            
+            // for info on allowed characters in json: https://stackoverflow.com/questions/2392766/multiline-strings-in-json
+            
+            self.subAppData = subAppDict
+            
+            print("-----------------------------")
+            
+        } catch {
+            print(error)
+        }
+        
+        
         performSegue(withIdentifier: "segue", sender: self)
     }
     
