@@ -11,9 +11,8 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var myIndex = 0
-    var mySecondIndex = 0
-    var subApp = ["Pointers" , "Linked"]
-    var subAppData : [Any] = []
+    var lessonNames = ["Pointers", "Linked Lists"]
+    var lessonData : [Any] = []
     
     // MARK: - Table view data source
     
@@ -30,20 +29,28 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return subApp.count
+        return lessonNames.count
     }
     
     // Same as before
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TopicCell
         
-        cell.subAppTitle.text = subApp[indexPath.item]
-        cell.subAppIcon.image = UIImage(named: subApp[indexPath.item])
+        cell.subAppTitle.text = lessonNames[indexPath.item]
+        cell.subAppIcon.image = UIImage(named: lessonNames[indexPath.item])
         //cell.textLabel?.text = subApp[indexPath.row]
         
         return cell
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabCtrl = segue.destination as! UITabBarController // This to indicate that these are
+        
+        // sets index depending on the topic chosen
+        let destVC1 = tabCtrl.viewControllers![0] as! SummaryVC
+        destVC1.myIndex = myIndex
+    }
     // Listens to the tap, that seugue is necessary for index update
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
@@ -59,15 +66,15 @@ class TableViewController: UITableViewController {
             let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
             //          print (json)
-            guard let subAppArray = json as? [Any] else { print("error444"); return }
+            guard let lessonDataArray = json as? [Any] else { print("error444"); return }
             
             //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
             
-            guard let subAppDict = subAppArray[myIndex] as? [Any] else { return }
+            guard let lessonData = lessonDataArray[myIndex] as? [Any] else { return }
             
             // for info on allowed characters in json: https://stackoverflow.com/questions/2392766/multiline-strings-in-json
             
-            self.subAppData = subAppDict
+            self.lessonData = lessonData
             
             print("-----------------------------")
             

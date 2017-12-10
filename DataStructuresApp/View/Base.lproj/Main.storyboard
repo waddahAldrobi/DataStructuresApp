@@ -65,7 +65,7 @@
         <!--Lessons-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LessonOptions" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ddH-4G-cR9"/>
                         <viewControllerLayoutGuide type="bottom" id="VD3-3o-A6N"/>

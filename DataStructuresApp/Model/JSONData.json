@@ -1,50 +1,31 @@
-[
- [
-      {
-        "SubApp": "Pointers",
-        "Lesson" : "Single Pointers",
-        "Summary" : "Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
-        "Code" : "Code goes here \n this is a new line \t this should be tabbed",
-        "Visualization" : {
+{
+  "Pointers":{
+      "Single Pointers":{
+          "Summary" : "Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+          "Code" : "Code goes here \n this is a new line \t this should be tabbed",
+          "Visualization" : {
+              "VisulizationCode" : "Some Code in Vis",
+              "image1" : "Some Image"
+          },
+          "Single Pointers":{
+              "Summary" : "Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+              "Code" : "Code goes here \n this is a new line \t this should be tabbed",
+              "Visualization" : {
                   "VisulizationCode" : "Some Code in Vis",
                   "image1" : "Some Image"
-                  }
-      },
-      {
-      "SubApp" : "Pointers",
-      "Lesson" : "Double Pointers",
-      "Summary" : "Whatever2",
-      "Code" : "Code goes here2",
-      "Visualization": {
-                  "VisulizationCode" : "Some Code in Vis2",
-                  "image1" : "Some Image2"
-                  }
-      }
- ],
- 
- [
-      {
-      "SubApp": "Linked List",
-      "Lesson" : "Single Pointers",
-      "Summary" : "Whatever",
-      "Code" : "Code goes here",
-      "Visualization" : {
-      "VisulizationCode" : "Some Code in Vis",
-      "image1" : "Some Image"
-      }
-      },
-      {
-      "SubApp" : "Linked List",
-      "Lesson" : "Double Pointers",
-      "Summary" : "Whatever2",
-      "Code" : "Code goes here2",
-      "Visualization": {
-      "VisulizationCode" : "Some Code in Vis2",
-      "image1" : "Some Image2"
-      }
-      }
-  ]
- 
- 
-]
+              }
 
+      }
+  }
+    "Linked-List":{
+        "Single Pointers":{
+            "Summary" : "Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
+            "Code" : "Code goes here \n this is a new line \t this should be tabbed",
+            "Visualization" : {
+                "VisulizationCode" : "Some Code in Vis",
+                "image1" : "Some Image"
+            }
+
+        }
+    }
+}
