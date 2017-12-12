@@ -25,6 +25,9 @@ class LessonOptions: UIViewController {
     @IBOutlet weak var tab2: UIButton!
     @IBOutlet weak var tab3: UIButton!
     
+    @IBOutlet weak var tab1Label: UILabel!
+    @IBOutlet weak var tab2Label: UILabel!
+    @IBOutlet weak var tab3Label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +41,12 @@ class LessonOptions: UIViewController {
         
         print("dddddddddddddddddddddddd")
         print(lessonData)
+        
+        
         // These will change the buttons
-        tab1.setTitle(tab1arr[myIndex], for: UIControlState.normal)
-        tab2.setTitle(tab2arr[myIndex], for: UIControlState.normal)
-        tab3.setTitle(tab3arr[myIndex], for: UIControlState.normal)
+        tab1Label.text = tab1arr[myIndex]
+        tab2Label.text = tab2arr[myIndex]
+        tab3Label.text = tab3arr[myIndex]
         //tab3.isEnabled = false
     }
 
