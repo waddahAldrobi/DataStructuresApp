@@ -7,12 +7,13 @@ class CodeVC: UIViewController {
     var subLessonData : String = ""
     
     @IBOutlet weak var textfield: UILabel!
+    @IBOutlet weak var codeText: UITextView!
     
     override func viewDidLoad() {
 //        textfield.text = "\(myIndex) \(mySecondIndex)"
         print("in code vc")
         print(subLessonData)
-        textfield.text = subLessonData
+        codeText.text = subLessonData
     }
     
     

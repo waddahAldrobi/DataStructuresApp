@@ -239,7 +239,6 @@ hello</string>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.3394626026" green="0.72532936049999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="326-av-kqJ" firstAttribute="width" secondItem="6Oh-G2-hVZ" secondAttribute="width" id="AnF-TV-XoS"/>
                                             <constraint firstItem="326-av-kqJ" firstAttribute="leading" secondItem="6Oh-G2-hVZ" secondAttribute="leading" id="I2w-2a-B1z"/>
@@ -296,10 +295,10 @@ hello</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Here is the text of summary" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aKT-No-RJ3">
-                                <rect key="frame" x="67" y="135" width="240" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -346,19 +345,19 @@ hello</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7L-ni-A7B">
-                                <rect key="frame" x="52" y="208" width="286" height="223"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Code goes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0SJ-8t-uAU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Code" id="fDX-7l-G1b"/>
                     <connections>
-                        <outlet property="textfield" destination="a7L-ni-A7B" id="odW-6o-E8W"/>
+                        <outlet property="codeText" destination="0SJ-8t-uAU" id="KmI-gw-0Wr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vlt-Uc-YLz" userLabel="First Responder" sceneMemberID="firstResponder"/>

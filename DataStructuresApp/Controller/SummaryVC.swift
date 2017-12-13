@@ -25,7 +25,6 @@ class SummaryVC: UIViewController {
         // var trial = "• This is a list item! \n• This is too! " copy and paste 
     }
     
-    
     // Controls orientation
    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
