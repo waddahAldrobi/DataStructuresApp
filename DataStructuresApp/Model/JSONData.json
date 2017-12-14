@@ -17,8 +17,8 @@
         }
       },
       {
-      "Summary" : "This is the summary for Memory Management. Whatever\nthis is a new line\t this should be tabbed and I fully understand that",
-      "Code" : "memory management Code. Code goes here \n this is a new line \t this should be tabbed",
+   "Summary" : "Memory Management\n\t• Garbage Memory aka. Memory Leak\n\t\tGarbage memory is created when pointers are not deleted before they are reassigned.\n\t• Dangling Pointers\n\t\tThese are pointers that reference meaningless data because they were not properly deleted.",
+   "Code" : "Garbage Memory\nInt *ptr = new int;\n*ptr = 5;\nInt a = 6;\nptr = &a; // leaves the block of memory originally allocated in the heap inaccessible\n\nDangling Pointers\nInt *ptr3 = new int; *ptr3 = 5 ;\nInt *ptr4 = ptr3; //same as int *ptr4; ptr4 = ptr3\nDelete ptr3;",
       "Visualization" : {
           "VisulizationCode" : "memory management visualization. Some Code in Vis",
           "image1" : "Some Image"

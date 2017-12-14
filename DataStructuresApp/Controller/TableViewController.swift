@@ -82,8 +82,8 @@ class TableViewController: UITableViewController {
             print("-----------------------------")
             
         } catch {
-            print(error)
-        }
+            
+            print(error)        }
         
         
         performSegue(withIdentifier: "segue", sender: self)
