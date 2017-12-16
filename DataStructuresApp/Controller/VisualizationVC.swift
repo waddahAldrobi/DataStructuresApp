@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Highlightr
 
 class VisualizationVC: UIViewController {
     var myIndex = 5
@@ -8,12 +9,22 @@ class VisualizationVC: UIViewController {
     
     @IBOutlet weak var textfield: UITextView!
     
+    @IBOutlet weak var firstScrollView: UITextView!
     @IBOutlet weak var secondScrollView: UITextView!
     override func viewDidLoad() {
 //        textfield.text = "\(myIndex) \(mySecondIndex)"
         print("in visualization vc")
         print(subLessonData)
         secondScrollView.text = subLessonData["VisulizationCode"] as! String
+
+        //Syntax Highlighting
+        let highlightr = Highlightr()
+        highlightr?.setTheme(to: "paraiso-dark")
+        let code = subLessonData["VisulizationCode"] as! String
+        // You can omit the second parameter to use automatic language detection.
+        let highlightedCode = highlightr?.highlight(code, as: "c++")
+        firstScrollView.attributedText = highlightedCode
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {

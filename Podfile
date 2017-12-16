@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 # Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
@@ -6,6 +8,6 @@ target 'DataStructuresApp' do
   use_frameworks!
 
   # Pods for DataStructuresApp
-	pod 'SyntaxKit'
+	pod 'Highlightr', :path => '../'
 
 end

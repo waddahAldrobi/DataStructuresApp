@@ -1,10 +1,17 @@
 import Foundation
 import UIKit
+import Highlightr
 
 class CodeVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
     var subLessonData : String = ""
+    
+//    let highlightr = Highlightr()
+//    highlightr.setTheme(to: "paraiso-dark")
+//    let code = "let a = 1"
+//    // You can omit the second parameter to use automatic language detection.
+//    let highlightedCode = highlightr.highlight(code, as: "swift")
     
     @IBOutlet weak var textfield: UILabel!
     @IBOutlet weak var codeText: UITextView!
@@ -14,6 +21,8 @@ class CodeVC: UIViewController {
         print("in code vc")
         print(subLessonData)
         codeText.text = subLessonData
+        
+        
     }
     
     

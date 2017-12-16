@@ -350,11 +350,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DataStructuresApp/Pods-DataStructuresApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SyntaxKit/SyntaxKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Highlightr/Highlightr.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SyntaxKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Highlightr.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
