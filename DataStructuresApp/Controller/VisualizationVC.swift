@@ -11,6 +11,10 @@ class VisualizationVC: UIViewController {
     
     @IBOutlet weak var firstScrollView: UITextView!
     @IBOutlet weak var secondScrollView: UITextView!
+    
+    var highlightr = Highlightr()
+    let textStorage = CodeAttributedString()
+    
     override func viewDidLoad() {
 //        textfield.text = "\(myIndex) \(mySecondIndex)"
         print("in visualization vc")
@@ -18,13 +22,13 @@ class VisualizationVC: UIViewController {
         secondScrollView.text = subLessonData["VisulizationCode"] as! String
 
         //Syntax Highlighting
-        let highlightr = Highlightr()
-        highlightr?.setTheme(to: "paraiso-dark")
+        
+        textStorage.highlightr.setTheme(to: "solarized-dark")
         let code = subLessonData["VisulizationCode"] as! String
         // You can omit the second parameter to use automatic language detection.
-        let highlightedCode = highlightr?.highlight(code, as: "c++")
+        let highlightedCode = textStorage.highlightr.highlight(code, as: "c++")
         firstScrollView.attributedText = highlightedCode
-    
+        firstScrollView.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
