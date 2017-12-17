@@ -13,7 +13,7 @@ class CodeVC: UIViewController {
 //    // You can omit the second parameter to use automatic language detection.
 //    let highlightedCode = highlightr.highlight(code, as: "swift")
     
-    @IBOutlet weak var textfield: UILabel!
+ 
     @IBOutlet weak var codeText: UITextView!
     
     override func viewDidLoad() {
@@ -22,7 +22,13 @@ class CodeVC: UIViewController {
         print(subLessonData)
         codeText.text = subLessonData
         
-        
+        //Syntax Highlighting
+        let highlightr = Highlightr()
+        highlightr?.setTheme(to: "paraiso-dark")
+        let code = subLessonData
+        // You can omit the second parameter to use automatic language detection.
+        let highlightedCode = highlightr?.highlight(code, as: "c++")
+        codeText.attributedText = highlightedCode
     }
     
     
