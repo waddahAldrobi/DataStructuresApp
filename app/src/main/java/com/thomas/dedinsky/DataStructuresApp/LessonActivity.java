@@ -24,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import io.github.kbiakov.codeview.CodeView;
+import io.github.kbiakov.codeview.adapters.Options;
 import io.github.kbiakov.codeview.highlight.ColorTheme;
 
 public class LessonActivity extends AppCompatActivity {
@@ -43,8 +44,6 @@ public class LessonActivity extends AppCompatActivity {
     protected String summary;
     protected String code;
     protected int orientation;
-    private boolean hasVis = false;
-    private boolean hasCode = false;
     protected String testImage = "image";
     protected String testRegCode = "#include <iostream>\n" +
             "using namespace std;\n" +
@@ -135,10 +134,6 @@ public class LessonActivity extends AppCompatActivity {
                         lpBottom.weight = 1;
                         contentBottom.setLayoutParams(lpBottom);
                     }
-                    if (!hasVis) {
-                        hasVis = true;
-                        visCodeView.setCode(testVisCode, "cpp");
-                    }
                     return true;
                 case R.id.navigation_notifications:
                     topSumText.setText(summary);
@@ -153,11 +148,6 @@ public class LessonActivity extends AppCompatActivity {
                     sectionBottomSum.setLayoutParams(lpBottomSum);
                     lpBottom.weight = 0;
                     contentBottom.setLayoutParams(lpBottom);
-                    if (!hasCode) {
-                        hasCode = true;
-                        regCodeView.setCode(testRegCode, "cpp");
-                        regCodeView.getOptions().setTheme(ColorTheme.MONOKAI);
-                    }
                     return true;
             }
             return false;
@@ -183,6 +173,14 @@ public class LessonActivity extends AppCompatActivity {
         bottomSumText = (TextView) findViewById(R.id.bottom_sum_text);
         topSumText.setText(summary);
         bottomSumText.setText(summary);
+        regCodeView.setOptions(Options.Default.get(this)
+                .withLanguage("cpp")
+                .withCode(testRegCode)
+                .withTheme(ColorTheme.MONOKAI));
+        visCodeView.setOptions(Options.Default.get(this)
+                .withLanguage("cpp")
+                .withCode(testVisCode)
+                .withTheme(ColorTheme.DEFAULT));
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
