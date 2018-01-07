@@ -25,6 +25,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Iterator;
 
+import io.github.kbiakov.codeview.classifier.CodeProcessor;
+
 class MyAppApplication extends Application {
     private String chapterName;
     public String getChapterName() {return chapterName;}
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // train classifier on app start
+        CodeProcessor.init(this);
         MyAppApplication mApp = ((MyAppApplication)getApplicationContext());
         mApp.setChapterName("default");
         mApp.setLessonID(-1);
