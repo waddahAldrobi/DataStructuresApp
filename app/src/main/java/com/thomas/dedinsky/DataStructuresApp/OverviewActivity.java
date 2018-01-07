@@ -24,13 +24,15 @@ public class OverviewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (((MyAppApplication)getApplicationContext()).getIsDarkTheme()) {
+            this.setTheme(R.style.dark);
+        }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employer);
         binding.recycleView.setLayoutManager(new LinearLayoutManager(this));
         readFromDB();
     }
 
     private void readFromDB() {
-        MyAppApplication mApp = ((MyAppApplication)getApplicationContext());
         SQLiteDatabase database = new SampleDBSQLiteHelper(this).getReadableDatabase();
         String[] projection = {
                 SampleDBContract.Lesson.COLUMN_CHAPTER
@@ -46,6 +48,6 @@ public class OverviewActivity extends AppCompatActivity {
                 null,                                     // don't sort
                 null                                      // no limit
         );
-        binding.recycleView.setAdapter(new SampleRecyclerViewCursorAdapter(mApp, this, cursor, false));
+        binding.recycleView.setAdapter(new SampleRecyclerViewCursorAdapter(((MyAppApplication)getApplicationContext()), this, cursor, false));
     }
 }

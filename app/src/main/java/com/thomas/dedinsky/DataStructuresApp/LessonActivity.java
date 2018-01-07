@@ -158,6 +158,10 @@ public class LessonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MyAppApplication mApp = ((MyAppApplication)getApplicationContext());
+        if (mApp.getIsDarkTheme()) {
+            this.setTheme(R.style.dark);
+        }
         setContentView(R.layout.activity_lesson);
         readFromDB();
         orientation = getResources().getConfiguration().orientation;
@@ -176,11 +180,11 @@ public class LessonActivity extends AppCompatActivity {
         regCodeView.setOptions(Options.Default.get(this)
                 .withLanguage("cpp")
                 .withCode(testRegCode)
-                .withTheme(ColorTheme.MONOKAI));
+                .withTheme(mApp.getIsDarkTheme() ? ColorTheme.MONOKAI : ColorTheme.DEFAULT));
         visCodeView.setOptions(Options.Default.get(this)
                 .withLanguage("cpp")
                 .withCode(testVisCode)
-                .withTheme(ColorTheme.DEFAULT));
+                .withTheme(mApp.getIsDarkTheme() ? ColorTheme.MONOKAI : ColorTheme.DEFAULT));
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }

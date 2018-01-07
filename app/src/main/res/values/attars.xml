@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <attr name="regTextColour" format="reference"/>
+   <attr name="lightTextColour" format="reference"/>
+   <attr name="regBackColour" format="reference"/>
+   <attr name="darkBackColour" format="reference"/>
+</resources>

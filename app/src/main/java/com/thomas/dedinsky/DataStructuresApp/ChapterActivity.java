@@ -24,6 +24,9 @@ public class ChapterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (((MyAppApplication)getApplicationContext()).getIsDarkTheme()) {
+            this.setTheme(R.style.dark);
+        }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_employer);
         binding.recycleView.setLayoutManager(new LinearLayoutManager(this));
         readFromDB();

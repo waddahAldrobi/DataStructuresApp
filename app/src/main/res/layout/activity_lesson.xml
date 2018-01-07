@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.thomas.dedinsky.DataStructuresApp.LessonActivity"
-    android:background="@color/colorAccent">
+    android:background="?attr/regBackColour">
 
     <LinearLayout
         android:id="@+id/contentTop"
@@ -32,7 +32,7 @@
                 android:id="@+id/top_sum_text"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/colorPrimary"
+                android:textColor="?attr/regTextColour"
                 android:textSize="26dp" />
         </LinearLayout>
 
@@ -48,7 +48,7 @@
                 android:id="@+id/bottom_sum_text"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/colorPrimary"
+                android:textColor="?attr/regTextColour"
                 android:textSize="26dp" />
         </LinearLayout>
 

@@ -34,11 +34,16 @@ class MyAppApplication extends Application {
     private int lessonID;
     public int getLessonID() {return lessonID;}
     public void setLessonID(int lessonID) {this.lessonID = lessonID;}
+    private boolean isDarkTheme;
+    public boolean getIsDarkTheme() {return isDarkTheme;}
+    public void setIsDarkTheme(boolean isDarkTheme) {this.isDarkTheme = isDarkTheme;}
 }
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    protected String preferenceTable = "preferences";
+    protected String themeTableName = "theme";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         mApp.setChapterName("default");
         mApp.setLessonID(-1);
         checkData();
+        if (mApp.getIsDarkTheme()) {
+            this.setTheme(R.style.dark);
+        }
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.firstActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,27 +65,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         binding.firstActivityButton.setVisibility(View.VISIBLE);
+        binding.lightThemeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setPreferenceTable("light");
+            }
+        });
+        binding.lightThemeButton.setVisibility(View.VISIBLE);
+        binding.darkThemeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setPreferenceTable("dark");
+            }
+        });
+        binding.darkThemeButton.setVisibility(View.VISIBLE);
         startActivity(new Intent(MainActivity.this, com.thomas.dedinsky.DataStructuresApp.OverviewActivity.class));
     }
 
     protected void checkData() {
         MyAppApplication mApp = ((MyAppApplication)getApplicationContext());
         SQLiteDatabase database = new SampleDBSQLiteHelper(this).getReadableDatabase();
-        String[] projection = {
-                SampleDBContract.Lesson._ID,
-                SampleDBContract.Lesson.COLUMN_NAME,
-                SampleDBContract.Lesson.COLUMN_CHAPTER,
-                SampleDBContract.Lesson.COLUMN_SUMMARY,
-                SampleDBContract.Lesson.COLUMN_CODE
-        };
-        String selection =
-                SampleDBContract.Lesson._ID + " = ?";
-        String[] selectionArgs = {Integer.toString(mApp.getLessonID())};
         Cursor cursor = database.rawQuery("SELECT count(*) FROM "+SampleDBContract.Lesson.TABLE_NAME, null);
         cursor.moveToFirst();
-        int count = cursor.getInt(0);
-        Log.d("meme", Integer.toString(count));
-        if (count == 0) {
+        if (cursor.getInt(0) == 0) {
+            ContentValues values = new ContentValues();
+            values.put(themeTableName, "light");
+            database.insert(preferenceTable, null, values);
             try {
                 readJSON();
             } catch (IOException e) {
@@ -85,6 +98,11 @@ public class MainActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+        } else {
+            Log.d("yo", "yo");
+            cursor = database.rawQuery("SELECT " + themeTableName + " FROM " + preferenceTable, null);
+            cursor.moveToFirst();
+            mApp.setIsDarkTheme(cursor.getString(cursor.getColumnIndexOrThrow(themeTableName)).equals("dark"));
         }
     }
 
@@ -120,5 +138,12 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(this, "The new Row Id is " + newRowId, Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    protected void setPreferenceTable(String theme) {
+        SQLiteDatabase database = new SampleDBSQLiteHelper(this).getWritableDatabase();
+        Cursor cursor = database.rawQuery("UPDATE " + preferenceTable + " SET "+themeTableName+" = '" + theme + "'", null);
+        cursor.moveToFirst();
+        Toast.makeText(this, "You've set your theme as " + theme + ". Please restart for it to take effect.", Toast.LENGTH_LONG).show();
     }
 }
