@@ -13,26 +13,30 @@
         <scene sceneID="LIZ-bM-iW0">
             <objects>
                 <tableViewController id="nKW-xP-2nw" customClass="TableViewController" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9gI-Ir-SZU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="105" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9gI-Ir-SZU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="bAF-nv-fxR" customClass="TopicCell" customModule="DataStructuresApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="bAF-nv-fxR" customClass="TopicCell" customModule="DataStructuresApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bAF-nv-fxR" id="JFf-VP-EFb" customClass="TopicCell" customModule="DataStructuresApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="S62-DF-gCn">
-                                            <rect key="frame" x="26" y="13.5" width="323" height="123"/>
+                                            <rect key="frame" x="26" y="5" width="323" height="95"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="44Q-4i-6A1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="123"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="95"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="95" id="XbW-ku-iWN"/>
+                                                        <constraint firstAttribute="width" constant="115" id="cID-J0-krf"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8g-FA-2xp">
-                                                    <rect key="frame" x="220" y="48" width="103" height="27.5"/>
+                                                    <rect key="frame" x="115" y="34" width="208" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -70,7 +74,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V6S-zZ-U2M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-587.5" y="31.999999999999996"/>
+            <point key="canvasLocation" x="-587.5" y="31.5"/>
         </scene>
         <!--Lessons-->
         <scene sceneID="tne-QT-ifu">

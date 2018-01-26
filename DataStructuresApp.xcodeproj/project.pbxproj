@@ -12,10 +12,10 @@
 		852B1D021FBBB43B0093A857 /* CodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852B1D011FBBB43B0093A857 /* CodeVC.swift */; };
 		AAC60A291FDDEF09002189C1 /* VisualizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC60A281FDDEF09002189C1 /* VisualizationVC.swift */; };
 		AADBEFAC1FCA24D2005A3492 /* JSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = AADBEFAB1FCA24D1005A3492 /* JSONData.json */; };
+		D49B8B48201BBE17007A9BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D49B8B47201BBE16007A9BBC /* Assets.xcassets */; };
 		D4B9E51A1FB98AE200EA7B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E5191FB98AE200EA7B59 /* AppDelegate.swift */; };
 		D4B9E51C1FB98AE200EA7B59 /* LessonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E51B1FB98AE200EA7B59 /* LessonOptions.swift */; };
 		D4B9E51F1FB98AE200EA7B59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B9E51D1FB98AE200EA7B59 /* Main.storyboard */; };
-		D4B9E5211FB98AE200EA7B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B9E5201FB98AE200EA7B59 /* Assets.xcassets */; };
 		D4B9E5241FB98AE200EA7B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4B9E5221FB98AE200EA7B59 /* LaunchScreen.storyboard */; };
 		D4B9E52F1FB98AE200EA7B59 /* DataStructuresAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E52E1FB98AE200EA7B59 /* DataStructuresAppTests.swift */; };
 		D4B9E53A1FB98AE200EA7B59 /* DataStructuresAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E5391FB98AE200EA7B59 /* DataStructuresAppUITests.swift */; };
@@ -48,11 +48,11 @@
 		AAC60A281FDDEF09002189C1 /* VisualizationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizationVC.swift; sourceTree = "<group>"; };
 		AADBEFAB1FCA24D1005A3492 /* JSONData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONData.json; sourceTree = "<group>"; };
 		CA18835B57E07967E2A2FB34 /* Pods-DataStructuresApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataStructuresApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DataStructuresApp/Pods-DataStructuresApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D49B8B47201BBE16007A9BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4B9E5161FB98AE200EA7B59 /* DataStructuresApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStructuresApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B9E5191FB98AE200EA7B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4B9E51B1FB98AE200EA7B59 /* LessonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonOptions.swift; sourceTree = "<group>"; };
 		D4B9E51E1FB98AE200EA7B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4B9E5201FB98AE200EA7B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4B9E5231FB98AE200EA7B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4B9E5251FB98AE200EA7B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4B9E52A1FB98AE200EA7B59 /* DataStructuresAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructuresAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				D4B9E51D1FB98AE200EA7B59 /* Main.storyboard */,
-				D4B9E5201FB98AE200EA7B59 /* Assets.xcassets */,
+				D49B8B47201BBE16007A9BBC /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 			files = (
 				D4B9E5241FB98AE200EA7B59 /* LaunchScreen.storyboard in Resources */,
 				AADBEFAC1FCA24D2005A3492 /* JSONData.json in Resources */,
-				D4B9E5211FB98AE200EA7B59 /* Assets.xcassets in Resources */,
+				D49B8B48201BBE17007A9BBC /* Assets.xcassets in Resources */,
 				D4B9E51F1FB98AE200EA7B59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,7 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33K52ZD6RY;
+				DEVELOPMENT_TEAM = RPB3854KB6;
 				INFOPLIST_FILE = DataStructuresApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = waddah;
@@ -573,7 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 33K52ZD6RY;
+				DEVELOPMENT_TEAM = RPB3854KB6;
 				INFOPLIST_FILE = DataStructuresApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = waddah;
