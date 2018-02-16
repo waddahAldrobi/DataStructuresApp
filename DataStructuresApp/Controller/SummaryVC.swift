@@ -18,7 +18,7 @@ class SummaryVC: UIViewController, WKNavigationDelegate{
     }
     
     func insertCSSString(into webView: WKWebView) {
-        let cssString = "body{color:#eee;background:#0078C1;font-family:Helvetica}p{font-size:36pt}h1{color:#d11;font-family:Chalkduster;font-size:36pt}a{font-family:Helvetica;font-weight:700;color:#ffa;text-decoration:none;padding-left:5px}img{padding-left:0;max-width:90%;max-height:90%;box-shadow:3px 3px 3px 0 #202020}.navbar{background-color:#000;color:#fff;position:absolute;top:0;left:0;width:100%}.content{padding-left:1em;padding-top:1em}"
+        let cssString = "body{color:#000;background:ffffff;font-family:Helvetica}p{font-size:36pt}h1{color:#d11;font-family:Chalkduster;font-size:36pt}a{font-family:Helvetica;font-weight:700;color:#ffa;text-decoration:none;padding-left:5px}img{padding-left:0;max-width:90%;max-height:90%;box-shadow:3px 3px 3px 0 #202020}.navbar{background-color:#000;color:#fff;position:absolute;top:0;left:0;width:100%}.content{padding-left:1em;padding-top:1em}"
         let jsString = "var style = document.createElement('style'); style.innerHTML = '\(cssString)'; document.head.appendChild(style);"
         summaryWebView.evaluateJavaScript(jsString, completionHandler: nil)
     }
@@ -32,6 +32,7 @@ class SummaryVC: UIViewController, WKNavigationDelegate{
         
         print("in summary vc")
         print(subLessonData)
+        summaryWebView.isHidden = true
         summaryWebView.navigationDelegate = self
         summaryWebView.loadHTMLString(subLessonData as String, baseURL: nil)
         // var trial = "• This is a list item! \n• This is too! " copy and paste 
@@ -40,6 +41,7 @@ class SummaryVC: UIViewController, WKNavigationDelegate{
     // Controls orientation
    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        summaryWebView.isHidden = false
         // Or to rotate and lock
         AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
         AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
