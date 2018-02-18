@@ -55,10 +55,15 @@ class CodeVC: UIViewController {
     
 }
 
+var tap1 = false
+
 // Extension
 extension CodeVC : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Hello")
+        if (tap1 == false) {tap1=true}
+        else if (tap1 == true) {tap1=false}
+        print (tap1)
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
     
     // Height of the row could change here
@@ -68,6 +73,7 @@ extension CodeVC : UITableViewDelegate{
 }
 
 // Extension
+var run=["r1","r2","r3","r4"]
 extension CodeVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -77,6 +83,12 @@ extension CodeVC : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCode") as! CodeCell
         
         cell.code.text = data[indexPath.row]
+        if (tap1 == false){
+            cell.tapLabel.text = "Tap to run the code"
+        }
+        else if (tap1 == true){
+            cell.tapLabel.text = run[indexPath.row]
+        }
         
         return cell
     }

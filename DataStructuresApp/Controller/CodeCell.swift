@@ -11,5 +11,6 @@ import UIKit
 
 class CodeCell : UITableViewCell{
     @IBOutlet weak var code: UILabel!
+    @IBOutlet weak var tapLabel: UILabel!
     
 }

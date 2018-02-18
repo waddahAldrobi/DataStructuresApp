@@ -629,9 +629,14 @@ hello</string>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="code" destination="AcX-lu-Qfs" id="xEO-3c-b5y"/>
+                                            <outlet property="tapLabel" destination="aMK-ZS-1ty" id="Xa0-1m-t97"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="THX-KV-61p" id="44k-od-UDi"/>
+                                    <outlet property="delegate" destination="THX-KV-61p" id="hwO-ll-F1f"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
