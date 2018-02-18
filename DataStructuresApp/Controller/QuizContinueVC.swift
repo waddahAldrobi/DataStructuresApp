@@ -16,6 +16,7 @@ class QuizContinueVC : UIViewController {
     var numberCorrect = 0
     @IBOutlet weak var numberCorrectField: UITextField!
 =======
+    @IBOutlet weak var numberCorrect: UITextField!
 >>>>>>> 9ff8cedbd42569509dfab1774d076ac2b8422b18
     
     override func viewDidLoad() {
