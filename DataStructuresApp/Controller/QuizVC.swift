@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class QuizVC: UIViewController {
+class QuizVC: UITableViewController {
     var myIndex = 5
     var mySecondIndex = 5
     var subLessonData : String = ""
@@ -15,7 +15,7 @@ class QuizVC: UIViewController {
     
     override func viewDidLoad() {
         //textfield.text = "\(myIndex) \(mySecondIndex)"
-        print("in code vc")
+        print("in quiz vc")
         print(subLessonData)
 
         
@@ -27,18 +27,36 @@ class QuizVC: UIViewController {
         
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
-        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
-        AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
+//        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
+//        AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
         
         //Sets title of tab
-        self.tabBarController?.navigationItem.title = "Quiz";
+//        self.tabBarController?.navigationItem.title = "Quiz";
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//
+//        // Don't forget to reset when view is being removed
+//        AppUtility.lockOrientation(.portrait)
+//    }
+//
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subTopicCell", for: indexPath) as! SubTopicCell
         
-        // Don't forget to reset when view is being removed
-        AppUtility.lockOrientation(.portrait)
+        cell.subTopic.text = "testing"
+        
+        return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "quizSeque", sender: self)
     }
     
 }

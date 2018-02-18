@@ -11,11 +11,11 @@ import UIKit
 
 class QuizContinueVC : UIViewController {
     
-    totalQuestions = 0
-    numberCorrect = 0
-    @IBOutlet weak var numberCorrect: UITextField!
+    var totalQuestions = 0
+    var numberCorrect = 0
+    @IBOutlet weak var numberCorrectField: UITextField!
     
     override func viewDidLoad() {
-        numberCorrect.text = "You got \(numberCorrect) / \(totalQuestions) correct"
+        numberCorrectField.text = "You got \(numberCorrect) / \(totalQuestions) correct"
     }
 }

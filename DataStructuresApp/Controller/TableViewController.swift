@@ -54,7 +54,7 @@ class TableViewController: UITableViewController {
     
     
     
-    // Listens to the tap, that seugue is necessary for index update
+    // Listens to the tap, that segue is necessary for index update
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         myIndex = indexPath.row
