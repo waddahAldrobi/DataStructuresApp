@@ -10,22 +10,25 @@ import Foundation
 import UIKit
 
 class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSource{
+    var answers = ["one", "two", "three", "four"]
+    var correctAnswer = [Int]()
+    var selectedAnswer = [Int]()
+    var questionType = "multiple-choice"
     @IBOutlet weak var answer1: UIButton!
     @IBOutlet weak var answer2: UIButton!
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
     
-    
+    @IBAction func answer(_ sender: Any) {
+        performSegue(withIdentifier: "quizContinue", sender: self)
+    }
     @IBAction func button(_ sender: Any) {
-        print(tableData)
-        print(selected)
-        
+        print(answers)
+        print(selectedAnswer)
     }
     @IBOutlet weak var tableView: UITableView!
-    var selected = [Int]()
-    var tableData = ["one", "two", "three", "four"]
-    var questionType = "multiple-choice"
-    var answer = 1
+    
+
     
     override func viewDidLoad() {
         tableView.delegate = self
@@ -44,20 +47,25 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         else if questionType == "multiple-choice"{
             tableView.isHidden = true
-            answer1.setTitle(tableData[0],for: .normal)
-            answer2.setTitle(tableData[1],for: .normal)
-            answer3.setTitle(tableData[2],for: .normal)
-            answer4.setTitle(tableData[3],for: .normal)
+            answer1.setTitle(answers[0],for: .normal)
+            answer2.setTitle(answers[1],for: .normal)
+            answer3.setTitle(answers[2],for: .normal)
+            answer4.setTitle(answers[3],for: .normal)
         }
         tableView.allowsMultipleSelection = true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let quizContinueVC = segue.destination as! QuizContinueVC
+        quizContinueVC.correctAnswer = correctAnswer
+        quizContinueVC.selectedAnswer = selectedAnswer
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell", for: indexPath) as! AnswerCell
         cell.question.isEditable = false
         cell.question.isSelectable = false
-        cell.question.text = tableData[indexPath.row]
+        cell.question.text = answers[indexPath.row]
 //        cell.accessoryType = UITableViewCellAccessoryType.checkmark
 //        cell.accessoryType = cell.isSelected ? .checkmark : .none
 //        cell.selectionStyle = .none
@@ -86,9 +94,9 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let itemToMove = tableData[sourceIndexPath.row]
-        tableData.remove(at: sourceIndexPath.row)
-        tableData.insert(itemToMove, at: destinationIndexPath.row)
+        let itemToMove = answers[sourceIndexPath.row]
+        answers.remove(at: sourceIndexPath.row)
+        answers.insert(itemToMove, at: destinationIndexPath.row)
     }
     
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
@@ -104,7 +112,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
 //        cell.selectedBackgroundView?.backgroundColor = UIColor.clear
 //        cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.accessoryType = UITableViewCellAccessoryType.checkmark
-        selected.append(indexPath.row)
+        selectedAnswer.append(indexPath.row)
 //        if cell.isSelected
 //        {
 //            cell.isSelected = false
@@ -125,8 +133,8 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         let cell = tableView.cellForRow(at: indexPath)!
         cell.accessoryType = UITableViewCellAccessoryType.none
         
-        while ((selected.index(of: indexPath.row)) != nil){
-            selected.remove(at: selected.index(of: indexPath.row)!)
+        while ((selectedAnswer.index(of: indexPath.row)) != nil){
+            selectedAnswer.remove(at: selectedAnswer.index(of: indexPath.row)!)
         }
     }
     

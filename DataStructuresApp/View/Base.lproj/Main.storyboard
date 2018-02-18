@@ -157,7 +157,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aH6-RH-7l7">
-                                <rect key="frame" x="36" y="281.33333333333331" width="303" height="329.99999999999994"/>
+                                <rect key="frame" x="36" y="281" width="303" height="330"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-hq-6sr">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="75"/>
@@ -166,7 +166,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" backgroundImage="blueIcon"/>
                                         <connections>
-                                            <segue destination="SdA-qX-pgU" kind="push" identifier="answer1" id="qYZ-Fo-xnw"/>
+                                            <action selector="answer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="TZ3-tf-HQq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUm-3v-zA5">
@@ -176,7 +176,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" backgroundImage="blueIcon"/>
                                         <connections>
-                                            <segue destination="SdA-qX-pgU" kind="push" identifier="answer2" id="f1R-Zd-IhF"/>
+                                            <action selector="answer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="hqF-il-bl3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-nN-VIl">
@@ -186,17 +186,17 @@
                                         </constraints>
                                         <state key="normal" title="Button" backgroundImage="blueIcon"/>
                                         <connections>
-                                            <segue destination="SdA-qX-pgU" kind="push" identifier="answer3" id="4GU-eh-P2Q"/>
+                                            <action selector="answer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="AZu-Sy-hna"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-L7-HYv">
-                                        <rect key="frame" x="0.0" y="255.00000000000006" width="303" height="75"/>
+                                        <rect key="frame" x="0.0" y="255" width="303" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="Isw-9d-PP7"/>
                                         </constraints>
                                         <state key="normal" title="Button" backgroundImage="blueIcon"/>
                                         <connections>
-                                            <segue destination="SdA-qX-pgU" kind="push" identifier="answer4" id="ii1-Pv-N2H"/>
+                                            <action selector="answer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="X3A-rr-20d"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -212,7 +212,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-sh-xbC">
-                                <rect key="frame" x="15" y="197" width="345" height="558"/>
+                                <rect key="frame" x="15" y="188" width="345" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" rowHeight="66" id="DKB-fu-X1o" customClass="AnswerCell" customModule="DataStructuresApp" customModuleProvider="target">
@@ -252,18 +252,23 @@
                                     <action selector="button:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="meT-ej-fhP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX0-4e-I7L">
+                                <rect key="frame" x="199" y="736" width="160" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check Answer" backgroundImage="blueIcon"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PKZ-sh-xbC" firstAttribute="leading" secondItem="kK6-8F-VbQ" secondAttribute="leading" constant="15" id="1rT-72-U4Q"/>
                             <constraint firstItem="aH6-RH-7l7" firstAttribute="centerY" secondItem="kK6-8F-VbQ" secondAttribute="centerY" constant="40" id="5ci-mU-NtV"/>
-                            <constraint firstItem="PKZ-sh-xbC" firstAttribute="top" secondItem="zRS-XP-CVX" secondAttribute="bottom" constant="54" id="Emp-7f-U5m"/>
+                            <constraint firstItem="PKZ-sh-xbC" firstAttribute="top" secondItem="zRS-XP-CVX" secondAttribute="bottom" constant="45" id="HRV-Rf-gSy"/>
+                            <constraint firstItem="YkK-fU-qQn" firstAttribute="top" secondItem="PKZ-sh-xbC" secondAttribute="bottom" constant="50" id="Hsf-x1-jzd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aH6-RH-7l7" secondAttribute="trailing" constant="20" id="WPQ-sD-Wh9"/>
                             <constraint firstItem="aH6-RH-7l7" firstAttribute="leading" secondItem="kK6-8F-VbQ" secondAttribute="leadingMargin" constant="20" id="cl5-ag-cEV"/>
-                            <constraint firstItem="YkK-fU-qQn" firstAttribute="top" secondItem="PKZ-sh-xbC" secondAttribute="bottom" constant="23" id="iWn-69-ztB"/>
+                            <constraint firstItem="zRS-XP-CVX" firstAttribute="top" secondItem="Cfi-b6-CJV" secondAttribute="bottom" constant="69" id="i8u-gK-0X6"/>
                             <constraint firstItem="zRS-XP-CVX" firstAttribute="centerX" secondItem="kK6-8F-VbQ" secondAttribute="centerX" id="nHX-cU-cC1"/>
                             <constraint firstItem="aH6-RH-7l7" firstAttribute="centerX" secondItem="kK6-8F-VbQ" secondAttribute="centerX" id="oXR-fD-04G"/>
-                            <constraint firstItem="zRS-XP-CVX" firstAttribute="top" secondItem="Cfi-b6-CJV" secondAttribute="bottom" constant="69" id="owf-Xd-tS1"/>
                             <constraint firstAttribute="trailing" secondItem="PKZ-sh-xbC" secondAttribute="trailing" constant="15" id="xvg-1Y-adg"/>
                         </constraints>
                     </view>
@@ -274,6 +279,7 @@
                         <outlet property="answer3" destination="eYb-nN-VIl" id="0Ix-AZ-ScE"/>
                         <outlet property="answer4" destination="MHc-L7-HYv" id="Xdh-P7-qaZ"/>
                         <outlet property="tableView" destination="PKZ-sh-xbC" id="X1W-oE-lGO"/>
+                        <segue destination="SdA-qX-pgU" kind="push" identifier="quizContinue" id="7Z3-6t-iGN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPQ-02-rnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,7 +317,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Continue" backgroundImage="blueIcon"/>
                                 <connections>
-                                    <segue destination="kVT-Fx-Y1E" kind="custom" id="mba-Cx-UI5"/>
+                                    <segue destination="kVT-Fx-Y1E" kind="push" id="TR5-TN-d2u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -673,8 +679,7 @@ hello</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="QFZ-z0-wci"/>
-        <segue reference="ii1-Pv-N2H"/>
-        <segue reference="mba-Cx-UI5"/>
+        <segue reference="TR5-TN-d2u"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
