@@ -12,7 +12,8 @@ class CodeVC: UIViewController {
 //    let code = "let a = 1"
 //    // You can omit the second parameter to use automatic language detection.
 //    let highlightedCode = highlightr.highlight(code, as: "swift")
-    
+    @IBOutlet weak var tableViewCode: UITableView!
+    let data = ["0","1","2","3"]
  
     @IBOutlet weak var codeText: UITextView!
     
@@ -20,7 +21,7 @@ class CodeVC: UIViewController {
 //        textfield.text = "\(myIndex) \(mySecondIndex)"
         print("in code vc")
         print(subLessonData)
-        codeText.text = subLessonData
+        //codeText.text = subLessonData
         
         //Syntax Highlighting
         let highlightr = Highlightr()
@@ -28,7 +29,7 @@ class CodeVC: UIViewController {
         let code = subLessonData
         // You can omit the second parameter to use automatic language detection.
         let highlightedCode = highlightr?.highlight(code, as: "c++")
-        codeText.attributedText = highlightedCode
+        //codeText.attributedText = highlightedCode
     }
     
     
@@ -53,3 +54,44 @@ class CodeVC: UIViewController {
     }
     
 }
+
+// Extension
+extension CodeVC : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Hello")
+    }
+    
+    // Height of the row could change here
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
+
+// Extension
+extension CodeVC : UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellCode") as! CodeCell
+        
+        cell.code.text = data[indexPath.row]
+        
+        return cell
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
