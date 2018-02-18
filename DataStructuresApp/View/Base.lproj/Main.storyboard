@@ -514,29 +514,64 @@ hello</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Code goes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0SJ-8t-uAU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jSp-MO-Vjc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCode" id="Uhi-af-TN1" customClass="CodeCell" customModule="DataStructuresApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uhi-af-TN1" id="6vm-Vr-ZfQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcX-lu-Qfs">
+                                                    <rect key="frame" x="15" y="11" width="152" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="152" id="LE5-9X-Ut8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMK-ZS-1ty">
+                                                    <rect key="frame" x="242" y="11" width="118" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aMK-ZS-1ty" firstAttribute="leading" secondItem="AcX-lu-Qfs" secondAttribute="trailing" constant="75" id="6FD-XX-qvE"/>
+                                                <constraint firstItem="aMK-ZS-1ty" firstAttribute="baseline" secondItem="AcX-lu-Qfs" secondAttribute="baseline" id="Oaa-lf-UpL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aMK-ZS-1ty" secondAttribute="trailing" constant="-1" id="XsP-Wd-0iJ"/>
+                                                <constraint firstItem="AcX-lu-Qfs" firstAttribute="centerY" secondItem="6vm-Vr-ZfQ" secondAttribute="centerY" id="a3B-88-QaT"/>
+                                                <constraint firstItem="AcX-lu-Qfs" firstAttribute="leading" secondItem="6vm-Vr-ZfQ" secondAttribute="leadingMargin" constant="-1" id="xoY-eU-5Q2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="code" destination="AcX-lu-Qfs" id="xEO-3c-b5y"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="0SJ-8t-uAU" secondAttribute="bottom" id="3sw-QO-992"/>
-                            <constraint firstItem="0SJ-8t-uAU" firstAttribute="leading" secondItem="hYB-Bs-45G" secondAttribute="leading" id="ag0-Cp-A63"/>
-                            <constraint firstAttribute="trailing" secondItem="0SJ-8t-uAU" secondAttribute="trailing" id="dta-MV-dRI"/>
-                            <constraint firstItem="0SJ-8t-uAU" firstAttribute="top" secondItem="sKP-iN-6hG" secondAttribute="bottom" id="mmO-sH-yCe"/>
+                            <constraint firstItem="jSp-MO-Vjc" firstAttribute="bottom" secondItem="F4a-qc-ZAB" secondAttribute="top" id="9u2-x2-P4b"/>
+                            <constraint firstItem="jSp-MO-Vjc" firstAttribute="top" secondItem="sKP-iN-6hG" secondAttribute="bottom" id="AJw-A6-mqU"/>
+                            <constraint firstItem="jSp-MO-Vjc" firstAttribute="leading" secondItem="hYB-Bs-45G" secondAttribute="leading" id="org-aB-ALf"/>
+                            <constraint firstAttribute="trailing" secondItem="jSp-MO-Vjc" secondAttribute="trailing" id="wYk-r0-gu1"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Code" id="fDX-7l-G1b"/>
                     <connections>
-                        <outlet property="codeText" destination="0SJ-8t-uAU" id="KmI-gw-0Wr"/>
+                        <outlet property="tableViewCode" destination="jSp-MO-Vjc" id="x8V-3E-44D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vlt-Uc-YLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1391" y="131"/>
+            <point key="canvasLocation" x="1390.5" y="131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j1k-y2-NIB">

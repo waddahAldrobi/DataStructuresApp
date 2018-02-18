@@ -11,8 +11,7 @@ import UIKit
 
 class QuizContinueVC : UIViewController {
     
-    totalQuestions = 0
-    numberCorrect = 0
+    var totalQuestions = 0
     @IBOutlet weak var numberCorrect: UITextField!
     
     override func viewDidLoad() {
