@@ -50,7 +50,7 @@ class QuizVC: UITableViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC4 = segue.destination as! QuizQuestionsVC
-        destVC4.questions = subLessonData as! [Any]
+        destVC4.questions = subLessonData
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5

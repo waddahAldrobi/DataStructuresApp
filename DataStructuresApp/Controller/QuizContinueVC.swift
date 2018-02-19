@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class QuizContinueVC : UIViewController {
+    var questions = [Any]()
     var questionNumber = 0
     var correctAnswer = [Int]()
     var selectedAnswer = [Int]()
@@ -31,5 +32,6 @@ class QuizContinueVC : UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizQuestionsVC = segue.destination as! QuizQuestionsVC
         quizQuestionsVC.questionNumber = questionNumber + 1
+        quizQuestionsVC.questions = questions
     }
 }

@@ -13,7 +13,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     var questionNumber = 0
     var questions = [Any]()
    
-    var answers = ["1","1","1","1"]
+    var answers = ["0", "0", "0", "0"]
     var correctAnswer = [Int]()
     var selectedAnswer = [Int]()
     var questionType = "multiple-choice"
@@ -21,20 +21,18 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var answer2: UIButton!
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
-    
-    @IBAction func answer(_ sender: Any) {
+    @IBOutlet weak var question: UITextView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBAction func checkAnswer(_ sender: Any) {
         performSegue(withIdentifier: "quizContinue", sender: self)
     }
-    @IBAction func button(_ sender: Any) {
-        print(answers)
-        print(selectedAnswer)
-    }
-    @IBOutlet weak var tableView: UITableView!
-   
+    
     
     override func viewDidLoad() {
+        print(questions)
         let fullQuestion = questions[questionNumber] as! [String: Any]
         let answers = fullQuestion["Answers"] as! [String]
+        let questionType = fullQuestion["Question-Type"] as! String
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -42,6 +40,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.allowsMultipleSelection = true
         
         //change question
+        question.text = fullQuestion["Question"] as? String
         
         if questionType == "ranking" {
             tableView.isEditing = true
@@ -52,6 +51,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
             answer2.setTitle("False",for: .normal)
             answer3.isHidden = true
             answer4.isHidden = true
+//            checkAnswer.isHidden = true
         }
         else if questionType == "multiple-choice"{
             tableView.isHidden = true
@@ -59,8 +59,9 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
             answer2.setTitle(answers[1],for: .normal)
             answer3.setTitle(answers[2],for: .normal)
             answer4.setTitle(answers[3],for: .normal)
+//            checkAnswer.isHidden = true
         }
-        
+        tableView.reloadData()
         print(answers)
     }
     
@@ -69,6 +70,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         quizContinueVC.correctAnswer = correctAnswer
         quizContinueVC.selectedAnswer = selectedAnswer
         quizContinueVC.questionNumber = questionNumber
+        quizContinueVC.questions = questions
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -112,9 +114,9 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
     }
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-//        return .none
-//    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .none
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
