@@ -2,6 +2,8 @@ import Foundation
 import UIKit
 import Highlightr
 
+let data = ["0","1","2","3"]
+
 class CodeVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
@@ -13,7 +15,6 @@ class CodeVC: UIViewController {
 //    // You can omit the second parameter to use automatic language detection.
 //    let highlightedCode = highlightr.highlight(code, as: "swift")
     @IBOutlet weak var tableViewCode: UITableView!
-    let data = ["0","1","2","3"]
  
     @IBOutlet weak var codeText: UITextView!
     
@@ -55,14 +56,24 @@ class CodeVC: UIViewController {
     
 }
 
-var tap1 = false
 
-// Extension
+var tap1 = Array(repeating: false, count: data.count)
+var tap2 = Array(repeating: false, count: data.count)
+
+//MARK: -Extension Delegate
 extension CodeVC : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (tap1 == false) {tap1=true}
-        else if (tap1 == true) {tap1=false}
-        print (tap1)
+        myIndex = indexPath.row
+        
+        if (tap1[myIndex] == false && tap2[myIndex] == false) {tap1[myIndex]=true}
+            
+        else if (tap1[myIndex] == true && tap2[myIndex] == false) {
+            tap1[myIndex]=false
+            tap2[myIndex]=true
+        }
+            
+        else if (tap1[myIndex] == false && tap2[myIndex] == true) {tap2[myIndex]=false}
+     
         tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
     
@@ -72,23 +83,23 @@ extension CodeVC : UITableViewDelegate{
     }
 }
 
-// Extension
+//MARK: -Extension DataSource
 var run=["r1","r2","r3","r4"]
+let run2 = ["t1","t2","t3","t4"]
+
 extension CodeVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        myIndex = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCode") as! CodeCell
         
         cell.code.text = data[indexPath.row]
-        if (tap1 == false){
-            cell.tapLabel.text = "Tap to run the code"
-        }
-        else if (tap1 == true){
-            cell.tapLabel.text = run[indexPath.row]
-        }
+        if (tap1[myIndex] == false && tap2[myIndex] == false){cell.tapLabel.text = "Tap to run"}
+        else if (tap1[myIndex] == true && tap2[myIndex] == false){cell.tapLabel.text = run[indexPath.row]}
+        else if (tap1[myIndex] == false && tap2[myIndex] == true){cell.tapLabel.text = run2[indexPath.row]}
         
         return cell
     }
