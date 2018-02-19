@@ -4,7 +4,7 @@ import UIKit
 class QuizVC: UITableViewController {
     var myIndex = 5
     var mySecondIndex = 5
-    var subLessonData : String = ""
+    var subLessonData = [Any]()
     
     //    let highlightr = Highlightr()
     //    highlightr.setTheme(to: "paraiso-dark")
@@ -49,7 +49,8 @@ class QuizVC: UITableViewController {
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let destVC4 = segue.destination as! QuizQuestionsVC
+        destVC4.questions = subLessonData as! [Any]
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5

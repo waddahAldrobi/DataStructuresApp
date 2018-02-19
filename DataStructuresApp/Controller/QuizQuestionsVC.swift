@@ -10,7 +10,10 @@ import Foundation
 import UIKit
 
 class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSource{
-    var answers = ["one", "two", "three", "four"]
+    var questionNumber = 0
+    var questions = [Any]()
+   
+    var answers = ["1","1","1","1"]
     var correctAnswer = [Int]()
     var selectedAnswer = [Int]()
     var questionType = "multiple-choice"
@@ -27,15 +30,20 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         print(selectedAnswer)
     }
     @IBOutlet weak var tableView: UITableView!
-    
-
+   
     
     override func viewDidLoad() {
+        let fullQuestion = questions[questionNumber] as! [String: Any]
+        let answers = fullQuestion["Answers"] as! [String]
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isScrollEnabled = false
+        tableView.allowsMultipleSelection = true
         
-        if questionType == "ranking"{
+        //change question
+        
+        if questionType == "ranking" {
             tableView.isEditing = true
         }
         else if questionType == "true-false"{
@@ -52,13 +60,15 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
             answer3.setTitle(answers[2],for: .normal)
             answer4.setTitle(answers[3],for: .normal)
         }
-        tableView.allowsMultipleSelection = true
+        
+        print(answers)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizContinueVC = segue.destination as! QuizContinueVC
         quizContinueVC.correctAnswer = correctAnswer
         quizContinueVC.selectedAnswer = selectedAnswer
+        quizContinueVC.questionNumber = questionNumber
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

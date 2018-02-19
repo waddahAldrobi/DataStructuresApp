@@ -66,6 +66,9 @@ class LessonOptions: UIViewController {
             let destVC3 = tabCtrl.viewControllers![2] as! CodeVC
             destVC3.myIndex = myIndex
         
+            let destVC4 = tabCtrl.viewControllers![3] as! QuizVC
+            destVC4.myIndex = myIndex
+
             //sets second index depending on button pressed
             // need to create data set that loads appropriate information.
             if (segue.identifier == "firstTabSegue") {
@@ -73,16 +76,19 @@ class LessonOptions: UIViewController {
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
                 destVC3.subLessonData = (subLessonData["Code"] as? String)!
+                destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
             } else if (segue.identifier == "secondTabSegue") {
                 guard let subLessonData = lessonData[1] as? [String : Any] else { print("error888"); return }
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
                 destVC3.subLessonData = (subLessonData["Code"] as? String)!
+                destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
             } else if (segue.identifier == "thirdTabSegue") {
                 guard let subLessonData = lessonData[2] as? [String : Any] else { print("error888"); return }
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
                 destVC3.subLessonData = (subLessonData["Code"] as? String)!
+                destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
             }
         
         //old style

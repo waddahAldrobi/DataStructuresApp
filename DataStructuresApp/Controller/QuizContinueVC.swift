@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class QuizContinueVC : UIViewController {
+    var questionNumber = 0
     var correctAnswer = [Int]()
     var selectedAnswer = [Int]()
     var totalQuestions = 0
@@ -20,10 +21,15 @@ class QuizContinueVC : UIViewController {
     override func viewDidLoad() {
         if correctAnswer.sort() == selectedAnswer.sort() {
             //hide correct answer
-            
+            print("questionNumber at continue = \(questionNumber)")
         }
 
         
         numberCorrectField.text = "You got \(numberCorrect) / \(totalQuestions) correct"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let quizQuestionsVC = segue.destination as! QuizQuestionsVC
+        quizQuestionsVC.questionNumber = questionNumber + 1
     }
 }
