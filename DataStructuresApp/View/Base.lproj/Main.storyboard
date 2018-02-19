@@ -603,33 +603,35 @@ hello</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcX-lu-Qfs">
-                                                    <rect key="frame" x="15" y="11" width="152" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="152" id="LE5-9X-Ut8"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label dfds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7a-kg-qGg">
+                                                    <rect key="frame" x="206" y="0.0" width="132" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMK-ZS-1ty">
-                                                    <rect key="frame" x="242" y="11" width="118" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP9-SY-QT4">
+                                                    <rect key="frame" x="25" y="0.0" width="129" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="129" id="muh-e0-aRk"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="aMK-ZS-1ty" firstAttribute="leading" secondItem="AcX-lu-Qfs" secondAttribute="trailing" constant="75" id="6FD-XX-qvE"/>
-                                                <constraint firstItem="aMK-ZS-1ty" firstAttribute="baseline" secondItem="AcX-lu-Qfs" secondAttribute="baseline" id="Oaa-lf-UpL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aMK-ZS-1ty" secondAttribute="trailing" constant="-1" id="XsP-Wd-0iJ"/>
-                                                <constraint firstItem="AcX-lu-Qfs" firstAttribute="centerY" secondItem="6vm-Vr-ZfQ" secondAttribute="centerY" id="a3B-88-QaT"/>
-                                                <constraint firstItem="AcX-lu-Qfs" firstAttribute="leading" secondItem="6vm-Vr-ZfQ" secondAttribute="leadingMargin" constant="-1" id="xoY-eU-5Q2"/>
+                                                <constraint firstItem="A7a-kg-qGg" firstAttribute="top" secondItem="lP9-SY-QT4" secondAttribute="top" id="0fW-mq-Eb3"/>
+                                                <constraint firstItem="A7a-kg-qGg" firstAttribute="leading" secondItem="lP9-SY-QT4" secondAttribute="trailing" constant="52" id="4dx-wN-P5i"/>
+                                                <constraint firstItem="A7a-kg-qGg" firstAttribute="bottom" secondItem="lP9-SY-QT4" secondAttribute="bottom" id="CxE-Ia-uYS"/>
+                                                <constraint firstItem="lP9-SY-QT4" firstAttribute="leading" secondItem="6vm-Vr-ZfQ" secondAttribute="leadingMargin" constant="9" id="FyR-VU-8ny"/>
+                                                <constraint firstItem="A7a-kg-qGg" firstAttribute="top" secondItem="6vm-Vr-ZfQ" secondAttribute="top" id="YTX-Lh-WxU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="A7a-kg-qGg" secondAttribute="trailing" constant="21" id="bQc-W7-uVK"/>
+                                                <constraint firstItem="A7a-kg-qGg" firstAttribute="centerY" secondItem="6vm-Vr-ZfQ" secondAttribute="centerY" id="bo8-fp-a3m"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="code" destination="AcX-lu-Qfs" id="xEO-3c-b5y"/>
-                                            <outlet property="tapLabel" destination="aMK-ZS-1ty" id="Xa0-1m-t97"/>
+                                            <outlet property="code" destination="lP9-SY-QT4" id="989-3y-u7e"/>
+                                            <outlet property="tapLabel" destination="A7a-kg-qGg" id="pG2-hg-0aa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

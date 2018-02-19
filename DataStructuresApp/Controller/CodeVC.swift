@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import Highlightr
 
-let data = ["0","1","2","3"]
+let data = ["00000000000000","1","2","3"]
 
 class CodeVC: UIViewController {
     var myIndex = 5
@@ -19,7 +19,10 @@ class CodeVC: UIViewController {
     @IBOutlet weak var codeText: UITextView!
     
     override func viewDidLoad() {
-//        textfield.text = "\(myIndex) \(mySecondIndex)"
+        tableViewCode.estimatedRowHeight = tableViewCode.rowHeight
+        tableViewCode.estimatedRowHeight = UITableViewAutomaticDimension
+        
+        //        textfield.text = "\(myIndex) \(mySecondIndex)"
         print("in code vc")
         print(subLessonData)
         //codeText.text = subLessonData
@@ -62,6 +65,17 @@ var tap2 = Array(repeating: false, count: data.count)
 
 //MARK: -Extension Delegate
 extension CodeVC : UITableViewDelegate{
+    
+    // Height of the row could change here
+    
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
         
@@ -76,18 +90,14 @@ extension CodeVC : UITableViewDelegate{
      
         tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
-    
-    // Height of the row could change here
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
 }
 
 //MARK: -Extension DataSource
-var run=["r1","r2","r3","r4"]
+var run=["r1dsfdfdsflkdlkdfjldsfjdklfdjlskfdlskjfldkfdlksfjldk2saddsadsadsadsadsadasdssdfdfsdfdsfdsfsdfdsfdsfds","r2","r3","r4"]
 let run2 = ["t1","t2","t3","t4"]
 
 extension CodeVC : UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -101,8 +111,11 @@ extension CodeVC : UITableViewDataSource{
         else if (tap1[myIndex] == true && tap2[myIndex] == false){cell.tapLabel.text = run[indexPath.row]}
         else if (tap1[myIndex] == false && tap2[myIndex] == true){cell.tapLabel.text = run2[indexPath.row]}
         
+        
         return cell
     }
+    
+    
 }
 
 
