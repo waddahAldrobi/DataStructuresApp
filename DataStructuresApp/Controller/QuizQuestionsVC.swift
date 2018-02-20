@@ -26,12 +26,24 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBAction func checkAnswer(_ sender: Any) {
         performSegue(withIdentifier: "quizContinue", sender: self)
     }
+    @IBOutlet weak var checkAnswer: UIButton!
     
     
     override func viewDidLoad() {
+       
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let quizContinueVC = segue.destination as! QuizContinueVC
+        quizContinueVC.correctAnswer = correctAnswer
+        quizContinueVC.selectedAnswer = selectedAnswer
+        quizContinueVC.questionNumber = questionNumber
+        quizContinueVC.questions = questions
+    }
+    override func viewWillAppear(_ animated: Bool) {
         print(questions)
         let fullQuestion = questions[questionNumber] as! [String: Any]
-        let answers = fullQuestion["Answers"] as! [String]
+        self.answers = fullQuestion["Answers"] as! [String]
         let questionType = fullQuestion["Question-Type"] as! String
         
         tableView.delegate = self
@@ -51,7 +63,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
             answer2.setTitle("False",for: .normal)
             answer3.isHidden = true
             answer4.isHidden = true
-//            checkAnswer.isHidden = true
+            checkAnswer.isHidden = true
         }
         else if questionType == "multiple-choice"{
             tableView.isHidden = true
@@ -59,25 +71,23 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
             answer2.setTitle(answers[1],for: .normal)
             answer3.setTitle(answers[2],for: .normal)
             answer4.setTitle(answers[3],for: .normal)
-//            checkAnswer.isHidden = true
+            checkAnswer.isHidden = true
         }
         tableView.reloadData()
         print(answers)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let quizContinueVC = segue.destination as! QuizContinueVC
-        quizContinueVC.correctAnswer = correctAnswer
-        quizContinueVC.selectedAnswer = selectedAnswer
-        quizContinueVC.questionNumber = questionNumber
-        quizContinueVC.questions = questions
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell", for: indexPath) as! AnswerCell
-        cell.question.isEditable = false
-        cell.question.isSelectable = false
+//        cell.question.isEditable = false
+//        cell.question.isSelectable = false
+        cell.question.isUserInteractionEnabled = false
         cell.question.text = answers[indexPath.row]
+        
+
 //        cell.accessoryType = UITableViewCellAccessoryType.checkmark
 //        cell.accessoryType = cell.isSelected ? .checkmark : .none
 //        cell.selectionStyle = .none

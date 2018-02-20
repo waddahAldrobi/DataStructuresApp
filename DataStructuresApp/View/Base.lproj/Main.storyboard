@@ -151,7 +151,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="aH6-RH-7l7">
-                                <rect key="frame" x="36" y="254" width="303" height="400"/>
+                                <rect key="frame" x="36" y="274" width="303" height="400"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-hq-6sr">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="91.666666666666671"/>
@@ -187,7 +187,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-sh-xbC">
-                                <rect key="frame" x="20" y="254" width="335" height="400"/>
+                                <rect key="frame" x="20" y="274" width="335" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="Vjc-ga-zhY"/>
@@ -200,8 +200,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="65.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fuh-Ii-Yux">
-                                                    <rect key="frame" x="10" y="10" width="114" height="46"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="test" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuh-Ii-Yux">
+                                                    <rect key="frame" x="10" y="10" width="280" height="46"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -209,7 +209,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="fuh-Ii-Yux" secondAttribute="bottom" constant="10" id="4T9-Hj-1NF"/>
-                                                <constraint firstAttribute="trailing" secondItem="fuh-Ii-Yux" secondAttribute="trailing" constant="211" id="bor-j2-vcC"/>
+                                                <constraint firstAttribute="trailing" secondItem="fuh-Ii-Yux" secondAttribute="trailing" constant="45" id="bor-j2-vcC"/>
                                                 <constraint firstItem="fuh-Ii-Yux" firstAttribute="leading" secondItem="kMP-Gw-T4k" secondAttribute="leading" constant="10" id="btx-st-3SS"/>
                                                 <constraint firstItem="fuh-Ii-Yux" firstAttribute="top" secondItem="kMP-Gw-T4k" secondAttribute="top" constant="10" id="eE7-9a-BQ5"/>
                                             </constraints>
@@ -221,10 +221,10 @@
                                 </prototypes>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z2a-27-tjp">
-                                <rect key="frame" x="26" y="74" width="323" height="90"/>
+                                <rect key="frame" x="26" y="74" width="323" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="Vpz-zb-kH7"/>
+                                    <constraint firstAttribute="height" constant="150" id="Vpz-zb-kH7"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="c3n-WX-TbW"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -246,7 +246,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="z2a-27-tjp" firstAttribute="top" secondItem="Cfi-b6-CJV" secondAttribute="bottom" constant="30" id="2Uh-OQ-Hem"/>
-                            <constraint firstItem="PKZ-sh-xbC" firstAttribute="top" secondItem="z2a-27-tjp" secondAttribute="bottom" constant="90" id="CBY-JD-hKe"/>
+                            <constraint firstItem="PKZ-sh-xbC" firstAttribute="top" secondItem="z2a-27-tjp" secondAttribute="bottom" constant="50" id="CBY-JD-hKe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z2a-27-tjp" secondAttribute="trailing" constant="10" id="E1M-4W-Eip"/>
                             <constraint firstItem="z2a-27-tjp" firstAttribute="leading" secondItem="kK6-8F-VbQ" secondAttribute="leadingMargin" constant="10" id="KHz-yb-m8y"/>
                             <constraint firstItem="aH6-RH-7l7" firstAttribute="leading" secondItem="kK6-8F-VbQ" secondAttribute="leadingMargin" constant="20" id="Sqq-43-Rs3"/>
@@ -254,7 +254,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="aH6-RH-7l7" secondAttribute="trailing" constant="20" id="bMj-a2-3qI"/>
                             <constraint firstItem="PKZ-sh-xbC" firstAttribute="leading" secondItem="kK6-8F-VbQ" secondAttribute="leading" constant="20" id="hT3-rN-vmU"/>
                             <constraint firstItem="fX0-4e-I7L" firstAttribute="trailing" secondItem="kK6-8F-VbQ" secondAttribute="trailingMargin" constant="-10" id="j7C-sX-qwG"/>
-                            <constraint firstItem="aH6-RH-7l7" firstAttribute="top" secondItem="z2a-27-tjp" secondAttribute="bottom" constant="90" id="oNk-ks-Buu"/>
+                            <constraint firstItem="aH6-RH-7l7" firstAttribute="top" secondItem="z2a-27-tjp" secondAttribute="bottom" constant="50" id="oNk-ks-Buu"/>
                             <constraint firstItem="YkK-fU-qQn" firstAttribute="top" secondItem="fX0-4e-I7L" secondAttribute="bottom" constant="25" id="uFI-nm-a54"/>
                         </constraints>
                     </view>
@@ -264,6 +264,7 @@
                         <outlet property="answer2" destination="yUm-3v-zA5" id="4Db-aI-MdC"/>
                         <outlet property="answer3" destination="eYb-nN-VIl" id="0Ix-AZ-ScE"/>
                         <outlet property="answer4" destination="MHc-L7-HYv" id="Xdh-P7-qaZ"/>
+                        <outlet property="checkAnswer" destination="fX0-4e-I7L" id="H39-mB-GRv"/>
                         <outlet property="question" destination="z2a-27-tjp" id="Nnf-YV-ydl"/>
                         <outlet property="tableView" destination="PKZ-sh-xbC" id="X1W-oE-lGO"/>
                         <segue destination="SdA-qX-pgU" kind="push" identifier="quizContinue" id="7Z3-6t-iGN"/>

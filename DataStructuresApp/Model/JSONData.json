@@ -14,22 +14,22 @@
                   "Correct-Answer" : ["Garbage collectors dont exist in C"]
                   },
                   {
-                  "Question" : "yes or no?",
+                  "Question" : "Pointers Store the value of a variable",
                   "Question-Type" : "true-false",
-                  "Answers" : ["True", "False"],
-                  "Correct-Answer" : ["True"]
+                  "Answers" : ["True", "False", "", ""],
+                  "Correct-Answer" : ["False"]
                   },
                   {
-                  "Question" : "What is big 0, Select all:",
+                  "Question" : "Select all true statements",
                   "Question-Type" : "select",
-                  "Answers" : ["1", "2", "3", "4"],
-                  "Correct-Answer" : ["4", "3"]
+                  "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Pointers can be created in the stack or the heap"],
+                  "Correct-Answer" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Pointers can be created in the stack or the heap"]
                   },
                   {
-                  "Question" : "Rank these things",
+                  "Question" : "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = $b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
                   "Question-Type" : "ranking",
-                  "Answers" : ["1", "2", "3", "4"],
-                  "Correct-Answer" : ["2", "3", "4", "1"]
+                  "Answers" : ["0X0615", "20", "10", "25"],
+                  "Correct-Answer" : ["10", "20", "25", "0X0615"]
                   }
                 ]
       },
