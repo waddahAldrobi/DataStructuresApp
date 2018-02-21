@@ -11,25 +11,25 @@
                   "Question" : "Why can't we rely on the garbage collector to clean up our dangling pointers?",
                   "Question-Type" : "multiple-choice",
                   "Answers" : ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
-                  "Correct-Answer" : ["Garbage collectors dont exist in C"]
+                  "Correct-Answer" : [3]
                   },
                   {
                   "Question" : "Pointers Store the value of a variable",
                   "Question-Type" : "true-false",
                   "Answers" : ["True", "False", "", ""],
-                  "Correct-Answer" : ["False"]
+                  "Correct-Answer" : [1]
                   },
                   {
                   "Question" : "Select all true statements",
                   "Question-Type" : "select",
                   "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Pointers can be created in the stack or the heap"],
-                  "Correct-Answer" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Pointers can be created in the stack or the heap"]
+                  "Correct-Answer" : [0,1,2,3]
                   },
                   {
                   "Question" : "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = $b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
                   "Question-Type" : "ranking",
                   "Answers" : ["0X0615", "20", "10", "25"],
-                  "Correct-Answer" : ["10", "20", "25", "0X0615"]
+                  "Correct-Answer" : [2,1,3,0]
                   }
                 ]
       },

@@ -12,18 +12,21 @@ import UIKit
 class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSource{
     var questionNumber = 0
     var questions = [Any]()
-   
+
     var answers = ["0", "0", "0", "0"]
     var correctAnswer = [Int]()
     var selectedAnswer = [Int]()
-    var questionType = "multiple-choice"
+    var questionType = ""
     @IBOutlet weak var answer1: UIButton!
     @IBOutlet weak var answer2: UIButton!
     @IBOutlet weak var answer3: UIButton!
     @IBOutlet weak var answer4: UIButton!
     @IBOutlet weak var question: UITextView!
     @IBOutlet weak var tableView: UITableView!
-    @IBAction func checkAnswer(_ sender: Any) {
+    @IBAction func checkAnswer(_ sender: UIButton) {
+        if sender.tag != 5{
+            selectedAnswer = [sender.tag]
+        }
         performSegue(withIdentifier: "quizContinue", sender: self)
     }
     @IBOutlet weak var checkAnswer: UIButton!
@@ -36,15 +39,29 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizContinueVC = segue.destination as! QuizContinueVC
         quizContinueVC.correctAnswer = correctAnswer
-        quizContinueVC.selectedAnswer = selectedAnswer
+        
         quizContinueVC.questionNumber = questionNumber
         quizContinueVC.questions = questions
+        if questionType == "ranking"{
+            let fullQuestion = questions[questionNumber] as! [String: Any]
+            let tempAnswer = fullQuestion["Answers"] as! [String]
+            selectedAnswer = []
+            for i in answers{
+                selectedAnswer.append(tempAnswer.index(of: i)!)
+                print(i, tempAnswer.index(of: i)!)
+            }
+
+            
+        }
+        quizContinueVC.selectedAnswer = selectedAnswer
     }
     override func viewWillAppear(_ animated: Bool) {
         print(questions)
+        selectedAnswer = [] // to ensure a second attempt at the question does not append selections
         let fullQuestion = questions[questionNumber] as! [String: Any]
+        self.correctAnswer = fullQuestion["Correct-Answer"] as! [Int]
         self.answers = fullQuestion["Answers"] as! [String]
-        let questionType = fullQuestion["Question-Type"] as! String
+        self.questionType = fullQuestion["Question-Type"] as! String
         
         tableView.delegate = self
         tableView.dataSource = self

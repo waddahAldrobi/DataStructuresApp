@@ -160,21 +160,21 @@
                                             <action selector="checkAnswer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="lFh-91-6fs"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUm-3v-zA5">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUm-3v-zA5">
                                         <rect key="frame" x="0.0" y="102.66666666666669" width="303" height="92"/>
                                         <state key="normal" title="Button" backgroundImage="blueIcon"/>
                                         <connections>
                                             <action selector="checkAnswer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="oQc-Jq-gpt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-nN-VIl">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-nN-VIl">
                                         <rect key="frame" x="0.0" y="205.66666666666669" width="303" height="91.666666666666686"/>
                                         <state key="normal" title="Button" backgroundImage="blueIcon"/>
                                         <connections>
                                             <action selector="checkAnswer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="0i2-GX-s6g"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-L7-HYv">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-L7-HYv">
                                         <rect key="frame" x="0.0" y="308.33333333333337" width="303" height="91.666666666666686"/>
                                         <state key="normal" title="Button" backgroundImage="blueIcon"/>
                                         <connections>
@@ -231,7 +231,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX0-4e-I7L">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX0-4e-I7L">
                                 <rect key="frame" x="189" y="713" width="160" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CBc-wb-gae"/>
@@ -286,33 +286,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Congrats!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-p7-olJ">
-                                <rect key="frame" x="142" y="89" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You've gotten X/Y correct" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPS-UC-bPX">
+                                <rect key="frame" x="157" y="69" width="187" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You got 1/X correct" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPS-UC-bPX">
-                                <rect key="frame" x="115" y="347" width="145" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvb-NY-6nk">
-                                <rect key="frame" x="199" y="562" width="160" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Continue" backgroundImage="blueIcon"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvb-NY-6nk">
+                                <rect key="frame" x="189" y="713" width="160" height="40"/>
+                                <state key="normal" title="Next Question" backgroundImage="blueIcon"/>
                                 <connections>
                                     <segue destination="kVT-Fx-Y1E" kind="push" id="TR5-TN-d2u"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-tI-l3M">
+                                <rect key="frame" x="35.666666666666657" y="321" width="304" height="110"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Correct!" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-p7-olJ">
+                                        <rect key="frame" x="89" y="0.0" width="126" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="The correct answer is:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-0v-mnj">
+                                        <rect key="frame" x="0.0" y="70" width="304" height="40"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZjN-ZN-siP" firstAttribute="top" secondItem="cvb-NY-6nk" secondAttribute="bottom" constant="25" id="7Gg-ce-yPV"/>
+                            <constraint firstItem="Xrk-tI-l3M" firstAttribute="centerX" secondItem="kJn-hG-8SE" secondAttribute="centerX" id="CyW-Sd-YYQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tPS-UC-bPX" secondAttribute="trailing" constant="15" id="Im2-RG-shK"/>
+                            <constraint firstItem="tPS-UC-bPX" firstAttribute="top" secondItem="MxE-sg-aXh" secondAttribute="bottom" constant="25" id="JDB-b8-4dD"/>
+                            <constraint firstItem="Xrk-tI-l3M" firstAttribute="centerY" secondItem="kJn-hG-8SE" secondAttribute="centerY" constant="-30" id="KgO-tw-xnA"/>
+                            <constraint firstItem="cvb-NY-6nk" firstAttribute="trailing" secondItem="kJn-hG-8SE" secondAttribute="trailingMargin" constant="-10" id="TaG-dp-OwK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="phx-BN-tIl"/>
                     <connections>
+                        <outlet property="correctAnswerField" destination="I5u-0v-mnj" id="Kro-eO-Yao"/>
+                        <outlet property="correctField" destination="FEo-p7-olJ" id="gEj-JI-5Fp"/>
                         <outlet property="numberCorrectField" destination="tPS-UC-bPX" id="wfw-lV-XyU"/>
                     </connections>
                 </viewController>
@@ -673,7 +691,6 @@ hello</string>
         <image name="blueIcon" width="160" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Z3-6t-iGN"/>
         <segue reference="QFZ-z0-wci"/>
         <segue reference="TR5-TN-d2u"/>
     </inferredMetricsTieBreakers>
