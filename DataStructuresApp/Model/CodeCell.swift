@@ -13,8 +13,10 @@ class CodeCell : UITableViewCell, UITableViewDelegate{
 //    @IBOutlet weak var code: UITextView!
 //    @IBOutlet weak var tapLabel: UITextView!
     
-    @IBOutlet weak var code: UILabel!
-    @IBOutlet weak var tapLabel: UILabel!
+    //@IBOutlet weak var code: UILabel!
+    //@IBOutlet weak var tapLabel: UILabel!
+    @IBOutlet weak var code: UITextView!
     
+    @IBOutlet weak var tapLabel: UITextView!
     
 }

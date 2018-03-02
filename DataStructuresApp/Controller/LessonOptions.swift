@@ -75,19 +75,19 @@ class LessonOptions: UIViewController {
                 guard let subLessonData = lessonData[0] as? [String : Any] else { print("error888"); return }
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
-                destVC3.subLessonData = (subLessonData["Code"] as? String)!
+                destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
                 destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
             } else if (segue.identifier == "secondTabSegue") {
                 guard let subLessonData = lessonData[1] as? [String : Any] else { print("error888"); return }
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
-                destVC3.subLessonData = (subLessonData["Code"] as? String)!
+                destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
                 destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
             } else if (segue.identifier == "thirdTabSegue") {
                 guard let subLessonData = lessonData[2] as? [String : Any] else { print("error888"); return }
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
-                destVC3.subLessonData = (subLessonData["Code"] as? String)!
+                destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
                 destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
             }
         

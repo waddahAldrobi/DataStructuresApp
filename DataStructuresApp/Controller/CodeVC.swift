@@ -2,12 +2,13 @@ import Foundation
 import UIKit
 import Highlightr
 
-let data = ["00000000000000","1","2","3"]
+let data = ["00000000000000","1"]
 
 class CodeVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
-    var subLessonData : String = ""
+    var subLessonData : [String:Any] = [:]
+    var cellCode : [Any] = []
     
 //    let highlightr = Highlightr()
 //    highlightr.setTheme(to: "paraiso-dark")
@@ -26,13 +27,15 @@ class CodeVC: UIViewController {
         print("in code vc")
         print(subLessonData)
         //codeText.text = subLessonData
+        cellCode = subLessonData["CellCode"] as! [Any]
+        print("cellcode: \(cellCode)")
         
         //Syntax Highlighting
         let highlightr = Highlightr()
         highlightr?.setTheme(to: "paraiso-dark")
         let code = subLessonData
         // You can omit the second parameter to use automatic language detection.
-        let highlightedCode = highlightr?.highlight(code, as: "c++")
+//        let highlightedCode = highlightr?.highlight(code, as: "c++")
         //codeText.attributedText = highlightedCode
     }
     
@@ -93,20 +96,20 @@ extension CodeVC : UITableViewDelegate{
 }
 
 //MARK: -Extension DataSource
-var run=["r1dsfdfdsflkdlkdfjldsfjdklfdjlskfdlskjfldkfdlksfjldk2saddsadsadsadsadsadasdssdfdfsdfdsfdsfsdfdsfdsfds","r2","r3","r4"]
-let run2 = ["t1","t2","t3","t4"]
+var run=["r1dsfdfdsflkdlkdfjldsfjdklfdjlskfdlskjfldkfdlksfjldk2saddsadsadsadsadsadasdssdfdfsdfdsfdsfsdfdsfdsfds","r2"]
+let run2 = ["t1","t2"]
 
 extension CodeVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return cellCode.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         myIndex = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCode") as! CodeCell
         
-        cell.code.text = data[indexPath.row]
+        cell.code.text = cellCode[indexPath.row] as! String
         if (tap1[myIndex] == false && tap2[myIndex] == false){cell.tapLabel.text = "Tap to run"}
         else if (tap1[myIndex] == true && tap2[myIndex] == false){cell.tapLabel.text = run[indexPath.row]}
         else if (tap1[myIndex] == false && tap2[myIndex] == true){cell.tapLabel.text = run2[indexPath.row]}
