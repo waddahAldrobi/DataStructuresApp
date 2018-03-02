@@ -14,7 +14,6 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     var questions = [Any]()
 
     var answers = ["0", "0", "0", "0"]
-    var correctAnswer = [Int]()
     var selectedAnswer = [Int]()
     var questionType = ""
     @IBOutlet weak var answer1: UIButton!
@@ -38,8 +37,6 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizContinueVC = segue.destination as! QuizContinueVC
-        quizContinueVC.correctAnswer = correctAnswer
-        
         quizContinueVC.questionNumber = questionNumber
         quizContinueVC.questions = questions
         if questionType == "ranking"{
@@ -59,7 +56,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         print(questions)
         selectedAnswer = [] // to ensure a second attempt at the question does not append selections
         let fullQuestion = questions[questionNumber] as! [String: Any]
-        self.correctAnswer = fullQuestion["Correct-Answer"] as! [Int]
+        
         self.answers = fullQuestion["Answers"] as! [String]
         self.questionType = fullQuestion["Question-Type"] as! String
         

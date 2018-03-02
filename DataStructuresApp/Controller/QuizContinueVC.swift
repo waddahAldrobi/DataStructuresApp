@@ -12,26 +12,29 @@ import UIKit
 class QuizContinueVC : UIViewController {
     var questions = [Any]()
     var questionNumber = 0
-    var correctAnswer = [Int]() // have it already
     var selectedAnswer = [Int]()
     var totalQuestions = 0
-    var numberCorrect = 0
     var answerCorrect = false
-    @IBOutlet weak var numberCorrectField: UITextField!
+
     @IBOutlet weak var correctField: UITextField!
-    @IBOutlet weak var correctAnswerField: UITextField!
+    @IBOutlet weak var correctAnswerField: UITextView!
     
     override func viewDidLoad() {
         
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        //answer checking
+        //answer checking // default setup is for correct case
         answerCorrect = false
         let fullQuestion = questions[questionNumber] as! [String: Any]
         let questionType = fullQuestion["Question-Type"] as! String
+        let correctAnswer = fullQuestion["Correct-Answer"] as! [Int]
+        let answers = fullQuestion["Answers"] as! [String]
+        
         print("selected ansswer", selectedAnswer)
         print(correctAnswer)
+        totalQuestions += 1
+        
         if questionType == "ranking"{
             if correctAnswer == selectedAnswer {
                 answerCorrect = true
@@ -41,17 +44,21 @@ class QuizContinueVC : UIViewController {
                     answerCorrect = true
                 }
         }
-        
-        correctAnswerField.isHidden = true
+//        self.view.backgroundColor = UIColor(red: 0.0/255, green: 255.0/255, blue: 128/255, alpha: 1)
+//        correctAnswerField.isHidden = true
         //answer showing
         if !answerCorrect {
             //show correct answer
+            self.view.backgroundColor = UIColor(red: 255.0/255, green: 26.0/255, blue: 26.0/255, alpha: 1)
             correctField.text = "Wrong!"
-            correctAnswerField.isHidden = false
-            correctAnswerField.text = "The correct answer is: \(correctAnswer)"
+            correctAnswerField.isHidden = false //correct answer field is hidden by default
+            var temp = "The correct answer is:\n"
+            for i in correctAnswer{
+                temp.append("-\(answers[i])\n")
+            }
+            correctAnswerField.text = temp
         }
         print(selectedAnswer)
-        numberCorrectField.text = "You got \(numberCorrect) / \(totalQuestions) correct"
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let quizQuestionsVC = segue.destination as! QuizQuestionsVC

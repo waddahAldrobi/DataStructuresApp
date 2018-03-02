@@ -8,6 +8,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmericanTypewriter.ttc">
+            <string>AmericanTypewriter</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Data Structures-->
         <scene sceneID="LIZ-bM-iW0">
@@ -286,12 +291,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="You've gotten X/Y correct" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tPS-UC-bPX">
-                                <rect key="frame" x="157" y="69" width="187" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvb-NY-6nk">
                                 <rect key="frame" x="189" y="713" width="160" height="40"/>
                                 <state key="normal" title="Next Question" backgroundImage="blueIcon"/>
@@ -299,39 +298,45 @@
                                     <segue destination="kVT-Fx-Y1E" kind="push" id="TR5-TN-d2u"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-tI-l3M">
-                                <rect key="frame" x="35.666666666666657" y="321" width="304" height="110"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-tI-l3M">
+                                <rect key="frame" x="26" y="273.66666666666669" width="323" height="65"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Correct!" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-p7-olJ">
-                                        <rect key="frame" x="89" y="0.0" width="126" height="40"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Correct!" textAlignment="center" minimumFontSize="56" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-p7-olJ">
+                                        <rect key="frame" x="46" y="0.0" width="231" height="65"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.98577313749999995" green="0.9960316548" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="The correct answer is:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-0v-mnj">
-                                        <rect key="frame" x="0.0" y="70" width="304" height="40"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    <textView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="correct answer goes here" translatesAutoresizingMaskIntoConstraints="NO" id="hRl-L6-g4w">
+                                        <rect key="frame" x="0.0" y="-273.66666666666669" width="323" height="0.0"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.98577313749999995" green="0.9960316548" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hRl-L6-g4w" secondAttribute="trailing" id="1IM-G9-Xun"/>
+                                    <constraint firstItem="hRl-L6-g4w" firstAttribute="leading" secondItem="Xrk-tI-l3M" secondAttribute="leading" id="dal-7t-3n8"/>
+                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.75564685880829019" blue="0.33863883308691939" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ZjN-ZN-siP" firstAttribute="top" secondItem="cvb-NY-6nk" secondAttribute="bottom" constant="25" id="7Gg-ce-yPV"/>
+                            <constraint firstItem="Xrk-tI-l3M" firstAttribute="leading" secondItem="kJn-hG-8SE" secondAttribute="leadingMargin" constant="10" id="8l4-ZV-y5m"/>
                             <constraint firstItem="Xrk-tI-l3M" firstAttribute="centerX" secondItem="kJn-hG-8SE" secondAttribute="centerX" id="CyW-Sd-YYQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tPS-UC-bPX" secondAttribute="trailing" constant="15" id="Im2-RG-shK"/>
-                            <constraint firstItem="tPS-UC-bPX" firstAttribute="top" secondItem="MxE-sg-aXh" secondAttribute="bottom" constant="25" id="JDB-b8-4dD"/>
-                            <constraint firstItem="Xrk-tI-l3M" firstAttribute="centerY" secondItem="kJn-hG-8SE" secondAttribute="centerY" constant="-30" id="KgO-tw-xnA"/>
+                            <constraint firstItem="Xrk-tI-l3M" firstAttribute="centerY" secondItem="kJn-hG-8SE" secondAttribute="centerY" constant="-100" id="KgO-tw-xnA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xrk-tI-l3M" secondAttribute="trailing" constant="10" id="MvP-Ot-PEh"/>
                             <constraint firstItem="cvb-NY-6nk" firstAttribute="trailing" secondItem="kJn-hG-8SE" secondAttribute="trailingMargin" constant="-10" id="TaG-dp-OwK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="phx-BN-tIl"/>
                     <connections>
-                        <outlet property="correctAnswerField" destination="I5u-0v-mnj" id="Kro-eO-Yao"/>
+                        <outlet property="correctAnswerField" destination="hRl-L6-g4w" id="wCB-HY-a8P"/>
                         <outlet property="correctField" destination="FEo-p7-olJ" id="gEj-JI-5Fp"/>
-                        <outlet property="numberCorrectField" destination="tPS-UC-bPX" id="wfw-lV-XyU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKN-sm-fPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
