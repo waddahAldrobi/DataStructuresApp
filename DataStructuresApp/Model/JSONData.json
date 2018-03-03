@@ -28,7 +28,7 @@
                   {
                   "Question" : "Select all true statements",
                   "Question-Type" : "select",
-                  "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data reference by a pointer can be stored in the stack or the heap"],
+                  "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
                   "Correct-Answer" : [0,1,2,3]
                   },
                   {
