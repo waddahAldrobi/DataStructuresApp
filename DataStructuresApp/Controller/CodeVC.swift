@@ -9,34 +9,29 @@ class CodeVC: UIViewController {
     var mySecondIndex = 5
     var subLessonData : [String:Any] = [:]
     var cellCode : [Any] = []
+    var cellRun : [Any] = []
+    var cellDesc : [Any] = []
     
-//    let highlightr = Highlightr()
-//    highlightr.setTheme(to: "paraiso-dark")
-//    let code = "let a = 1"
-//    // You can omit the second parameter to use automatic language detection.
-//    let highlightedCode = highlightr.highlight(code, as: "swift")
+    var highlightr = Highlightr()
+    let textStorage = CodeAttributedString()
+    
+    
     @IBOutlet weak var tableViewCode: UITableView!
  
-    @IBOutlet weak var codeText: UITextView!
     
     override func viewDidLoad() {
         tableViewCode.estimatedRowHeight = tableViewCode.rowHeight
         tableViewCode.estimatedRowHeight = UITableViewAutomaticDimension
         
-        //        textfield.text = "\(myIndex) \(mySecondIndex)"
+        //Parse of JSON
         print("in code vc")
-        print(subLessonData)
-        //codeText.text = subLessonData
         cellCode = subLessonData["CellCode"] as! [Any]
-        print("cellcode: \(cellCode)")
+        cellRun = subLessonData["CellRun"] as! [Any]
+        cellDesc = subLessonData["CellDesc"] as! [Any]
         
         //Syntax Highlighting
-        let highlightr = Highlightr()
-        highlightr?.setTheme(to: "paraiso-dark")
-        let code = subLessonData
-        // You can omit the second parameter to use automatic language detection.
-//        let highlightedCode = highlightr?.highlight(code, as: "c++")
-        //codeText.attributedText = highlightedCode
+        textStorage.highlightr.setTheme(to: "solarized-dark")
+
     }
     
     
@@ -69,16 +64,6 @@ var tap2 = Array(repeating: false, count: data.count)
 //MARK: -Extension Delegate
 extension CodeVC : UITableViewDelegate{
     
-    // Height of the row could change here
-    
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 100
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         myIndex = indexPath.row
         
@@ -96,9 +81,6 @@ extension CodeVC : UITableViewDelegate{
 }
 
 //MARK: -Extension DataSource
-var run=["r1dsfdfdsflkdlkdfjldsfjdklfdjlskfdlskjfldkfdlksfjldk2saddsadsadsadsadsadasdssdfdfsdfdsfdsfsdfdsfdsfds","r2"]
-let run2 = ["t1","t2"]
-
 extension CodeVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,14 +93,17 @@ extension CodeVC : UITableViewDataSource{
         
         cell.code.text = cellCode[indexPath.row] as! String
         if (tap1[myIndex] == false && tap2[myIndex] == false){cell.tapLabel.text = "Tap to run"}
-        else if (tap1[myIndex] == true && tap2[myIndex] == false){cell.tapLabel.text = run[indexPath.row]}
-        else if (tap1[myIndex] == false && tap2[myIndex] == true){cell.tapLabel.text = run2[indexPath.row]}
+        else if (tap1[myIndex] == true && tap2[myIndex] == false){cell.tapLabel.text = cellRun[indexPath.row] as! String}
+        else if (tap1[myIndex] == false && tap2[myIndex] == true){cell.tapLabel.text = cellDesc[indexPath.row] as! String}
         
+        //Highlighting
+        let highlightedCode = textStorage.highlightr.highlight(cell.code.text, as: "c++")
+        
+        cell.code.attributedText = highlightedCode
+        cell.code.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
         
         return cell
     }
-    
-    
 }
 
 

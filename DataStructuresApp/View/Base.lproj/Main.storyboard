@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="B9L-sC-axp">
-                                <rect key="frame" x="107" y="202" width="160" height="320"/>
+                                <rect key="frame" x="107.66666666666669" y="202" width="160" height="320"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="282-ai-uXn">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
@@ -206,7 +206,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="test" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuh-Ii-Yux">
-                                                    <rect key="frame" x="10" y="10" width="280" height="46"/>
+                                                    <rect key="frame" x="10" y="10" width="319" height="46"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -615,29 +615,33 @@ hello</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="code" translatesAutoresizingMaskIntoConstraints="NO" id="bZJ-7e-WG3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="51"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="188" id="X8Z-3A-0wf"/>
+                                                        <constraint firstAttribute="width" constant="188" id="u9D-xE-43f"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="desc" translatesAutoresizingMaskIntoConstraints="NO" id="TK5-AN-MBV">
-                                                    <rect key="frame" x="188" y="0.0" width="188" height="51"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="desc" translatesAutoresizingMaskIntoConstraints="NO" id="TK5-AN-MBV">
+                                                    <rect key="frame" x="188" y="0.0" width="187" height="44"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="187" id="0De-nb-sb4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="bottom" secondItem="bZJ-7e-WG3" secondAttribute="bottom" id="08I-bv-NNl"/>
-                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="leading" secondItem="bZJ-7e-WG3" secondAttribute="trailing" id="7Xd-K4-8a1"/>
-                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="top" secondItem="bZJ-7e-WG3" secondAttribute="top" id="RkJ-rN-5HE"/>
-                                                <constraint firstItem="bZJ-7e-WG3" firstAttribute="top" secondItem="6vm-Vr-ZfQ" secondAttribute="top" id="a4m-5x-0Rq"/>
-                                                <constraint firstItem="bZJ-7e-WG3" firstAttribute="leading" secondItem="6vm-Vr-ZfQ" secondAttribute="leading" id="cab-29-d9I"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="TK5-AN-MBV" secondAttribute="trailing" id="dzX-rY-xQm"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="bZJ-7e-WG3" secondAttribute="bottom" constant="-18" id="f1O-uS-3yu"/>
+                                                <constraint firstItem="bZJ-7e-WG3" firstAttribute="leading" secondItem="6vm-Vr-ZfQ" secondAttribute="leading" id="8un-e9-cLn"/>
+                                                <constraint firstAttribute="bottom" secondItem="TK5-AN-MBV" secondAttribute="bottom" id="BKm-E9-N7E"/>
+                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="leading" secondItem="bZJ-7e-WG3" secondAttribute="trailing" id="BYl-yw-XDe"/>
+                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="top" secondItem="6vm-Vr-ZfQ" secondAttribute="top" id="Foj-gn-cch"/>
+                                                <constraint firstItem="bZJ-7e-WG3" firstAttribute="top" secondItem="6vm-Vr-ZfQ" secondAttribute="top" id="c8K-Sf-JBN"/>
+                                                <constraint firstAttribute="trailing" secondItem="TK5-AN-MBV" secondAttribute="trailing" id="cQ5-JG-GJp"/>
+                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="leading" secondItem="bZJ-7e-WG3" secondAttribute="trailing" id="li6-ii-XVf"/>
+                                                <constraint firstAttribute="bottom" secondItem="bZJ-7e-WG3" secondAttribute="bottom" id="xfj-Sl-Krf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
