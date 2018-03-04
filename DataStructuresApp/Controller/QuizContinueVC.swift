@@ -18,6 +18,14 @@ class QuizContinueVC : UIViewController {
 
     @IBOutlet weak var correctField: UITextField!
     @IBOutlet weak var correctAnswerField: UITextView!
+    @IBAction func NextQuestion(_ sender: Any) {
+        if questionNumber == (questions.count - 1){
+            performSegue(withIdentifier: "quizFinish", sender: self)
+        }
+        else{
+            performSegue(withIdentifier: "quizContinue", sender: self)
+        }
+    }
     
     override func viewDidLoad() {
         
@@ -59,10 +67,21 @@ class QuizContinueVC : UIViewController {
             correctAnswerField.text = temp
         }
         print(selectedAnswer)
+    
+        
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let quizQuestionsVC = segue.destination as! QuizQuestionsVC
-        quizQuestionsVC.questionNumber = questionNumber + 1
-        quizQuestionsVC.questions = questions
+        if questionNumber == (questions.count - 1){
+            // pass data for analytics
+            let quizQuestionsVC = segue.destination as! QuizFinish
+            quizQuestionsVC.questions = questions
+        }
+        else{
+            let quizQuestionsVC = segue.destination as! QuizQuestionsVC
+            quizQuestionsVC.questionNumber = questionNumber + 1
+            quizQuestionsVC.questions = questions
+        }
+       
     }
 }

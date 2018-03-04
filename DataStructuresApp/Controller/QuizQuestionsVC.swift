@@ -54,7 +54,8 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     override func viewWillAppear(_ animated: Bool) {
         print(questions)
-        selectedAnswer = [] // to ensure a second attempt at the question does not append selections
+        selectedAnswer = [] // to ensure a second attempt at the question does not append selections\
+        print("Questions Number: \(questionNumber)")
         let fullQuestion = questions[questionNumber] as! [String: Any]
         
         self.answers = fullQuestion["Answers"] as! [String]
@@ -70,9 +71,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         
         if questionType == "ranking" {
             tableView.isEditing = true
-            //Temp disable
-            checkAnswer.isEnabled = false
-            checkAnswer.setTitle("Temp Disable", for: .normal)
+           
         }
         else if questionType == "true-false"{
             tableView.isHidden = true

@@ -44,6 +44,7 @@ class QuizVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC4 = segue.destination as! QuizQuestionsVC
         destVC4.questions = subLessonData
+        destVC4.questionNumber = 0
     }
     
     
