@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class QuizVC: UITableViewController {
+class QuizVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
     var subLessonData = [Any]()
@@ -40,25 +40,12 @@ class QuizVC: UITableViewController {
 //        // Don't forget to reset when view is being removed
 //        AppUtility.lockOrientation(.portrait)
 //    }
-//
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "subTopicCell", for: indexPath) as! SubTopicCell
-        
-        cell.subTopic.text = "testing"
-        
-        return cell
-    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC4 = segue.destination as! QuizQuestionsVC
         destVC4.questions = subLessonData
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "quizSeque", sender: self)
-    }
     
 }
 
