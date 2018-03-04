@@ -70,6 +70,9 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         
         if questionType == "ranking" {
             tableView.isEditing = true
+            //Temp disable
+            checkAnswer.isEnabled = false
+            checkAnswer.setTitle("Temp Disable", for: .normal)
         }
         else if questionType == "true-false"{
             tableView.isHidden = true
