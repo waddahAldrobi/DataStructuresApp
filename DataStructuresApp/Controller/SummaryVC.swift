@@ -18,7 +18,7 @@ class SummaryVC: UIViewController, WKNavigationDelegate{
     }
     
     func insertCSSString(into webView: WKWebView) {
-        let cssString = "body{color:#000;background:ffffff;font-family:Helvetica}h1{color:#d11;font-family:Chalkduster;font-size:200%}ul{font-size:3vw}p{font-size:3vw}"
+        let cssString = "body{color:#000;background:ffffff;font-family:American Typewriter}h1{color:#19BCFF;font-family:American Typewriter;font-size:200%}ul{font-size:3vw}p{font-size:3vw}"
         let jsString = "var style = document.createElement('style'); style.innerHTML = '\(cssString)'; document.head.appendChild(style);"
         summaryWebView.evaluateJavaScript(jsString, completionHandler: nil)
     }

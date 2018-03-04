@@ -11,7 +11,7 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var myIndex = 0
-    var lessonNames = ["arrow", "Linked Lists"]
+    var lessonNames = ["Pointers", "Linked Lists"]
     var lessonData : [Any] = []
     
     // MARK: - Table view data source

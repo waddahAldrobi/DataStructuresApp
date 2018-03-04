@@ -7,9 +7,9 @@
 //
 
 import UIKit
-var tab1arr = ["Single Pointers" , "Linked Pointers"]
-var tab2arr = ["Double Pointer2" , "Linked Pointers2"]
-var tab3arr = ["Memory3" , "Linked Pointers3"]
+var tab1arr = ["Single Pointers" , "Linked Lists vs Arrays"]
+var tab2arr = ["Double Pointer" , "Singly Linked List/ Doubly Linked Lists"]
+var tab3arr = ["Memory Management" , "Circulaurly Linked Lists"]
 
 
 // Add more buttons, if one has more than the other
