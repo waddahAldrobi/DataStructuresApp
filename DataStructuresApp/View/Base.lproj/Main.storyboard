@@ -91,11 +91,11 @@
                         <viewControllerLayoutGuide type="bottom" id="VD3-3o-A6N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="B9L-sC-axp">
-                                <rect key="frame" x="127" y="176" width="160" height="320"/>
+                                <rect key="frame" x="127" y="138" width="160" height="460"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="282-ai-uXn">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
@@ -122,6 +122,13 @@
                                         </state>
                                         <connections>
                                             <segue destination="wto-5X-WcY" kind="push" identifier="thirdTabSegue" id="5Yi-Rc-Tcb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaI-nj-0Xi" userLabel="QuizTab">
+                                        <rect key="frame" x="0.0" y="420" width="160" height="40"/>
+                                        <state key="normal" title="Quiz" backgroundImage="blueIcon"/>
+                                        <connections>
+                                            <segue destination="end-gs-PbW" kind="push" identifier="quizSegue" id="o2O-ev-i8U"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -176,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyC-pD-wkA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="1153"/>
+            <point key="canvasLocation" x="77" y="1132"/>
         </scene>
         <!--Quiz QuestionsVC-->
         <scene sceneID="CzO-xy-gRj">
@@ -312,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPQ-02-rnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312.5" y="1137"/>
+            <point key="canvasLocation" x="642" y="1132"/>
         </scene>
         <!--Quiz ContinueVC-->
         <scene sceneID="bmP-R5-tGK">
@@ -378,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKN-sm-fPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869" y="1132"/>
+            <point key="canvasLocation" x="1235" y="1132"/>
         </scene>
         <!--Quiz Finish-->
         <scene sceneID="6qd-ym-FNi">
@@ -400,7 +407,7 @@
                                 </constraints>
                                 <state key="normal" title="Finish" backgroundImage="blueIcon"/>
                                 <connections>
-                                    <segue destination="end-gs-PbW" kind="push" id="z1F-1t-X2e"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="WTP-sV-Gbf"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="An Analytics page" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-aw-0jc">
@@ -428,7 +435,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuN-bb-gLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450" y="1132"/>
+            <point key="canvasLocation" x="1829" y="1132"/>
         </scene>
         <!--Visualization-->
         <scene sceneID="EpP-oV-bzu">
@@ -439,11 +446,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Sru-hH-3ae"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="POI-yc-OQW">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="936"/>
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vA1-Vy-p2u">
-                                <rect key="frame" x="0.0" y="0.0" width="406" height="887"/>
+                                <rect key="frame" x="0.0" y="20" width="406" height="931"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgA-PV-a1S">
                                         <rect key="frame" x="0.0" y="0.0" width="406" height="1000"/>
@@ -514,7 +521,7 @@ hello</string>
                                 </constraints>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPq-UJ-zIk">
-                                <rect key="frame" x="406" y="0.0" width="406" height="887"/>
+                                <rect key="frame" x="406" y="20" width="406" height="931"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Oh-G2-hVZ">
                                         <rect key="frame" x="0.0" y="0.0" width="406" height="1000"/>
@@ -580,11 +587,11 @@ hello</string>
                         <viewControllerLayoutGuide type="bottom" id="HnF-IQ-x8z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="t9b-Ti-cIw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVs-7Z-IgF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
@@ -619,7 +626,6 @@ hello</string>
                         <segue destination="eG8-cl-OCT" kind="relationship" relationship="viewControllers" id="CwD-B0-n4r"/>
                         <segue destination="QmG-dk-JYH" kind="relationship" relationship="viewControllers" id="P7t-cF-TlO"/>
                         <segue destination="THX-KV-61p" kind="relationship" relationship="viewControllers" id="Nb3-ny-hki"/>
-                        <segue destination="end-gs-PbW" kind="relationship" relationship="viewControllers" id="Alv-Or-yVu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Un2-4b-0gY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,11 +641,11 @@ hello</string>
                         <viewControllerLayoutGuide type="bottom" id="F4a-qc-ZAB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hYB-Bs-45G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jSp-MO-Vjc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCode" id="Uhi-af-TN1" customClass="CodeCell" customModule="DataStructuresApp" customModuleProvider="target">
@@ -730,9 +736,10 @@ hello</string>
         <image name="blueIcon" width="160" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7Z3-6t-iGN"/>
         <segue reference="5Yi-Rc-Tcb"/>
-        <segue reference="VSM-0T-foH"/>
-        <segue reference="z1F-1t-X2e"/>
+        <segue reference="jAM-YQ-vUc"/>
+        <segue reference="WTP-sV-Gbf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

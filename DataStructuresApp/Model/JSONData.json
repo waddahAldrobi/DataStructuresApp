@@ -1,241 +1,73 @@
- [
-  [
-   {
-   "Summary" : "<html> <h1>What is a pointer?</h1> <ul> <li>Definition: A pointer is a data value that is stored in memory and points to only one memory address at a time.</li></ul> <h1>Pointers: Stack vs. Heap </h1> <ul> <li> Memory Stack: <ul> <li> <p>stores variables in direct memory and accesses variables very fast. The variables are reserved in Last In First Out (LIFO) order - the last stored block of memory is the first to be freed.</p></li></ul> </li><li> Memory Heap: <ul> <li>stores variables in dynamic memory and access variables a bit slower. Variables stored in heap can be accessed randomly at any time. Memory in the heap is limited by virtual memory - it is often used when the data at runtime is not known.</li></ul> </li></ul> <h1>Where are pointers stored in memory?</h1> <ul> <li>Pointers are always stored in the stack. The data created using the “new” expression are always stored in the heap, whereas the data that pointers referencing an existing variable are stored in the stack.</li></ul> <h1>Delete the pointer in stack or heap?</h1> <ul> <li>You cannot delete a pointer stored in stack; however, you MUST delete a pointer whose data is stored in the heap. It is also good practice to set the memory of the pointer to NULL after deleting. </li></ul></html>",
-   "Code" : {
-   "CellCode":["#include <iostream>\nusing namespace std;\nint main(){\n\tint var1 = 25;\n\t*ptr1 = &var1;\n\tprint(ptr1);\n\tprint(*ptr1); ","\tint *ptr2 = new int;\n\t*ptr2 = 5;\n\tprint(ptr2);\n\tprint(*ptr2)"],
+[
+  [{
+   "Summary": "<html> <h1>What is a pointer?</h1> <ul> <li>Definition: A pointer is a data value that is stored in memory and points to only one memory address at a time.</li></ul> <h1>Pointers: Stack vs. Heap </h1> <ul> <li> Memory Stack: <ul> <li> <p>stores variables in direct memory and accesses variables very fast. The variables are reserved in Last In First Out (LIFO) order - the last stored block of memory is the first to be freed.</p></li></ul> </li><li> Memory Heap: <ul> <li>stores variables in dynamic memory and access variables a bit slower. Variables stored in heap can be accessed randomly at any time. Memory in the heap is limited by virtual memory - it is often used when the data at runtime is not known.</li></ul> </li></ul> <h1>Where are pointers stored in memory?</h1> <ul> <li>Pointers are always stored in the stack. The data created using the “new” expression are always stored in the heap, whereas the data that pointers referencing an existing variable are stored in the stack.</li></ul> <h1>Delete the pointer in stack or heap?</h1> <ul> <li>You cannot delete a pointer stored in stack; however, you MUST delete a pointer whose data is stored in the heap. It is also good practice to set the memory of the pointer to NULL after deleting. </li></ul></html>",
+   "Code": {
+   "CellCode": ["#include <iostream>\nusing namespace std;\nint main(){\n\tint var1 = 25;\n\t*ptr1 = &var1;\n\tprint(ptr1);\n\tprint(*ptr1); ", "\tint *ptr2 = new int;\n\t*ptr2 = 5;\n\tprint(ptr2);\n\tprint(*ptr2)"],
    
-   "CellRun":["prints memory address of var1 \nprints 25","prints memory of ptr2 \nprints 5"],
+   "CellRun": ["prints memory address of var1 \nprints 25", "prints memory of ptr2 \nprints 5"],
    
-   "CellDesc":["*ptr1 points to memory of var1 \nthe '*' prints the value of ptr1","using '= new int' makes the pointer point to the heap memory"]
+   "CellDesc": ["*ptr1 points to memory of var1 \nthe '*' prints the value of ptr1", "using '= new int' makes the pointer point to the heap memory"]
    },
-   "Visualization" : {
-   "VisulizationCode" : "One half will be an animation that can be stepped through, the other will be descriptions",
-   "image1" : "Some Image"
-   },
-   "Quiz" : [{
-             "Question" : "Why can't we rely on the garbage collector to clean up our dangling pointers?",
-             "Question-Type" : "multiple-choice",
-             "Answers" : ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
-             "Correct-Answer" : [3]
-             },
-             {
-             "Question" : "Pointers Store the value of a variable",
-             "Question-Type" : "true-false",
-             "Answers" : ["True", "False", "", ""],
-             "Correct-Answer" : [1]
-             },
-             {
-             "Question" : "Select all true statements",
-             "Question-Type" : "select",
-             "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
-             "Correct-Answer" : [0,1,2,3]
-             },
-             {
-             "Question" : "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
-             "Question-Type" : "ranking",
-             "Answers" : ["0X0615", "20", "10", "25"],
-             "Correct-Answer" : [2,1,3,0]
-             }]
-   },
-   {
-   "Summary" : "<html> <h1>What is a Double pointer?</h1> <ul> <li>A double pointer is a pointer to a pointer. In C++, pointers can be nested multiple levels but is not suggested for readability.</li></ul> <h1>Does this mean we can have triple pointers, quadruple pointers, and so on and so forth?</h1> <ul> <li>Yes! Although, there's tyically no need and it's pretty hard to keep track after double pointers.</li></ul> <h1>Where is it used?</h1> <ul> <li>Example use cases: a sentence that can be represented by a summation of letters into words and then words into sentences</li></ul> <h1>Passing Double pointers</h1> <ul> <li>???</li></ul></html>",
-   "Code" : {
-   "CellCode":["Some Double Pointer Code", "Some more code"],
-   
-   "CellRun":["Some Output", "Some Output"],
-   
-   "CellDesc":["Some Description","Some Description"]
-   },
-   "Visualization" : {
-   "VisulizationCode" : "Some visualization}",
-   "image1" : "Some Image"
-   },
-   "Quiz" : [{
-             "Question" : "Why can't we rely on the garbage collector to clean up our dangling pointers?",
-             "Question-Type" : "multiple-choice",
-             "Answers" : ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
-             "Correct-Answer" : [3]
-             },
-             {
-             "Question" : "Pointers Store the value of a variable",
-             "Question-Type" : "true-false",
-             "Answers" : ["True", "False", "", ""],
-             "Correct-Answer" : [1]
-             },
-             {
-             "Question" : "Select all true statements",
-             "Question-Type" : "select",
-             "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
-             "Correct-Answer" : [0,1,2,3]
-             },
-             {
-             "Question" : "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
-             "Question-Type" : "ranking",
-             "Answers" : ["0X0615", "20", "10", "25"],
-             "Correct-Answer" : [2,1,3,0]
-             }
-             ]
-   },
-   {
-   "Summary" : "<html> <h1>What's the point?</h1> <ul> <ul> <li>For better or worse, there is no automatic garbage collection in C++. Thus, any memory we use, must be cleaned up by our self. (If you have infinite memory, feel free to ignore this.)</li><li>Pointers created in the stack won’t leave garbage memory because it will always be accessible through some variable.</li></ul> </ul> <h1>Garbage Memory aka. Memory Leak</h1> <ul> <li>Garbage memory is created when pointers are not deleted before they are reassigned.</li></ul> <h1>Dangling Pointers</h1> <ul> <li>These are pointers that reference meaningless data because they were not properly deleted.</li></ul></html>",
-   "Code" : {
-   "CellCode":["#include <iostream>\nusing namespace std;\nint main(){\n\tint var1 = 25;\n\t*ptr1 = &var1;\n\tprint(ptr1);\n\tprint(*ptr1); ","\tint *ptr2 = new int;\n\t*ptr2 = 5;\n\tprint(ptr2);\n\tprint(*ptr2)"],
-   
-   "CellRun":["prints memory address of var1 \nprints 25","prints memory of ptr2 \nprints 5"],
-   
-   "CellDesc":["*ptr1 points to memory of var1 \nthe '*' prints the value of ptr1","using '= new int' makes the pointer point to the heap memory"]
-   },
-   "Visualization" : {
-   "VisulizationCode" : "#include <iostream>\nusing namespace std;\nint main(){\nint var1 = 25;   // the “&” accesses memory\nint *ptr1 = &var1;    // pointer in stack \n\n// Both of these methods are pointers in heap \nint *ptr2 = new int;\n*ptr2 = 5;\n// OR\nint *ptr2 = new int(5);\n\n\// Deleting heap pointer\ndelete ptr2 ; \ndelete [] ptr2 ;    // If pointer is an array\n}",
-   "image1" : "Some Image"
-   },
-   "Quiz" : [{
-             "Question" : "Why can't we rely on the garbage collector to clean up our dangling pointers?",
-             "Question-Type" : "multiple-choice",
-             "Answers" : ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
-             "Correct-Answer" : [3]
-             },
-             {
-             "Question" : "Pointers Store the value of a variable",
-             "Question-Type" : "true-false",
-             "Answers" : ["True", "False", "", ""],
-             "Correct-Answer" : [1]
-             },
-             {
-             "Question" : "Select all true statements",
-             "Question-Type" : "select",
-             "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
-             "Correct-Answer" : [0,1,2,3]
-             },
-             {
-             "Question" : "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
-             "Question-Type" : "ranking",
-             "Answers" : ["0X0615", "20", "10", "25"],
-             "Correct-Answer" : [2,1,3,0]
-             }
-             ]
+   "Visualization": {
+   "VisulizationCode": "One half will be an animation that can be stepped through, the other will be descriptions",
+   "image1": "Some Image"
    }
-   ],
-  
-  [
-   {
-   "Summary" : "<html> <h1>What is a pointer?</h1> <ul> <li>Definition: A pointer is a data value that is stored in memory and points to only one memory address at a time.</li></ul> <h1>Pointers: Stack vs. Heap </h1> <ul> <li> Memory Stack: <ul> <li> <p>stores variables in direct memory and accesses variables very fast. The variables are reserved in Last In First Out (LIFO) order - the last stored block of memory is the first to be freed.</p></li></ul> </li><li> Memory Heap: <ul> <li>stores variables in dynamic memory and access variables a bit slower. Variables stored in heap can be accessed randomly at any time. Memory in the heap is limited by virtual memory - it is often used when the data at runtime is not known.</li></ul> </li></ul> <h1>Where are pointers stored in memory?</h1> <ul> <li>Pointers are always stored in the stack. The data created using the “new” expression are always stored in the heap, whereas the data that pointers referencing an existing variable are stored in the stack.</li></ul> <h1>Delete the pointer in stack or heap?</h1> <ul> <li>You cannot delete a pointer stored in stack; however, you MUST delete a pointer whose data is stored in the heap. It is also good practice to set the memory of the pointer to NULL after deleting. </li></ul></html>",
-   "Code" : {
-   "CellCode":["#include <iostream>\nusing namespace std;\nint main(){\n\tint var1 = 25;\n\t*ptr1 = &var1;\n\tprint(ptr1);\n\tprint(*ptr1); ","\tint *ptr2 = new int;\n\t*ptr2 = 5;\n\tprint(ptr2);\n\tprint(*ptr2)"],
-   
-   "CellRun":["prints memory address of var1 \nprints 25","prints memory of ptr2 \nprints 5"],
-   
-   "CellDesc":["*ptr1 points to memory of var1 \nthe '*' prints the value of ptr1","using '= new int' makes the pointer point to the heap memory"]
-   },
-   "Visualization" : {
-   "VisulizationCode" : "One half will be an animation that can be stepped through, the other will be descriptions",
-   "image1" : "Some Image"
-   },
-   "Quiz" : [{
-             "Question" : "Why can't we rely on the garbage collector to clean up our dangling pointers?",
-             "Question-Type" : "multiple-choice",
-             "Answers" : ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
-             "Correct-Answer" : [3]
-             },
-             {
-             "Question" : "Pointers Store the value of a variable",
-             "Question-Type" : "true-false",
-             "Answers" : ["True", "False", "", ""],
-             "Correct-Answer" : [1]
-             },
-             {
-             "Question" : "Select all true statements",
-             "Question-Type" : "select",
-             "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
-             "Correct-Answer" : [0,1,2,3]
-             },
-             {
-             "Question" : "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
-             "Question-Type" : "ranking",
-             "Answers" : ["0X0615", "20", "10", "25"],
-             "Correct-Answer" : [2,1,3,0]
-             }
-             ]
    },
    {
-   "Summary" : "<html> <h1>What is a Double pointer?</h1> <ul> <li>A double pointer is a pointer to a pointer. In C++, pointers can be nested multiple levels but is not suggested for readability.</li></ul> <h1>Does this mean we can have triple pointers, quadruple pointers, and so on and so forth?</h1> <ul> <li>Yes! Although, there's tyically no need and it's pretty hard to keep track after double pointers.</li></ul> <h1>Where is it used?</h1> <ul> <li>Example use cases: a sentence that can be represented by a summation of letters into words and then words into sentences</li></ul> <h1>Passing Double pointers</h1> <ul> <li>???</li></ul></html>",
-   "Code" : {
-   "CellCode":["Some Double Pointer Code", "Some more code"],
+   "Summary": "<html> <h1>What is a Double pointer?</h1> <ul> <li>A double pointer is a pointer to a pointer. In C++, pointers can be nested multiple levels but is not suggested for readability.</li></ul> <h1>Does this mean we can have triple pointers, quadruple pointers, and so on and so forth?</h1> <ul> <li>Yes! Although, there's tyically no need and it's pretty hard to keep track after double pointers.</li></ul> <h1>Where is it used?</h1> <ul> <li>Example use cases: a sentence that can be represented by a summation of letters into words and then words into sentences</li></ul> <h1>Passing Double pointers</h1> <ul> <li>???</li></ul></html>",
+   "Code": {
+   "CellCode": ["Some Double Pointer Code", "Some more code"],
    
-   "CellRun":["Some Output", "Some Output"],
+   "CellRun": ["Some Output", "Some Output"],
    
-   "CellDesc":["Some Description","Some Description"]
+   "CellDesc": ["Some Description", "Some Description"]
    },
-   "Visualization" : {
-   "VisulizationCode" : "Some visualization}",
-   "image1" : "Some Image"
-   },
-   "Quiz" : [{
-             "Question" : "Why can't we rely on the garbage collector to clean up our dangling pointers?",
-             "Question-Type" : "multiple-choice",
-             "Answers" : ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
-             "Correct-Answer" : [3]
-             },
-             {
-             "Question" : "Pointers Store the value of a variable",
-             "Question-Type" : "true-false",
-             "Answers" : ["True", "False", "", ""],
-             "Correct-Answer" : [1]
-             },
-             {
-             "Question" : "Select all true statements",
-             "Question-Type" : "select",
-             "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
-             "Correct-Answer" : [0,1,2,3]
-             },
-             {
-             "Question" : "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
-             "Question-Type" : "ranking",
-             "Answers" : ["0X0615", "20", "10", "25"],
-             "Correct-Answer" : [2,1,3,0]
-             }
-             ]
+   "Visualization": {
+   "VisulizationCode": "Some visualization}",
+   "image1": "Some Image"
+   }
+   
    },
    {
-   "Summary" : "<html> <h1>What's the point?</h1> <ul> <ul> <li>For better or worse, there is no automatic garbage collection in C++. Thus, any memory we use, must be cleaned up by our self. (If you have infinite memory, feel free to ignore this.)</li><li>Pointers created in the stack won’t leave garbage memory because it will always be accessible through some variable.</li></ul> </ul> <h1>Garbage Memory aka. Memory Leak</h1> <ul> <li>Garbage memory is created when pointers are not deleted before they are reassigned.</li></ul> <h1>Dangling Pointers</h1> <ul> <li>These are pointers that reference meaningless data because they were not properly deleted.</li></ul></html>",
-   "Code" : {
-   "CellCode":["#include <iostream>\nusing namespace std;\nint main(){\n\tint var1 = 25;\n\t*ptr1 = &var1;\n\tprint(ptr1);\n\tprint(*ptr1); ","\tint *ptr2 = new int;\n\t*ptr2 = 5;\n\tprint(ptr2);\n\tprint(*ptr2)"],
+   "Summary": "<html> <h1>What's the point?</h1> <ul> <ul> <li>For better or worse, there is no automatic garbage collection in C++. Thus, any memory we use, must be cleaned up by our self. (If you have infinite memory, feel free to ignore this.)</li><li>Pointers created in the stack won’t leave garbage memory because it will always be accessible through some variable.</li></ul> </ul> <h1>Garbage Memory aka. Memory Leak</h1> <ul> <li>Garbage memory is created when pointers are not deleted before they are reassigned.</li></ul> <h1>Dangling Pointers</h1> <ul> <li>These are pointers that reference meaningless data because they were not properly deleted.</li></ul></html>",
+   "Code": {
+   "CellCode": ["#include <iostream>\nusing namespace std;\nint main(){\n\tint var1 = 25;\n\t*ptr1 = &var1;\n\tprint(ptr1);\n\tprint(*ptr1); ", "\tint *ptr2 = new int;\n\t*ptr2 = 5;\n\tprint(ptr2);\n\tprint(*ptr2)"],
    
-   "CellRun":["prints memory address of var1 \nprints 25","prints memory of ptr2 \nprints 5"],
+   "CellRun": ["prints memory address of var1 \nprints 25", "prints memory of ptr2 \nprints 5"],
    
-   "CellDesc":["*ptr1 points to memory of var1 \nthe '*' prints the value of ptr1","using '= new int' makes the pointer point to the heap memory"]
+   "CellDesc": ["*ptr1 points to memory of var1 \nthe '*' prints the value of ptr1", "using '= new int' makes the pointer point to the heap memory"]
    },
-   "Visualization" : {
-   "VisulizationCode" : "#include <iostream>\nusing namespace std;\nint main(){\nint var1 = 25;   // the “&” accesses memory\nint *ptr1 = &var1;    // pointer in stack \n\n// Both of these methods are pointers in heap \nint *ptr2 = new int;\n*ptr2 = 5;\n// OR\nint *ptr2 = new int(5);\n\n\// Deleting heap pointer\ndelete ptr2 ; \ndelete [] ptr2 ;    // If pointer is an array\n}",
-   "image1" : "Some Image"
+   "Visualization": {
+   "VisulizationCode": "#include <iostream>\nusing namespace std;\nint main(){\nint var1 = 25;   // the “&” accesses memory\nint *ptr1 = &var1;    // pointer in stack \n\n// Both of these methods are pointers in heap \nint *ptr2 = new int;\n*ptr2 = 5;\n// OR\nint *ptr2 = new int(5);\n\n\// Deleting heap pointer\ndelete ptr2 ; \ndelete [] ptr2 ;    // If pointer is an array\n}",
+   "image1": "Some Image"
+   }
    },
-   "Quiz" : [{
-             "Question" : "Why can't we rely on the garbage collector to clean up our dangling pointers?",
-             "Question-Type" : "multiple-choice",
-             "Answers" : ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
-             "Correct-Answer" : [3]
-             },
-             {
-             "Question" : "Pointers Store the value of a variable",
-             "Question-Type" : "true-false",
-             "Answers" : ["True", "False", "", ""],
-             "Correct-Answer" : [1]
-             },
-             {
-             "Question" : "Select all true statements",
-             "Question-Type" : "select",
-             "Answers" : ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
-             "Correct-Answer" : [0,1,2,3]
-             },
-             {
-             "Question" : "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
-             "Question-Type" : "ranking",
-             "Answers" : ["0X0615", "20", "10", "25"],
-             "Correct-Answer" : [2,1,3,0]
-             }
-             ]
+   {
+   "Quiz": [{
+            "Question": "Why can't we rely on the garbage collector to clean up our dangling pointers?",
+            "Question-Type": "multiple-choice",
+            "Answers": ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
+            "Correct-Answer": [3]
+            },
+            {
+            "Question": "Pointers Store the value of a variable",
+            "Question-Type": "true-false",
+            "Answers": ["True", "False", "", ""],
+            "Correct-Answer": [1]
+            },
+            {
+            "Question": "Select all true statements",
+            "Question-Type": "select",
+            "Answers": ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
+            "Correct-Answer": [0, 1, 2, 3]
+            },
+            {
+            "Question": "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
+            "Question-Type": "ranking",
+            "Answers": ["0X0615", "20", "10", "25"],
+            "Correct-Answer": [2, 1, 3, 0]
+            }
+            ]
    }
    ]
-]
-
+  ]

@@ -68,11 +68,10 @@ class TableViewController: UITableViewController {
         do {
             let data = try Data(contentsOf: url)
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-//                      print (json)
             guard let lessonDataArray = json as? [Any] else { print("error444"); return }
-            
+        
             //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
-            
+    
             guard let lessonData = lessonDataArray[myIndex] as? [Any] else { print("error888"); return }
             
             // for info on allowed characters in json: https://stackoverflow.com/questions/2392766/multiline-strings-in-json

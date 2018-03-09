@@ -13,9 +13,9 @@ class QuizFinish: UIViewController {
     override func viewDidLoad() {
        
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let restart = segue.destination as! QuizVC
-        restart.subLessonData = questions
-    }
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let restart = segue.destination as! QuizVC
+//        restart.subLessonData = questions
+//    }
 }

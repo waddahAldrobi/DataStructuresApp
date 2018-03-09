@@ -10,7 +10,7 @@ import UIKit
 var tab1arr = ["Single Pointers" , "Linked Lists vs Arrays"]
 var tab2arr = ["Double Pointer" , "Singly Linked List/ Doubly Linked Lists"]
 var tab3arr = ["Memory Management" , "Circulaurly Linked Lists"]
-
+var globalLessonData : [Any] = []
 
 // Add more buttons, if one has more than the other
 // Then, set in the array string to "", and use the isEnabled function
@@ -28,7 +28,7 @@ class LessonOptions: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        globalLessonData = lessonData
         // Makes the text of back button "Back" for the NEXT VC
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     
@@ -46,7 +46,11 @@ class LessonOptions: UIViewController {
         tab3.setTitle(tab3arr[myIndex], for: .normal)
         //tab3.isEnabled = false
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        lessonData = globalLessonData
+        print("global lesson data passed")
+        print(lessonData)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,6 +58,7 @@ class LessonOptions: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("Hit Here")
+        if !(segue.identifier == "quizSegue") {
         let tabCtrl = segue.destination as! UITabBarController // This to indicate that these are
         
             // sets index depending on the topic chosen
@@ -65,30 +70,33 @@ class LessonOptions: UIViewController {
 
             let destVC3 = tabCtrl.viewControllers![2] as! CodeVC
             destVC3.myIndex = myIndex
-        
-            let destVC4 = tabCtrl.viewControllers![3] as! QuizVC
-            destVC4.myIndex = myIndex
-
-            //sets second index depending on button pressed
-            // need to create data set that loads appropriate information.
+            
             if (segue.identifier == "firstTabSegue") {
                 guard let subLessonData = lessonData[0] as? [String : Any] else { print("error888"); return }
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
                 destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
-                destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
             } else if (segue.identifier == "secondTabSegue") {
                 guard let subLessonData = lessonData[1] as? [String : Any] else { print("error888"); return }
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
                 destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
-                destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
             } else if (segue.identifier == "thirdTabSegue") {
                 guard let subLessonData = lessonData[2] as? [String : Any] else { print("error888"); return }
                 destVC1.subLessonData = (subLessonData["Summary"] as? String)!
                 destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
                 destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
-                destVC4.subLessonData = (subLessonData["Quiz"] as? [Any])!
+            }
+        }
+
+
+            //sets second index depending on button pressed
+            // need to create data set that loads appropriate information.
+            if (segue.identifier == "quizSegue") {
+                guard let subLessonData = lessonData[3] as? [String : Any] else { print("error888"); return }
+                let destVC = segue.destination as! QuizVC
+                destVC.subLessonData = (subLessonData["Quiz"] as? [Any])!
+                
             }
         
         //old style
