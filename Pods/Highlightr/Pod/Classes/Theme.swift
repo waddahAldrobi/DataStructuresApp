@@ -1,4 +1,3 @@
-
 //
 //  Theme.swift
 //  Pods
@@ -6,49 +5,38 @@
 //  Created by Illanes, J.P. on 4/24/16.
 //
 //
+
 import Foundation
 
 #if os(iOS) || os(tvOS)
     import UIKit
-    /// Typealias for UIColor
     public typealias RPColor = UIColor
-    /// Typealias for UIFont
     public typealias RPFont = UIFont
 #else
     import AppKit
-    /// Typealias for NSColor
     public typealias RPColor = NSColor
-    /// Typealias for NSFont
     public typealias RPFont = NSFont
-    
+
 #endif
 
-private typealias RPThemeDict = [String: [AnyHashable: AnyObject]]
+private typealias RPThemeDict = [String:[String:AnyObject]]
 private typealias RPThemeStringDict = [String:[String:String]]
 
-/// Theme parser, can be used to configure the theme parameters.
-open class Theme {
+/// Theme parser, can be used to configure the theme parameters. 
+public class Theme {
     internal let theme : String
     internal var lightTheme : String!
     
-    /// Regular font to be used by this theme
-    open var codeFont : RPFont!
-    /// Bold font to be used by this theme
-    open var boldCodeFont : RPFont!
-    /// Italic font to be used by this theme
-    open var italicCodeFont : RPFont!
+    public var codeFont : RPFont!
+    public var boldCodeFont : RPFont!
+    public var italicCodeFont : RPFont!
     
-    fileprivate var themeDict : RPThemeDict!
-    fileprivate var strippedTheme : RPThemeStringDict!
+    private var themeDict : RPThemeDict!
+    private var strippedTheme : RPThemeStringDict!
     
-    /// Default background color for the current theme.
-    open var themeBackgroundColor : RPColor!
+        /// Default background color for the current theme.
+    public var themeBackgroundColor : RPColor!
     
-    /**
-     Initialize the theme with the given theme name.
-     
-     - parameter themeString: Theme to use.
-     */
     init(themeString: String)
     {
         theme = themeString
@@ -71,39 +59,39 @@ open class Theme {
                 themeBackgroundColor = RPColor(white: 0, alpha: 1)
             }else
             {
-                let range = bkgColorHex.range(of: "#")
-                let str = String(bkgColorHex[(range?.lowerBound)!...])
+                let range = bkgColorHex.rangeOfString("#")
+                let str = bkgColorHex.substringFromIndex((range?.startIndex)!)
                 themeBackgroundColor = colorWithHexString(str)
             }
         }else
         {
-            themeBackgroundColor = RPColor.white
+            themeBackgroundColor = RPColor.whiteColor()
         }
     }
     
     /**
-     Changes the theme font. This will try to automatically populate the codeFont, boldCodeFont and italicCodeFont properties based on the provided font.
+     Changes the theme font.
      
      - parameter font: UIFont (iOS or tvOS) or NSFont (OSX)
      */
-    open func setCodeFont(_ font: RPFont)
+    public func setCodeFont(font: RPFont)
     {
         codeFont = font
         
         #if os(iOS) || os(tvOS)
-            let boldDescriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family:font.familyName,
-                                                                   UIFontDescriptor.AttributeName.face:"Bold"])
-            let italicDescriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family:font.familyName,
-                                                                     UIFontDescriptor.AttributeName.face:"Italic"])
-            let obliqueDescriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family:font.familyName,
-                                                                      UIFontDescriptor.AttributeName.face:"Oblique"])
+        let boldDescriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptorFamilyAttribute:font.familyName,
+                                                                UIFontDescriptorFaceAttribute:"Bold"])
+        let italicDescriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptorFamilyAttribute:font.familyName,
+                                                                 UIFontDescriptorFaceAttribute:"Italic"])
+        let obliqueDescriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptorFamilyAttribute:font.familyName,
+                                                                  UIFontDescriptorFaceAttribute:"Oblique"])
         #else
-            let boldDescriptor = NSFontDescriptor(fontAttributes: [NSFontFamilyAttribute:font.familyName!,
-                                                                   NSFontFaceAttribute:"Bold"])
-            let italicDescriptor = NSFontDescriptor(fontAttributes: [NSFontFamilyAttribute:font.familyName!,
-                                                                     NSFontFaceAttribute:"Italic"])
-            let obliqueDescriptor = NSFontDescriptor(fontAttributes: [NSFontFamilyAttribute:font.familyName!,
-                                                                      NSFontFaceAttribute:"Oblique"])
+        let boldDescriptor = NSFontDescriptor(fontAttributes: [NSFontFamilyAttribute:font.familyName!,
+                                                                NSFontFaceAttribute:"Bold"])
+        let italicDescriptor = NSFontDescriptor(fontAttributes: [NSFontFamilyAttribute:font.familyName!,
+                                                                NSFontFaceAttribute:"Italic"])
+        let obliqueDescriptor = NSFontDescriptor(fontAttributes: [NSFontFamilyAttribute:font.familyName!,
+                                                                NSFontFaceAttribute:"Oblique"])
         #endif
         
         boldCodeFont = RPFont(descriptor: boldDescriptor, size: font.pointSize)
@@ -121,24 +109,24 @@ open class Theme {
         {
             boldCodeFont = font
         }
-        
+
         if(themeDict != nil)
         {
             themeDict = strippedThemeToTheme(strippedTheme)
         }
     }
     
-    internal func applyStyleToString(_ string: String, styleList: [String]) -> NSAttributedString
+    internal func applyStyleToString(string: String, styleList: [String]) -> NSAttributedString
     {
         let returnString : NSAttributedString
         
         if styleList.count > 0
         {
-            var attrs = [NSAttributedStringKey: Any]()
-            attrs[.font] = codeFont
+            var attrs = [String:AnyObject]()
+            attrs[NSFontAttributeName] = codeFont
             for style in styleList
             {
-                if let themeStyle = themeDict[style] as? [NSAttributedStringKey: Any]
+                if let themeStyle = themeDict[style]
                 {
                     for (attrName, attrValue) in themeStyle
                     {
@@ -151,20 +139,20 @@ open class Theme {
         }
         else
         {
-            returnString = NSAttributedString(string: string, attributes:[NSAttributedStringKey.font:codeFont] )
+            returnString = NSAttributedString(string: string, attributes:[NSFontAttributeName:codeFont] )
         }
         
         return returnString
     }
     
-    fileprivate func stripTheme(_ themeString : String) -> [String:[String:String]]
+    private func stripTheme(themeString : String) -> [String:[String:String]]
     {
         let objcString = (themeString as NSString)
-        let cssRegex = try! NSRegularExpression(pattern: "(?:(\\.[a-zA-Z0-9\\-_]*(?:[, ]\\.[a-zA-Z0-9\\-_]*)*)\\{([^\\}]*?)\\})", options:[.caseInsensitive])
+        let cssRegex = try! NSRegularExpression(pattern: "(?:(\\.[a-zA-Z0-9\\-_]*(?:[, ]\\.[a-zA-Z0-9\\-_]*)*)\\{([^\\}]*?)\\})", options:[.CaseInsensitive])
         
-        let results = cssRegex.matches(in: themeString,
-                                       options: [.reportCompletion],
-                                       range: NSMakeRange(0, objcString.length))
+        let results = cssRegex.matchesInString(themeString,
+                                               options: [.ReportCompletion],
+                                               range: NSMakeRange(0, objcString.length))
         
         var resultDict = [String:[String:String]]()
         
@@ -172,18 +160,18 @@ open class Theme {
             if(result.numberOfRanges == 3)
             {
                 var attributes = [String:String]()
-                let cssPairs = objcString.substring(with: result.range(at: 2)).components(separatedBy: ";")
+                let cssPairs = objcString.substringWithRange(result.rangeAtIndex(2)).componentsSeparatedByString(";")
                 for pair in cssPairs {
-                    let cssPropComp = pair.components(separatedBy: ":")
+                    let cssPropComp = pair.componentsSeparatedByString(":")
                     if(cssPropComp.count == 2)
                     {
                         attributes[cssPropComp[0]] = cssPropComp[1]
                     }
-                    
+
                 }
                 if attributes.count > 0
                 {
-                    resultDict[objcString.substring(with: result.range(at: 1))] = attributes
+                    resultDict[objcString.substringWithRange(result.rangeAtIndex(1))] = attributes
                 }
                 
             }
@@ -194,7 +182,7 @@ open class Theme {
         
         for (keys,result) in resultDict
         {
-            let keyArray = keys.replacingOccurrences(of: " ", with: ",").components(separatedBy: ",")
+            let keyArray = keys.stringByReplacingOccurrencesOfString(" ", withString: ",").componentsSeparatedByString(",")
             for key in keyArray {
                 var props : [String:String]?
                 props = returnDict[key]
@@ -213,14 +201,14 @@ open class Theme {
         return returnDict
     }
     
-    fileprivate func strippedThemeToString(_ theme: RPThemeStringDict) -> String
+    private func strippedThemeToString(theme: RPThemeStringDict) -> String
     {
         var resultString = ""
         for (key, props) in theme {
             resultString += key+"{"
             for (cssProp, val) in props
             {
-                if(key != ".hljs" || (cssProp.lowercased() != "background-color" && cssProp.lowercased() != "background"))
+                if(key != ".hljs" || (cssProp.lowercaseString != "background-color" && cssProp.lowercaseString != "background"))
                 {
                     resultString += "\(cssProp):\(val);"
                 }
@@ -230,12 +218,12 @@ open class Theme {
         return resultString
     }
     
-    fileprivate func strippedThemeToTheme(_ theme: RPThemeStringDict) -> RPThemeDict
+    private func strippedThemeToTheme(theme: RPThemeStringDict) -> RPThemeDict
     {
         var returnTheme = RPThemeDict()
         for (className, props) in theme
         {
-            var keyProps = [NSAttributedStringKey: AnyObject]()
+            var keyProps = [String:AnyObject]()
             for (key, prop) in props
             {
                 switch key
@@ -258,50 +246,49 @@ open class Theme {
             }
             if keyProps.count > 0
             {
-                let key = className.replacingOccurrences(of: ".", with: "")
+                let key = className.stringByReplacingOccurrencesOfString(".", withString: "")
                 returnTheme[key] = keyProps
             }
         }
         return returnTheme
     }
     
-    fileprivate func fontForCSSStyle(_ fontStyle:String) -> RPFont
+    private func fontForCSSStyle(fontStyle:String) -> RPFont
     {
         switch fontStyle
         {
-        case "bold", "bolder", "600", "700", "800", "900":
-            return boldCodeFont
-        case "italic", "oblique":
-            return italicCodeFont
-        default:
-            return codeFont
+            case "bold", "bolder", "600", "700", "800", "900":
+                return boldCodeFont
+            case "italic", "oblique":
+                return italicCodeFont
+            default:
+                return codeFont
         }
     }
     
-    fileprivate func attributeForCSSKey(_ key: String) -> NSAttributedStringKey
+    private func attributeForCSSKey(key: String) -> String
     {
         switch key {
         case "color":
-            return .foregroundColor
+            return NSForegroundColorAttributeName
         case "font-weight":
-            return .font
+            return NSFontAttributeName
         case "font-style":
-            return .font
+            return NSFontAttributeName
         case "background-color":
-            return .backgroundColor
+            return NSBackgroundColorAttributeName
         default:
-            return .font
+            return NSFontAttributeName
         }
     }
     
-    fileprivate func colorWithHexString (_ hex:String) -> RPColor
+    private func colorWithHexString (hex:String) -> RPColor
     {
-        
-        var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
         
         if (cString.hasPrefix("#"))
         {
-            cString = (cString as NSString).substring(from: 1)
+            cString = (cString as NSString).substringFromIndex(1)
         }
         else
         {
@@ -317,49 +304,48 @@ open class Theme {
             case "blue":
                 return RPColor(red: 0, green: 0, blue: 1, alpha: 1)
             default:
-                return RPColor.gray
+                return RPColor.grayColor()
             }
         }
         
-        if (cString.count != 6 && cString.count != 3 )
+        if (cString.characters.count != 6 && cString.characters.count != 3 )
         {
-            return RPColor.gray
+            return RPColor.grayColor()
         }
         
         
         var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
         var divisor : CGFloat
         
-        if (cString.count == 6 )
+        if (cString.characters.count == 6 )
         {
+        
+            let rString = (cString as NSString).substringToIndex(2)
+            let gString = ((cString as NSString).substringFromIndex(2) as NSString).substringToIndex(2)
+            let bString = ((cString as NSString).substringFromIndex(4) as NSString).substringToIndex(2)
             
-            let rString = (cString as NSString).substring(to: 2)
-            let gString = ((cString as NSString).substring(from: 2) as NSString).substring(to: 2)
-            let bString = ((cString as NSString).substring(from: 4) as NSString).substring(to: 2)
-            
-            Scanner(string: rString).scanHexInt32(&r)
-            Scanner(string: gString).scanHexInt32(&g)
-            Scanner(string: bString).scanHexInt32(&b)
+            NSScanner(string: rString).scanHexInt(&r)
+            NSScanner(string: gString).scanHexInt(&g)
+            NSScanner(string: bString).scanHexInt(&b)
             
             divisor = 255.0
             
         }else
         {
-            let rString = (cString as NSString).substring(to: 1)
-            let gString = ((cString as NSString).substring(from: 1) as NSString).substring(to: 1)
-            let bString = ((cString as NSString).substring(from: 2) as NSString).substring(to: 1)
+            let rString = (cString as NSString).substringToIndex(1)
+            let gString = ((cString as NSString).substringFromIndex(1) as NSString).substringToIndex(1)
+            let bString = ((cString as NSString).substringFromIndex(2) as NSString).substringToIndex(1)
             
-            Scanner(string: rString).scanHexInt32(&r)
-            Scanner(string: gString).scanHexInt32(&g)
-            Scanner(string: bString).scanHexInt32(&b)
+            NSScanner(string: rString).scanHexInt(&r)
+            NSScanner(string: gString).scanHexInt(&g)
+            NSScanner(string: bString).scanHexInt(&b)
             
             divisor = 15.0
         }
         
-        return RPColor(red: CGFloat(r) / divisor, green: CGFloat(g) / divisor, blue: CGFloat(b) / divisor, alpha: CGFloat(1))
+        return RPColor(red: CGFloat(r) / divisor, green: CGFloat(g) / divisor, blue: CGFloat(b) / divisor, alpha: CGFloat(1))        
         
     }
     
-    
-}
 
+}

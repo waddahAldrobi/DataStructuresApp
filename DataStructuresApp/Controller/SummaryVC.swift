@@ -17,11 +17,13 @@ class SummaryVC: UIViewController, WKNavigationDelegate{
         insertCSSString(into: webView) // 1
     }
     
-    func insertCSSString(into webView: WKWebView) {
-        let cssString = "body{color:#000;background:ffffff;font-family:American Typewriter}h1{color:#19BCFF;font-family:American Typewriter;font-size:200%}ul{font-size:3vw}p{font-size:3vw}"
-        let jsString = "var style = document.createElement('style'); style.innerHTML = '\(cssString)'; document.head.appendChild(style);"
-        summaryWebView.evaluateJavaScript(jsString, completionHandler: nil)
-    }
+    
+    
+//    func insertCSSString(into webView: WKWebView) {
+//        let cssString = "body{color:#000;background:ffffff;font-family:American Typewriter}h1{color:#19BCFF;font-family:American Typewriter;font-size:200%}ul{font-size:3vw}p{font-size:3vw}"
+//        let jsString = "var style = document.createElement('style'); style.innerHTML = '\(cssString)'; document.head.appendChild(style);"
+//        summaryWebView.evaluateJavaScript(jsString, completionHandler: nil)
+//    }
     
     override func viewDidLoad() {
         //This makes the title not flash DO NOT remove, should only be in default Tab

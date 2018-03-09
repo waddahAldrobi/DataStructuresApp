@@ -8,6 +8,5 @@ target 'DataStructuresApp' do
   use_frameworks!
 
   # Pods for DataStructuresApp
-	pod 'Highlightr', :path => '../'
 
 end
