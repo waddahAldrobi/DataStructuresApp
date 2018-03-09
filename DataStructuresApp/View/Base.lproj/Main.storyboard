@@ -583,26 +583,22 @@ hello</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCF-EZ-Ko2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVs-7Z-IgF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fCF-EZ-Ko2" firstAttribute="top" secondItem="HZh-yG-CaQ" secondAttribute="bottom" id="Hzy-xW-3QZ"/>
-                            <constraint firstAttribute="bottom" secondItem="fCF-EZ-Ko2" secondAttribute="bottom" id="ZN9-Fa-rtP"/>
-                            <constraint firstItem="fCF-EZ-Ko2" firstAttribute="leading" secondItem="t9b-Ti-cIw" secondAttribute="leading" id="mSq-YV-EEh"/>
-                            <constraint firstAttribute="trailing" secondItem="fCF-EZ-Ko2" secondAttribute="trailing" id="sy2-Bu-lRZ"/>
+                            <constraint firstItem="AVs-7Z-IgF" firstAttribute="top" secondItem="HZh-yG-CaQ" secondAttribute="bottom" id="2Aa-HM-9dA"/>
+                            <constraint firstAttribute="trailing" secondItem="AVs-7Z-IgF" secondAttribute="trailing" id="KZv-tv-dK0"/>
+                            <constraint firstItem="HnF-IQ-x8z" firstAttribute="top" secondItem="AVs-7Z-IgF" secondAttribute="bottom" id="OND-uf-atO"/>
+                            <constraint firstItem="AVs-7Z-IgF" firstAttribute="leading" secondItem="t9b-Ti-cIw" secondAttribute="leading" id="SXv-LD-OAG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Summary" id="Y0x-w8-hVb"/>
                     <connections>
-                        <outlet property="summaryWebView" destination="fCF-EZ-Ko2" id="WwS-K9-hIC"/>
+                        <outlet property="summaryWebView" destination="AVs-7Z-IgF" id="nRI-Ct-m1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1o-mM-Fj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
