@@ -17,6 +17,8 @@ class QuizVC: UIViewController {
         //textfield.text = "\(myIndex) \(mySecondIndex)"
         print("in quiz vc")
         print(subLessonData)
+        
+        
 
         
     }

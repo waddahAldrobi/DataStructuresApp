@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -402,7 +403,7 @@
                                     <segue destination="end-gs-PbW" kind="push" id="z1F-1t-X2e"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="An Analystics page for # correct" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-aw-0jc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="An Analytics page" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-aw-0jc">
                                 <rect key="frame" x="87" y="304" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
