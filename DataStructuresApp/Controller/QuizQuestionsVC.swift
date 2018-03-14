@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import Highlightr
 
 class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSource{
     var questionNumber = 0
     var questions = [Any]()
-
+    var highlightr = Highlightr()
+    let textStorage = CodeAttributedString()
+    
     var answers = ["0", "0", "0", "0"]
     var selectedAnswer = [Int]()
     var questionType = ""
@@ -22,6 +25,9 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var answer4: UIButton!
     @IBOutlet weak var question: UITextView!
     @IBOutlet weak var tableView: UITableView!
+    
+
+    
     @IBAction func checkAnswer(_ sender: UIButton) {
         if sender.tag != 5{
             selectedAnswer = [sender.tag]
@@ -67,7 +73,14 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.allowsMultipleSelection = true
         
         //change question
-        question.text = fullQuestion["Question"] as? String
+        textStorage.highlightr.setTheme(to: "color-brewer")
+        let questionText = fullQuestion["Question"] as? String
+        // You can omit the second parameter to use automatic language detection.
+        let highlightedCode = textStorage.highlightr.highlight(questionText!, as: "c++")
+        self.question.attributedText = highlightedCode
+        self.question.font = UIFont(name: "American Typewriter", size: 18)
+//        self.question.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
+
         
         if questionType == "ranking" {
             tableView.isEditing = true

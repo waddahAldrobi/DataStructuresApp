@@ -22,7 +22,6 @@ class VisualizationVC: UIViewController {
         secondScrollView.text = subLessonData["VisulizationCode"] as! String
 
         //Syntax Highlighting
-        
         textStorage.highlightr.setTheme(to: "solarized-dark")
         let code = subLessonData["VisulizationCode"] as! String
         // You can omit the second parameter to use automatic language detection.
