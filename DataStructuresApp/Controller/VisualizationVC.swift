@@ -2,13 +2,7 @@ import Foundation
 import UIKit
 import Highlightr
 
-class VisualizationVC: UIViewController {
-    var myIndex = 5
-    var mySecondIndex = 5
-    var subLessonData = [String : Any]()
-    
-    @IBOutlet weak var textfield: UITextView!
-    
+class VisualizationVC: UIViewController {    
     @IBOutlet weak var firstScrollView: UITextView!
     @IBOutlet weak var secondScrollView: UITextView!
     
@@ -16,9 +10,7 @@ class VisualizationVC: UIViewController {
     let textStorage = CodeAttributedString()
     
     override func viewDidLoad() {
-//        textfield.text = "\(myIndex) \(mySecondIndex)"
-        print("in visualization vc")
-        print(subLessonData)
+        let subLessonData = DataSingleton.shared.grabSpecific(tab: "Visualization") as! [String: Any]
         secondScrollView.text = subLessonData["VisulizationCode"] as! String
 
         //Syntax Highlighting

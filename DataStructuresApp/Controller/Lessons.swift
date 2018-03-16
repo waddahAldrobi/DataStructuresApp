@@ -8,17 +8,16 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class Lessons: UITableViewController {
     
-    var myIndex = 0
     var lessonNames = ["Pointers", "Linked Lists"]
-    var lessonData : [Any] = []
     
     // MARK: - Table view data source
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //load data from json
+        print(DataSingleton.shared.data)
         // Makes the text of back button "Back" for the NEXT VC
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
@@ -32,59 +31,20 @@ class TableViewController: UITableViewController {
         return lessonNames.count
     }
     
-    // Same as before
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TopicCell
-        
         cell.subAppTitle.text = lessonNames[indexPath.item]
         cell.subAppIcon.image = UIImage(named: lessonNames[indexPath.item])
-        //cell.textLabel?.text = subApp[indexPath.row]
-        
         return cell
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let lessonOptionsVC = segue.destination as! LessonOptions // This to indicate that these are
-        lessonOptionsVC.myIndex = myIndex
-        lessonOptionsVC.lessonData = lessonData
-        
-        
-    }
-    
     
     
     // Listens to the tap, that segue is necessary for index update
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        myIndex = indexPath.row
-        
-        
-        
-        // MARK: JSON Parsing
-        let path = Bundle.main.path(forResource: "JSONData", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            guard let lessonDataArray = json as? [Any] else { print("error444"); return }
-        
-            //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
-    
-            guard let lessonData = lessonDataArray[myIndex] as? [Any] else { print("error888"); return }
-            
-            // for info on allowed characters in json: https://stackoverflow.com/questions/2392766/multiline-strings-in-json
-            
-            self.lessonData = lessonData
-            
-            print("-----------------------------")
-            
-        } catch {
-            print(error)
-        }
-        
-        
+        DataSingleton.shared.lessonIdentifier = indexPath.row
+        print(DataSingleton.shared.lessonIdentifier)
         performSegue(withIdentifier: "segue", sender: self)
     }
     

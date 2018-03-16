@@ -38,7 +38,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
     override func viewDidLoad() {
-       
+        questions = DataSingleton.shared.grabSpecific(tab: "Quiz") as! [Any]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,7 +60,8 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     override func viewWillAppear(_ animated: Bool) {
         print(questions)
-        selectedAnswer = [] // to ensure a second attempt at the question does not append selections\
+        
+        selectedAnswer = [] // to ensure a second attempt at the question does not append selections
         print("Questions Number: \(questionNumber)")
         let fullQuestion = questions[questionNumber] as! [String: Any]
         

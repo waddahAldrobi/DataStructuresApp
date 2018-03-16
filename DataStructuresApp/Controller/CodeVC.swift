@@ -7,7 +7,6 @@ let data = ["00000000000000","1"]
 class CodeVC: UIViewController {
     var myIndex = 5
     var mySecondIndex = 5
-    var subLessonData : [String:Any] = [:]
     var cellCode : [Any] = []
     var cellRun : [Any] = []
     var cellDesc : [Any] = []
@@ -22,7 +21,7 @@ class CodeVC: UIViewController {
     override func viewDidLoad() {
         tableViewCode.estimatedRowHeight = tableViewCode.rowHeight
         tableViewCode.estimatedRowHeight = UITableViewAutomaticDimension
-        
+        let subLessonData = DataSingleton.shared.grabSpecific(tab: "Code") as! [String : Any]
         //Parse of JSON
         print("in code vc")
         cellCode = subLessonData["CellCode"] as! [Any]

@@ -2,10 +2,6 @@ import Foundation
 import UIKit
 
 class QuizVC: UIViewController {
-    var myIndex = 5
-    var mySecondIndex = 5
-    var subLessonData = [Any]()
-    
     //    let highlightr = Highlightr()
     //    highlightr.setTheme(to: "paraiso-dark")
     //    let code = "let a = 1"
@@ -14,13 +10,7 @@ class QuizVC: UIViewController {
     
     
     override func viewDidLoad() {
-        //textfield.text = "\(myIndex) \(mySecondIndex)"
-        print("in quiz vc")
-        print(subLessonData)
-        
-        
-
-        
+ 
     }
     
     // Controls orientation
@@ -44,9 +34,8 @@ class QuizVC: UIViewController {
 //    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC4 = segue.destination as! QuizQuestionsVC
-        destVC4.questions = subLessonData
-        destVC4.questionNumber = 0
+        let destVC = segue.destination as! QuizQuestionsVC
+        destVC.questionNumber = 0
     }
     
     
