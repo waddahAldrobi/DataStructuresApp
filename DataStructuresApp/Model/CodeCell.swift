@@ -19,4 +19,5 @@ class CodeCell : UITableViewCell, UITableViewDelegate{
     
     @IBOutlet weak var tapLabel: UITextView!
     
+    @IBOutlet weak var tapLabelBottomConstraint: NSLayoutConstraint!
 }

@@ -4,7 +4,7 @@ import Highlightr
 
 let data = ["00000000000000","1"]
 
-class CodeVC: UIViewController {
+class CodeVC: UIViewController{
     var myIndex = 5
     var mySecondIndex = 5
     var cellCode : [Any] = []
@@ -14,9 +14,9 @@ class CodeVC: UIViewController {
     var highlightr = Highlightr()
     let textStorage = CodeAttributedString()
     
+    //@IBOutlet weak var const: NSLayoutConstraint!
     
     @IBOutlet weak var tableViewCode: UITableView!
- 
     
     override func viewDidLoad() {
         tableViewCode.estimatedRowHeight = tableViewCode.rowHeight
@@ -91,9 +91,24 @@ extension CodeVC : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCode") as! CodeCell
         
         cell.code.text = cellCode[indexPath.row] as! String
-        if (tap1[myIndex] == false && tap2[myIndex] == false){cell.tapLabel.text = "Tap to run"}
-        else if (tap1[myIndex] == true && tap2[myIndex] == false){cell.tapLabel.text = cellRun[indexPath.row] as! String}
-        else if (tap1[myIndex] == false && tap2[myIndex] == true){cell.tapLabel.text = cellDesc[indexPath.row] as! String}
+        if (tap1[myIndex] == false && tap2[myIndex] == false){cell.tapLabel.text = nil
+            cell.tapLabelBottomConstraint.constant = -33
+            cell.tapLabel.backgroundColor = UIColor.white
+            cell.tapLabel.textColor = UIColor.black
+            cell.tapLabel.font = UIFont.systemFont(ofSize: 14)
+        }
+        else if (tap1[myIndex] == true && tap2[myIndex] == false){
+            cell.tapLabel.text = cellRun[indexPath.row] as! String
+            cell.tapLabelBottomConstraint.constant = 0
+            cell.tapLabel.backgroundColor = UIColor.black
+            cell.tapLabel.textColor = UIColor.white
+            cell.tapLabel.font = UIFont(name: "Avenir Book", size: 14)
+            
+        }
+        else if (tap1[myIndex] == false && tap2[myIndex] == true){
+            cell.tapLabel.text = cellDesc[indexPath.row] as! String
+            cell.tapLabelBottomConstraint.constant = 0
+        }
         
         //Highlighting
         let highlightedCode = textStorage.highlightr.highlight(cell.code.text, as: "c++")

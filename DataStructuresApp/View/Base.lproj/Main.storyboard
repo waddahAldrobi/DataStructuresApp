@@ -648,41 +648,41 @@ hello</string>
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCode" id="Uhi-af-TN1" customClass="CodeCell" customModule="DataStructuresApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCode" rowHeight="33" id="Uhi-af-TN1" customClass="CodeCell" customModule="DataStructuresApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="33"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uhi-af-TN1" id="6vm-Vr-ZfQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="32.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="code" translatesAutoresizingMaskIntoConstraints="NO" id="bZJ-7e-WG3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="33"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="desc" translatesAutoresizingMaskIntoConstraints="NO" id="TK5-AN-MBV">
-                                                    <rect key="frame" x="207" y="0.0" width="207" height="44"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" editable="NO" text="desc" translatesAutoresizingMaskIntoConstraints="NO" id="TK5-AN-MBV">
+                                                    <rect key="frame" x="0.0" y="33" width="414" height="33"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="leading" secondItem="bZJ-7e-WG3" secondAttribute="trailing" id="6Jw-Cv-HaW"/>
-                                                <constraint firstItem="bZJ-7e-WG3" firstAttribute="leading" secondItem="6vm-Vr-ZfQ" secondAttribute="leading" id="8un-e9-cLn"/>
-                                                <constraint firstAttribute="bottom" secondItem="TK5-AN-MBV" secondAttribute="bottom" id="BKm-E9-N7E"/>
-                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="top" secondItem="6vm-Vr-ZfQ" secondAttribute="top" id="Foj-gn-cch"/>
-                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="leading" secondItem="bZJ-7e-WG3" secondAttribute="trailing" id="PvV-MC-56c"/>
-                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="width" secondItem="bZJ-7e-WG3" secondAttribute="width" id="X05-zq-IMc"/>
-                                                <constraint firstItem="bZJ-7e-WG3" firstAttribute="top" secondItem="6vm-Vr-ZfQ" secondAttribute="top" id="c8K-Sf-JBN"/>
-                                                <constraint firstAttribute="trailing" secondItem="TK5-AN-MBV" secondAttribute="trailing" id="cQ5-JG-GJp"/>
-                                                <constraint firstAttribute="bottom" secondItem="bZJ-7e-WG3" secondAttribute="bottom" id="xfj-Sl-Krf"/>
+                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="top" secondItem="bZJ-7e-WG3" secondAttribute="bottom" id="KGf-sM-tBS"/>
+                                                <constraint firstItem="bZJ-7e-WG3" firstAttribute="leading" secondItem="6vm-Vr-ZfQ" secondAttribute="leading" id="U3M-UG-il8"/>
+                                                <constraint firstAttribute="trailing" secondItem="bZJ-7e-WG3" secondAttribute="trailing" id="ZMX-hD-wz5"/>
+                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="leading" secondItem="6vm-Vr-ZfQ" secondAttribute="leading" id="cjH-yS-a6A"/>
+                                                <constraint firstItem="bZJ-7e-WG3" firstAttribute="top" secondItem="6vm-Vr-ZfQ" secondAttribute="top" id="kXE-bD-EMO"/>
+                                                <constraint firstAttribute="trailing" secondItem="TK5-AN-MBV" secondAttribute="trailing" id="two-P3-MfO"/>
+                                                <constraint firstAttribute="bottom" secondItem="TK5-AN-MBV" secondAttribute="bottom" constant="-33.329999999999998" id="vvc-ug-Nae"/>
+                                                <constraint firstItem="TK5-AN-MBV" firstAttribute="top" secondItem="bZJ-7e-WG3" secondAttribute="bottom" id="ws3-kI-qhN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="code" destination="bZJ-7e-WG3" id="uQd-ya-3j0"/>
                                             <outlet property="tapLabel" destination="TK5-AN-MBV" id="qLh-RD-FEU"/>
+                                            <outlet property="tapLabelBottomConstraint" destination="vvc-ug-Nae" id="sj8-aL-kOs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
