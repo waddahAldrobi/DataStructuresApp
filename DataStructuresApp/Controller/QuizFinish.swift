@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 class QuizFinish: UIViewController {
+    
+    @IBOutlet weak var finishButton: UIButton!
     var questions = [Any]()
     override func viewDidLoad() {
-       
+       finishButton.layer.cornerRadius = 5
     }
 //    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

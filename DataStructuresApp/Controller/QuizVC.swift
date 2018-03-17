@@ -8,9 +8,10 @@ class QuizVC: UIViewController {
     //    // You can omit the second parameter to use automatic language detection.
     //    let highlightedCode = highlightr.highlight(code, as: "swift")
     
+    @IBOutlet weak var beginButton: UIButton!
     
     override func viewDidLoad() {
- 
+        beginButton.layer.cornerRadius = 5
     }
     
     // Controls orientation

@@ -16,6 +16,7 @@ class QuizContinueVC : UIViewController {
     var totalQuestions = 0
     var answerCorrect = false
 
+    @IBOutlet weak var nextQuestion: UIButton!
     @IBOutlet weak var correctField: UITextField!
     @IBOutlet weak var correctAnswerField: UITextView!
     @IBAction func NextQuestion(_ sender: Any) {
@@ -28,7 +29,7 @@ class QuizContinueVC : UIViewController {
     }
     
     override func viewDidLoad() {
-        
+        nextQuestion.layer.cornerRadius = 5
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -95,38 +95,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="B9L-sC-axp">
-                                <rect key="frame" x="127" y="106" width="160" height="460"/>
+                                <rect key="frame" x="175" y="122" width="65" height="428"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="282-ai-uXn">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
-                                        <state key="normal" title="Tab 1" backgroundImage="blueIcon">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="32"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Tab 1">
                                             <color key="titleColor" red="0.96005684393316415" green="0.98643257769029702" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="wto-5X-WcY" kind="push" identifier="firstTabSegue" id="QFZ-z0-wci"/>
+                                            <segue destination="Wdg-pM-aXD" kind="push" identifier="firstTabSegue" id="exX-4b-Ysp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-6g-1kb">
-                                        <rect key="frame" x="0.0" y="140" width="160" height="40"/>
-                                        <state key="normal" title="Tab 2" backgroundImage="blueIcon">
+                                        <rect key="frame" x="0.0" y="132" width="65" height="32"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Tab 2">
                                             <color key="titleColor" red="0.97357790927922172" green="0.95829165650241788" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="wto-5X-WcY" kind="push" identifier="secondTabSegue" id="AgC-eY-Xyk"/>
+                                            <segue destination="Wdg-pM-aXD" kind="push" identifier="secondTabSegue" id="zzw-tz-Pok"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5I-Ap-euq">
-                                        <rect key="frame" x="0.0" y="280" width="160" height="40"/>
-                                        <state key="normal" title="Tab 3" backgroundImage="blueIcon">
+                                        <rect key="frame" x="0.0" y="264" width="65" height="32"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Tab 3">
                                             <color key="titleColor" red="0.98577313752046236" green="0.99603165480938227" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <segue destination="wto-5X-WcY" kind="push" identifier="thirdTabSegue" id="5Yi-Rc-Tcb"/>
+                                            <segue destination="Wdg-pM-aXD" kind="push" identifier="thirdTabSegue" id="N0v-ZT-TVE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaI-nj-0Xi" userLabel="QuizTab">
-                                        <rect key="frame" x="0.0" y="420" width="160" height="40"/>
-                                        <state key="normal" title="Quiz" backgroundImage="blueIcon"/>
+                                        <rect key="frame" x="0.0" y="396" width="65" height="32"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                        <state key="normal" title="Quiz"/>
                                         <connections>
                                             <segue destination="end-gs-PbW" kind="push" identifier="quizSegue" id="o2O-ev-i8U"/>
                                         </connections>
@@ -142,6 +150,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Lessons" id="kAN-eD-gdb"/>
                     <connections>
+                        <outlet property="quizButton" destination="gaI-nj-0Xi" id="aqP-VQ-SWt"/>
                         <outlet property="tab1" destination="282-ai-uXn" id="WA3-ni-lFo"/>
                         <outlet property="tab2" destination="23Z-6g-1kb" id="L7c-wW-DhR"/>
                         <outlet property="tab3" destination="Q5I-Ap-euq" id="RwJ-qy-EVZ"/>
@@ -149,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77.5" y="31.5"/>
+            <point key="canvasLocation" x="96" y="32"/>
         </scene>
         <!--Quiz-->
         <scene sceneID="9QS-gF-IGK">
@@ -164,9 +173,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv5-VI-q2E">
-                                <rect key="frame" x="127.66666666666669" y="309" width="160" height="54"/>
+                                <rect key="frame" x="124.66666666666669" y="299" width="165" height="74"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="46"/>
-                                <state key="normal" title="Begin" backgroundImage="blueIcon"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Begin"/>
                                 <connections>
                                     <segue destination="kVT-Fx-Y1E" kind="push" id="VSM-0T-foH"/>
                                 </connections>
@@ -180,6 +191,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Quiz" id="IZV-Qg-wqD"/>
                     <navigationItem key="navigationItem" id="3Xf-3P-Wrm"/>
+                    <connections>
+                        <outlet property="beginButton" destination="lv5-VI-q2E" id="JvY-Ec-dTJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyC-pD-wkA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -194,36 +208,40 @@
                         <viewControllerLayoutGuide type="bottom" id="YkK-fU-qQn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kK6-8F-VbQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="aH6-RH-7l7">
-                                <rect key="frame" x="40" y="250" width="334" height="400"/>
+                                <rect key="frame" x="40" y="270" width="334" height="400"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYe-hq-6sr">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="91.666666666666671"/>
-                                        <state key="normal" title="Button" backgroundImage="blueIcon"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="checkAnswer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="lFh-91-6fs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUm-3v-zA5">
                                         <rect key="frame" x="0.0" y="102.66666666666669" width="334" height="92"/>
-                                        <state key="normal" title="Button" backgroundImage="blueIcon"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="checkAnswer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="oQc-Jq-gpt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYb-nN-VIl">
-                                        <rect key="frame" x="0.0" y="205.66666666666663" width="334" height="91.666666666666686"/>
-                                        <state key="normal" title="Button" backgroundImage="blueIcon"/>
+                                        <rect key="frame" x="0.0" y="205.66666666666669" width="334" height="91.666666666666686"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="checkAnswer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="0i2-GX-s6g"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-L7-HYv">
                                         <rect key="frame" x="0.0" y="308.33333333333337" width="334" height="91.666666666666686"/>
-                                        <state key="normal" title="Button" backgroundImage="blueIcon"/>
+                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="checkAnswer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="hxJ-ih-JYp"/>
                                         </connections>
@@ -234,7 +252,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="4" rowHeight="74" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PKZ-sh-xbC">
-                                <rect key="frame" x="20" y="250" width="374" height="400"/>
+                                <rect key="frame" x="20" y="270" width="374" height="400"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="Vjc-ga-zhY"/>
@@ -268,7 +286,7 @@
                                 </prototypes>
                             </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z2a-27-tjp">
-                                <rect key="frame" x="30" y="20" width="354" height="180"/>
+                                <rect key="frame" x="30" y="40" width="354" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="Vpz-zb-kH7"/>
@@ -279,12 +297,13 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX0-4e-I7L">
-                                <rect key="frame" x="224" y="607" width="160" height="40"/>
+                                <rect key="frame" x="224" y="671" width="160" height="40"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CBc-wb-gae"/>
                                     <constraint firstAttribute="width" constant="160" id="eCq-GT-Vin"/>
                                 </constraints>
-                                <state key="normal" title="Check Answer" backgroundImage="blueIcon"/>
+                                <state key="normal" title="Check Answer"/>
                                 <connections>
                                     <action selector="checkAnswer:" destination="kVT-Fx-Y1E" eventType="touchUpInside" id="8DJ-A5-lDr"/>
                                 </connections>
@@ -311,7 +330,8 @@
                         <outlet property="answer2" destination="yUm-3v-zA5" id="4Db-aI-MdC"/>
                         <outlet property="answer3" destination="eYb-nN-VIl" id="0Ix-AZ-ScE"/>
                         <outlet property="answer4" destination="MHc-L7-HYv" id="Xdh-P7-qaZ"/>
-                        <outlet property="checkAnswer" destination="fX0-4e-I7L" id="H39-mB-GRv"/>
+                        <outlet property="checkAnswer" destination="fX0-4e-I7L" id="Nyl-he-rzC"/>
+                        <outlet property="checkAnswerButton" destination="fX0-4e-I7L" id="lVq-vL-kew"/>
                         <outlet property="question" destination="z2a-27-tjp" id="Nnf-YV-ydl"/>
                         <outlet property="tableView" destination="PKZ-sh-xbC" id="X1W-oE-lGO"/>
                         <segue destination="SdA-qX-pgU" kind="push" identifier="quizContinue" id="7Z3-6t-iGN"/>
@@ -330,18 +350,23 @@
                         <viewControllerLayoutGuide type="bottom" id="ZjN-ZN-siP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kJn-hG-8SE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvb-NY-6nk">
-                                <rect key="frame" x="224" y="607" width="160" height="40"/>
-                                <state key="normal" title="Next Question" backgroundImage="blueIcon"/>
+                                <rect key="frame" x="224" y="671" width="160" height="40"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="QzS-mB-ctv"/>
+                                    <constraint firstAttribute="height" constant="40" id="fIu-xE-8MP"/>
+                                </constraints>
+                                <state key="normal" title="Next Question"/>
                                 <connections>
                                     <action selector="NextQuestion:" destination="SdA-qX-pgU" eventType="touchUpInside" id="zHJ-Tq-LkA"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-tI-l3M">
-                                <rect key="frame" x="30" y="203.66666666666669" width="354" height="65"/>
+                                <rect key="frame" x="30" y="235.66666666666663" width="354" height="65"/>
                                 <subviews>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Correct!" textAlignment="center" minimumFontSize="56" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-p7-olJ">
                                         <rect key="frame" x="61.666666666666686" y="0.0" width="231" height="65"/>
@@ -351,7 +376,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="correct answer goes here" translatesAutoresizingMaskIntoConstraints="NO" id="hRl-L6-g4w">
-                                        <rect key="frame" x="0.0" y="-267.66666666666669" width="354" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="-235.66666666666666" width="354" height="0.0"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" red="0.98577313749999995" green="0.9960316548" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -379,6 +404,7 @@
                     <connections>
                         <outlet property="correctAnswerField" destination="hRl-L6-g4w" id="wCB-HY-a8P"/>
                         <outlet property="correctField" destination="FEo-p7-olJ" id="gEj-JI-5Fp"/>
+                        <outlet property="nextQuestion" destination="cvb-NY-6nk" id="xF2-Bz-dMy"/>
                         <segue destination="6U7-HZ-LUy" kind="push" identifier="quizFinish" id="SfZ-YD-JSv"/>
                         <segue destination="kVT-Fx-Y1E" kind="push" identifier="quizContinue" id="jAM-YQ-vUc"/>
                     </connections>
@@ -396,22 +422,23 @@
                         <viewControllerLayoutGuide type="bottom" id="ccn-0o-mUa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LYN-tv-UzM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1un-UV-9Km">
-                                <rect key="frame" x="234" y="612" width="160" height="40"/>
+                                <rect key="frame" x="234" y="676" width="160" height="40"/>
+                                <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="CBz-jz-Wkc"/>
                                     <constraint firstAttribute="height" constant="40" id="k63-Cs-9EI"/>
                                 </constraints>
-                                <state key="normal" title="Finish" backgroundImage="blueIcon"/>
+                                <state key="normal" title="Finish"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="push" id="WTP-sV-Gbf"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="An Analytics page" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-aw-0jc">
-                                <rect key="frame" x="87" y="272" width="240" height="128"/>
+                                <rect key="frame" x="87" y="304" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="RGL-oR-Gv2"/>
@@ -432,6 +459,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vde-Z3-ISa"/>
+                    <connections>
+                        <outlet property="finishButton" destination="1un-UV-9Km" id="TdW-JL-2Xs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuN-bb-gLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,24 +643,24 @@ hello</string>
             <point key="canvasLocation" x="518" y="-1034"/>
         </scene>
         <!--Tab Bar Controller-->
-        <scene sceneID="Dhm-KE-uPd">
+        <scene sceneID="C3A-zT-oD3">
             <objects>
-                <tabBarController id="wto-5X-WcY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="xhO-cF-Q20"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qpb-qN-HIc">
+                <tabBarController id="Wdg-pM-aXD" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="noM-1z-5PI"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DE0-oe-g24">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="eG8-cl-OCT" kind="relationship" relationship="viewControllers" id="CwD-B0-n4r"/>
-                        <segue destination="QmG-dk-JYH" kind="relationship" relationship="viewControllers" id="P7t-cF-TlO"/>
-                        <segue destination="THX-KV-61p" kind="relationship" relationship="viewControllers" id="Nb3-ny-hki"/>
+                        <segue destination="eG8-cl-OCT" kind="relationship" relationship="viewControllers" id="k1S-DY-dry"/>
+                        <segue destination="QmG-dk-JYH" kind="relationship" relationship="viewControllers" id="xrm-uX-ewO"/>
+                        <segue destination="THX-KV-61p" kind="relationship" relationship="viewControllers" id="uwo-q7-CeB"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Un2-4b-0gY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6V-kQ-YUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642.5" y="31.999999999999996"/>
+            <point key="canvasLocation" x="698" y="31"/>
         </scene>
         <!--Code-->
         <scene sceneID="uHC-Fq-Ic8">
@@ -732,12 +762,9 @@ hello</string>
             <point key="canvasLocation" x="-1165.625" y="32.479999999999997"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="blueIcon" width="160" height="40"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Yi-Rc-Tcb"/>
-        <segue reference="VSM-0T-foH"/>
+        <segue reference="zzw-tz-Pok"/>
+        <segue reference="jAM-YQ-vUc"/>
         <segue reference="i1V-TB-Vzf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

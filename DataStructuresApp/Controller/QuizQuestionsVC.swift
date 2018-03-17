@@ -25,6 +25,7 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var answer4: UIButton!
     @IBOutlet weak var question: UITextView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var checkAnswerButton: UIButton!
     
 
     
@@ -39,6 +40,11 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         questions = DataSingleton.shared.grabSpecific(tab: "Quiz") as! [Any]
+        checkAnswerButton.layer.cornerRadius = 5
+        answer1.layer.cornerRadius = 5
+        answer2.layer.cornerRadius = 5
+        answer3.layer.cornerRadius = 5
+        answer4.layer.cornerRadius = 5
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

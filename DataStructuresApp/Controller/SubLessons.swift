@@ -20,6 +20,7 @@ class SubLessons: UIViewController {
     @IBOutlet weak var tab1: UIButton!
     @IBOutlet weak var tab2: UIButton!
     @IBOutlet weak var tab3: UIButton!
+    @IBOutlet weak var quizButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -30,8 +31,12 @@ class SubLessons: UIViewController {
     
         // These will change the buttons
         tab1.setTitle(tab1arr[DataSingleton.shared.lessonIdentifier], for: .normal)
+        tab1.layer.cornerRadius = 5
         tab2.setTitle(tab2arr[DataSingleton.shared.lessonIdentifier], for: .normal)
+        tab2.layer.cornerRadius = 5
         tab3.setTitle(tab3arr[DataSingleton.shared.lessonIdentifier], for: .normal)
+        tab3.layer.cornerRadius = 5
+        quizButton.layer.cornerRadius = 5
         //tab3.isEnabled = false
     }
 
