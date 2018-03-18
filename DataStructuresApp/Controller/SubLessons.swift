@@ -25,7 +25,15 @@ class SubLessons: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationItem.hidesBackButton = true
+//        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(back(_:)))
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SubLessons.back(sender:)))
+        
+        
+//        UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: Selector(SubLessons.back(<#T##SubLessons#>)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+        
         // Makes the text of back button "Back" for the NEXT VC
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     
@@ -45,6 +53,13 @@ class SubLessons: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func back(sender: UIBarButtonItem) {
+        // Perform your custom actions
+        // ...
+        // Go back to the previous ViewController
+//        _ = navigationController?.popViewController(animated: true)
+        _ = navigationController?.popToRootViewController(animated: true)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "firstTabSegue") {
             DataSingleton.shared.sublessonIdentifier = 0
@@ -56,51 +71,6 @@ class SubLessons: UIViewController {
             DataSingleton.shared.sublessonIdentifier = 3
         }
     }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        print("Hit Here")
-//        if !(segue.identifier == "quizSegue") {
-//        let tabCtrl = segue.destination as! UITabBarController // This to indicate that these are
-//
-//            // sets index depending on the topic chosen
-//            let destVC1 = tabCtrl.viewControllers![0] as! SummaryVC
-//            destVC1.myIndex = myIndex
-//
-//            let destVC2 = tabCtrl.viewControllers![1] as! VisualizationVC
-//            destVC2.myIndex = myIndex
-//
-//            let destVC3 = tabCtrl.viewControllers![2] as! CodeVC
-//            destVC3.myIndex = myIndex
-//
-//            if (segue.identifier == "firstTabSegue") {
-//                guard let subLessonData = lessonData[0] as? [String : Any] else { print("error888"); return }
-//                destVC1.subLessonData = (subLessonData["Summary"] as? String)!
-//                destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
-//                destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
-//            } else if (segue.identifier == "secondTabSegue") {
-//                guard let subLessonData = lessonData[1] as? [String : Any] else { print("error888"); return }
-//                destVC1.subLessonData = (subLessonData["Summary"] as? String)!
-//                destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
-//                destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
-//            } else if (segue.identifier == "thirdTabSegue") {
-//                guard let subLessonData = lessonData[2] as? [String : Any] else { print("error888"); return }
-//                destVC1.subLessonData = (subLessonData["Summary"] as? String)!
-//                destVC2.subLessonData = (subLessonData["Visualization"] as? [String: Any])!
-//                destVC3.subLessonData = (subLessonData["Code"] as? [String:Any])!
-//            }
-//        }
-//
-//
-//            //sets second index depending on button pressed
-//            if (segue.identifier == "quizSegue") {
-//                guard let subLessonData = lessonData[3] as? [String : Any] else { print("error888"); return }
-//                let destVC = segue.destination as! QuizVC
-//                destVC.subLessonData = (subLessonData["Quiz"] as? [Any])!
-//
-//            }
-//
-//        }
-    
     
     // Controls orientation 
     override func viewDidAppear(_ animated: Bool) {
