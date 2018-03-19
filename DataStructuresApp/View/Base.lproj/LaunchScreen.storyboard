@@ -23,30 +23,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bYH-DT-oxX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="mNe-Iq-80P">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Data Structures" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vdn-Nd-QP3">
-                                        <rect key="frame" x="31" y="382" width="313" height="48"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="38"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.57254901960000004" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="vdn-Nd-QP3" firstAttribute="centerY" secondItem="bYH-DT-oxX" secondAttribute="centerY" id="Bk5-N7-JeW"/>
-                                    <constraint firstItem="vdn-Nd-QP3" firstAttribute="centerX" secondItem="bYH-DT-oxX" secondAttribute="centerX" id="jS0-ds-AEW"/>
-                                </constraints>
-                            </view>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Data Structures" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAf-Mc-e7F">
+                                <rect key="frame" x="15.666666666666657" y="379.66666666666669" width="344" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="42"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bYH-DT-oxX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="89S-Dj-vjk"/>
-                            <constraint firstItem="bYH-DT-oxX" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="8Ii-ib-66K"/>
-                            <constraint firstAttribute="bottom" secondItem="bYH-DT-oxX" secondAttribute="bottom" id="sXp-G4-zaF"/>
-                            <constraint firstItem="bYH-DT-oxX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zSz-b3-b1H"/>
+                            <constraint firstItem="iAf-Mc-e7F" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1zT-F8-OGS"/>
+                            <constraint firstItem="mNe-Iq-80P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I9L-aH-b9s"/>
+                            <constraint firstItem="mNe-Iq-80P" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hhT-6f-gxB"/>
+                            <constraint firstItem="mNe-Iq-80P" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="pkg-4g-yOm"/>
+                            <constraint firstItem="iAf-Mc-e7F" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ryU-Nn-5HE"/>
+                            <constraint firstAttribute="bottom" secondItem="mNe-Iq-80P" secondAttribute="bottom" id="z7H-Zb-Nk2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -56,4 +51,7 @@
             <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Gradient" width="444" height="730"/>
+    </resources>
 </document>
