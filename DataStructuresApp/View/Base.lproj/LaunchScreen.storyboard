@@ -26,7 +26,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="mNe-Iq-80P">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Data Structures" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAf-Mc-e7F">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Data Structures" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAf-Mc-e7F">
                                 <rect key="frame" x="15.666666666666657" y="379.66666666666669" width="344" height="53"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,8 +37,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iAf-Mc-e7F" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1zT-F8-OGS"/>
+                            <constraint firstItem="iAf-Mc-e7F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="BWt-nl-1u4"/>
                             <constraint firstItem="mNe-Iq-80P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I9L-aH-b9s"/>
                             <constraint firstItem="mNe-Iq-80P" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hhT-6f-gxB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iAf-Mc-e7F" secondAttribute="trailing" constant="15" id="mIs-E9-DcV"/>
                             <constraint firstItem="mNe-Iq-80P" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="pkg-4g-yOm"/>
                             <constraint firstItem="iAf-Mc-e7F" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ryU-Nn-5HE"/>
                             <constraint firstAttribute="bottom" secondItem="mNe-Iq-80P" secondAttribute="bottom" id="z7H-Zb-Nk2"/>
