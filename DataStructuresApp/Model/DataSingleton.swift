@@ -12,8 +12,8 @@ class DataSingleton{
     
     static let shared = DataSingleton()
     
-    var lessonIdentifier = 42
-    var sublessonIdentifier = 42
+    var lessonIdentifier = 0
+    var sublessonIdentifier = 0
     var data: [Any] = []
     init(){
         print("initialized")

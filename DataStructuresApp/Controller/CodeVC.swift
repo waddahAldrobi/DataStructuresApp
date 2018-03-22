@@ -56,7 +56,7 @@ class CodeVC: UIViewController{
     
 }
 
-
+////////////// Must change the data.count !!!!!!!
 var tap1 = Array(repeating: false, count: data.count)
 var tap2 = Array(repeating: false, count: data.count)
 

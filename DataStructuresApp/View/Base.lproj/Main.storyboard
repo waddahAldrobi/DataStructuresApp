@@ -94,72 +94,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="B9L-sC-axp">
-                                <rect key="frame" x="178.66666666666666" y="132" width="57" height="408"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="282-ai-uXn">
-                                        <rect key="frame" x="0.0" y="0.0" width="57" height="27"/>
-                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                        <state key="normal" title="Tab 1">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W9Z-DQ-k83">
+                                <rect key="frame" x="76" y="20" width="273" height="164"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sublessonsCell" id="8MD-2A-gBC" customClass="SubLessonsCell" customModule="DataStructuresApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="273" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8MD-2A-gBC" id="qe4-I7-jf3">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8I-xU-cFn">
+                                                    <rect key="frame" x="0.0" y="12" width="245" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Wdg-pM-aXD" kind="push" identifier="firstTabSegue" id="exX-4b-Ysp"/>
+                                            <outlet property="subLessonTitle" destination="T8I-xU-cFn" id="kUy-JQ-NUT"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-6g-1kb">
-                                        <rect key="frame" x="0.0" y="127" width="57" height="27"/>
-                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                        <state key="normal" title="Tab 2">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Wdg-pM-aXD" kind="push" identifier="secondTabSegue" id="zzw-tz-Pok"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5I-Ap-euq">
-                                        <rect key="frame" x="0.0" y="254" width="57" height="27"/>
-                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                        <state key="normal" title="Tab 3">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Wdg-pM-aXD" kind="push" identifier="thirdTabSegue" id="N0v-ZT-TVE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaI-nj-0Xi" userLabel="QuizTab">
-                                        <rect key="frame" x="0.0" y="381" width="57" height="27"/>
-                                        <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="14"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                        <state key="normal" title="Quiz">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="end-gs-PbW" kind="push" identifier="quizSegue" id="o2O-ev-i8U"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ysw-Xw-khL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4V8-hb-SyV"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="B9L-sC-axp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LbP-jg-unr"/>
-                            <constraint firstItem="B9L-sC-axp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xlt-to-bv3"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lessons" id="kAN-eD-gdb"/>
                     <connections>
-                        <outlet property="quizButton" destination="gaI-nj-0Xi" id="aqP-VQ-SWt"/>
-                        <outlet property="tab1" destination="282-ai-uXn" id="WA3-ni-lFo"/>
-                        <outlet property="tab2" destination="23Z-6g-1kb" id="L7c-wW-DhR"/>
-                        <outlet property="tab3" destination="Q5I-Ap-euq" id="RwJ-qy-EVZ"/>
+                        <segue destination="end-gs-PbW" kind="push" identifier="quizSegue" id="NXI-RQ-RFY"/>
+                        <segue destination="Wdg-pM-aXD" kind="push" identifier="lessonSegue" id="KDY-GR-sMg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -169,7 +141,7 @@
         <!--Quiz-->
         <scene sceneID="9QS-gF-IGK">
             <objects>
-                <viewController id="end-gs-PbW" customClass="QuizVC" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuizPage" id="end-gs-PbW" customClass="QuizVC" customModule="DataStructuresApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MT7-wi-doa"/>
                         <viewControllerLayoutGuide type="bottom" id="pGY-nL-f1s"/>
@@ -770,7 +742,6 @@ hello</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N0v-ZT-TVE"/>
         <segue reference="VSM-0T-foH"/>
         <segue reference="i1V-TB-Vzf"/>
     </inferredMetricsTieBreakers>
