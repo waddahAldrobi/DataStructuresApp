@@ -12,10 +12,7 @@ var tab2arr = ["Double Pointer" , "Singly Linked List/ Doubly Linked Lists"]
 var tab3arr = ["Memory Management" , "Circulaurly Linked Lists"]
 
 var pointers = ["Single Pointers", "Double Pointer", "Memory Management", "Quiz" ]
-
-// Add more buttons, if one has more than the other
-// Then, set in the array string to "", and use the isEnabled function
-// and set it to false
+var linked = ["Linked Lists vs Arrays", "Singly Linked List/ Doubly Linked Lists", "Circulaurly Linked Lists", "Quiz" ]
 
 class SubLessons: UIViewController {
     
@@ -71,6 +68,8 @@ extension SubLessons : UITableViewDelegate{
         else{
             performSegue(withIdentifier: "lessonSegue", sender: self)
         }
+        
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
         
     }
 }
