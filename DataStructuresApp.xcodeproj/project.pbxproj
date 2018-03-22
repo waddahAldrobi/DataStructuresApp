@@ -131,6 +131,7 @@
 				AAAF5D0C20372AC600BBEF40 /* QuizQuestionsVC.swift */,
 				AAAF5D0E20372AF400BBEF40 /* QuizContinueVC.swift */,
 				AA56167E204BC21F00AC1AFA /* QuizFinish.swift */,
+				D443CCF120632C8E00517B0D /* SubLessonsCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 				AAAF5D102037989B00BBEF40 /* AnswerCell.swift */,
 				AAC448172037E3C00040D4EB /* SubTopicCell.swift */,
 				D46C11E3203951AC00527BA7 /* CodeCell.swift */,
-				D443CCF120632C8E00517B0D /* SubLessonsCell.swift */,
 				AA597E85205B4036003A60FA /* DataSingleton.swift */,
 			);
 			path = Model;
