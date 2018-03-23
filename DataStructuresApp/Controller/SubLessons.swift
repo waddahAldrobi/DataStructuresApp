@@ -7,18 +7,16 @@
 //
 
 import UIKit
-var tab1arr = ["Single Pointers" , "Linked Lists vs Arrays"]
-var tab2arr = ["Double Pointer" , "Singly Linked List/ Doubly Linked Lists"]
-var tab3arr = ["Memory Management" , "Circulaurly Linked Lists"]
 
-var pointers = ["Single Pointers", "Double Pointer", "Memory Management", "Quiz" ]
-var linked = ["Linked Lists vs Arrays", "Singly Linked List/ Doubly Linked Lists", "Circulaurly Linked Lists", "Quiz" ]
+
+var subLessons = [""]
+
 
 class SubLessons: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        subLessons = DataSingleton.shared.subLessonTitles[DataSingleton.shared.lessonIdentifier]
         //Everything that has to do with the back button - to be removed or fixed
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SubLessons.back(sender:)))
@@ -76,12 +74,12 @@ extension SubLessons : UITableViewDelegate{
 
 extension SubLessons : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return subLessons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sublessonsCell") as! SubLessonsCell
-        cell.subLessonTitle.text = pointers[indexPath.row]
+        cell.subLessonTitle.text = subLessons[indexPath.row]
         return cell
     }
     

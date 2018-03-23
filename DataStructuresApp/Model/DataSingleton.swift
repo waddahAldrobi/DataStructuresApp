@@ -14,6 +14,8 @@ class DataSingleton{
     
     var lessonIdentifier = 0
     var sublessonIdentifier = 0
+    var lessonTitles = [String]()
+    var subLessonTitles = [[String]]()
     var data: [Any] = []
     init(){
         print("initialized")
@@ -23,14 +25,16 @@ class DataSingleton{
         
         do {
             let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            guard let lessonDataArray = json as? [Any] else { print("error444"); return }
-            
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]
+            guard let lessonDataArray = json!["Content"] as? [Any] else { print("error444"); return }
+            guard let lessonTitlesArray = json!["LessonTitles"] as? [Any] else { print("error444"); return }
+            guard let subLessonTitlesArray = json!["SubLessonTitles"] as? [Any] else { print("error444"); return }
             //watch this for more info on JSON https://www.youtube.com/watch?v=ih20QtEVCa0
             // for info on allowed characters in json: https://stackoverflow.com/questions/2392766/multiline-strings-in-json
         
             self.data = lessonDataArray
-            
+            self.lessonTitles = lessonTitlesArray as! [String]
+            self.subLessonTitles = subLessonTitlesArray as! [[String]]
         } catch {
             print(error)
         }

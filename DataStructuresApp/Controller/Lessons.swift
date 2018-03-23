@@ -10,7 +10,7 @@ import UIKit
 
 class Lessons: UITableViewController {
     
-    var lessonNames = ["Pointers", "Linked Lists"]
+    var lessonNames = [""]
     
     // MARK: - Table view data source
     
@@ -18,6 +18,7 @@ class Lessons: UITableViewController {
         super.viewDidLoad()
         //load data from json
         print(DataSingleton.shared.data)
+        lessonNames = DataSingleton.shared.lessonTitles
         // Makes the text of back button "Back" for the NEXT VC
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
