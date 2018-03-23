@@ -70,6 +70,7 @@ extension SubLessons : UITableViewDelegate{
         tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
         
     }
+    
 }
 
 extension SubLessons : UITableViewDataSource{
@@ -81,7 +82,7 @@ extension SubLessons : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "sublessonsCell") as! SubLessonsCell
         cell.subLessonTitle.text = subLessons[indexPath.row]
         
-        cell.layer.cornerRadius = cell.frame.height / 2
+//        cell.layer.cornerRadius = cell.frame.height / 2
         return cell
     }
     
