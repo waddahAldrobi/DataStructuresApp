@@ -60,7 +60,7 @@ extension SubLessons : UITableViewDelegate{
         print(indexPath.row)
         DataSingleton.shared.sublessonIdentifier = indexPath.row
         
-        if(indexPath.row == 3){
+        if(indexPath.row == subLessons.count - 1){
             performSegue(withIdentifier: "quizSegue", sender: self)
         }
         else{

@@ -33,7 +33,7 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
             let xCoordinate = view.frame.midX + view.frame.width * CGFloat(images.index(of: image)!)
             contentWidth += view.frame.width
             scrollView.addSubview(imageView)
-            imageView.frame = CGRect(x: xCoordinate - 50, y: (scrollView.frame.height / 2) - 50, width: 100, height: 100)
+            imageView.frame = CGRect(x: xCoordinate - 50, y: (scrollView.frame.height / 2) - 50, width:100, height: 100)
             pageControl.numberOfPages += 1
         }
         
