@@ -80,6 +80,8 @@ extension SubLessons : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sublessonsCell") as! SubLessonsCell
         cell.subLessonTitle.text = subLessons[indexPath.row]
+        
+        cell.layer.cornerRadius = cell.frame.height / 2
         return cell
     }
     
