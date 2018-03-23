@@ -9,9 +9,11 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
     var highlightr = Highlightr()
     let textStorage = CodeAttributedString()
     var contentWidth:CGFloat = 0.0
+    var images = [String]()
     
     override func viewDidLoad() {
         let subLessonData = DataSingleton.shared.grabSpecific(tab: "Visualization") as! [String: Any]
+        images = subLessonData["Images"] as! [String]
 //        secondScrollView.text = subLessonData["VisulizationCode"] as! String
 
         //Syntax Highlighting
@@ -23,14 +25,16 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
         
         
         //scrollview
+        pageControl.numberOfPages = 0
         scrollView.delegate = self
-        for image in 0...2 {
+        for image in images {
             let imageToDisplay = UIImage(named: "\(image).png")
             let imageView = UIImageView(image: imageToDisplay)
-            let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+            let xCoordinate = view.frame.midX + view.frame.width * CGFloat(images.index(of: image)!)
             contentWidth += view.frame.width
             scrollView.addSubview(imageView)
             imageView.frame = CGRect(x: xCoordinate - 50, y: (scrollView.frame.height / 2) - 50, width: 100, height: 100)
+            pageControl.numberOfPages += 1
         }
         
         scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.height-150)
