@@ -25,8 +25,8 @@ class SummaryVC: UIViewController, UIWebViewDelegate{
         super.viewDidAppear(animated)
         summaryWebView.isHidden = false
     // Or to rotate and lock
-        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
-        AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
+//        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
+//        AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
     
       //Sets title of tab
       self.tabBarController?.navigationItem.title = "Summary";
@@ -36,7 +36,7 @@ class SummaryVC: UIViewController, UIWebViewDelegate{
         super.viewWillDisappear(animated)
 
     // Don't forget to reset when view is being removed
-        AppUtility.lockOrientation(.portrait)
+//        AppUtility.lockOrientation(.portrait)
     }
 }
 

@@ -40,8 +40,8 @@ class CodeVC: UIViewController{
         
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
-        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
-        AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
+//        AppUtility.lockOrientation(.portrait , andRotateTo: .portraitUpsideDown)
+//        AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
         
         //Sets title of tab
          self.tabBarController?.navigationItem.title = "Code";
@@ -51,7 +51,7 @@ class CodeVC: UIViewController{
         super.viewWillDisappear(animated)
         
         // Don't forget to reset when view is being removed
-        AppUtility.lockOrientation(.portrait)
+//        AppUtility.lockOrientation(.portrait)
     }
     
 }
