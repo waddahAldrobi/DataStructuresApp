@@ -517,31 +517,16 @@
                         <viewControllerLayoutGuide type="top" id="HZh-yG-CaQ"/>
                         <viewControllerLayoutGuide type="bottom" id="HnF-IQ-x8z"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t9b-Ti-cIw">
+                    <view key="view" contentMode="scaleToFill" id="t9b-Ti-cIw" customClass="CTView" customModule="DataStructuresApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVs-7Z-IgF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="AVs-7Z-IgF" firstAttribute="top" secondItem="HZh-yG-CaQ" secondAttribute="bottom" id="2Aa-HM-9dA"/>
-                            <constraint firstAttribute="trailing" secondItem="AVs-7Z-IgF" secondAttribute="trailing" id="KZv-tv-dK0"/>
-                            <constraint firstItem="HnF-IQ-x8z" firstAttribute="top" secondItem="AVs-7Z-IgF" secondAttribute="bottom" id="OND-uf-atO"/>
-                            <constraint firstItem="AVs-7Z-IgF" firstAttribute="leading" secondItem="t9b-Ti-cIw" secondAttribute="leading" id="SXv-LD-OAG"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Summary" id="Y0x-w8-hVb"/>
-                    <connections>
-                        <outlet property="summaryWebView" destination="AVs-7Z-IgF" id="nRI-Ct-m1r"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1o-mM-Fj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="891" y="-1061"/>
+            <point key="canvasLocation" x="890.5" y="-1061"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="C3A-zT-oD3">
