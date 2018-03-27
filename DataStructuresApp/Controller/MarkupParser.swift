@@ -39,8 +39,7 @@ class MarkupParser: NSObject {
                 let tag = parts[1]
                 
                 if tag.hasPrefix("font") {
-                    let colorRegex = try NSRegularExpression(pattern: "(?<=color=\")\\w+",
-                                                             options: NSRegularExpression.Options(rawValue: 0))
+                    let colorRegex = try NSRegularExpression(pattern: "(?<=color=\")\\w+", options:NSRegularExpression.Options(rawValue: 0))
                     colorRegex.enumerateMatches(in: tag, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, tag.characters.count)) {(match, _, _) in
                         if let match = match,
                             let range = tag.range(from: match.range) {

@@ -1,8 +1,22 @@
 import UIKit
 
-class CTView: UIView {
-    
+class CTView: UIView{
 
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        self.contentSize = CGSize(width: 375, height: 1000) //self.frame.size
+//        self.isScrollEnabled = true
+//        self.isUserInteractionEnabled = true
+//        print ("scrollview initialized")
+//        
+//    }
+//    
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+    
+    
     // MARK: - Properties
     var attrString: NSAttributedString!
     
@@ -12,7 +26,6 @@ class CTView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-
         guard let context = UIGraphicsGetCurrentContext() else { return }
         // Flip the coordinate system
         context.textMatrix = .identity

@@ -112,7 +112,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.21361805740000001" green="0.47392962859999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.25882352939999997" green="0.57254901960000004" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="T8I-xU-cFn" secondAttribute="bottom" id="7mj-Ah-Hvd"/>
                                                 <constraint firstItem="T8I-xU-cFn" firstAttribute="leading" secondItem="qe4-I7-jf3" secondAttribute="leading" id="iff-VT-eO7"/>
@@ -508,12 +508,35 @@
                         <viewControllerLayoutGuide type="top" id="HZh-yG-CaQ"/>
                         <viewControllerLayoutGuide type="bottom" id="HnF-IQ-x8z"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t9b-Ti-cIw" customClass="CTView" customModule="DataStructuresApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="t9b-Ti-cIw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3Z-bj-kfQ" customClass="CTView" customModule="DataStructuresApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibf-Co-3vS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ibf-Co-3vS" firstAttribute="top" secondItem="HZh-yG-CaQ" secondAttribute="bottom" id="0aW-p9-RjB"/>
+                            <constraint firstItem="HnF-IQ-x8z" firstAttribute="top" secondItem="B3Z-bj-kfQ" secondAttribute="bottom" id="CwS-gN-7TA"/>
+                            <constraint firstItem="HnF-IQ-x8z" firstAttribute="top" secondItem="ibf-Co-3vS" secondAttribute="bottom" id="JP6-Ua-og4"/>
+                            <constraint firstItem="B3Z-bj-kfQ" firstAttribute="leading" secondItem="t9b-Ti-cIw" secondAttribute="leading" id="K3o-Op-xzL"/>
+                            <constraint firstAttribute="trailing" secondItem="ibf-Co-3vS" secondAttribute="trailing" id="O9N-1K-JPE"/>
+                            <constraint firstItem="B3Z-bj-kfQ" firstAttribute="top" secondItem="HZh-yG-CaQ" secondAttribute="bottom" id="YzB-0k-HTs"/>
+                            <constraint firstItem="ibf-Co-3vS" firstAttribute="leading" secondItem="t9b-Ti-cIw" secondAttribute="leading" id="enM-E3-gEw"/>
+                            <constraint firstAttribute="trailing" secondItem="B3Z-bj-kfQ" secondAttribute="trailing" id="qqE-s9-QiA"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Summary" id="Y0x-w8-hVb"/>
+                    <connections>
+                        <outlet property="scrollView" destination="ibf-Co-3vS" id="ZXH-qs-uzA"/>
+                        <outlet property="views" destination="B3Z-bj-kfQ" id="8wo-Wp-rPY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1o-mM-Fj4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -626,7 +649,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="QXK-N9-Uax">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.21416128498635781" green="0.48067403707175121" blue="0.75486082603401017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.22958664592839845" green="0.51529546978201857" blue="0.80923106715076143" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
