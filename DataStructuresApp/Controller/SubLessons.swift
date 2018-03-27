@@ -57,10 +57,14 @@ class SubLessons: UIViewController {
 
 extension SubLessons : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+<<<<<<< HEAD
         print(indexPath.row)
+=======
+        //Note that everything use here is indexPath.section NOT .count or .row (those will crash)
+        print(indexPath.section)
+>>>>>>> e897582d0d5046ffb92469dc24e284a604c53baf
         DataSingleton.shared.sublessonIdentifier = indexPath.section
         
-        if(indexPath.row == subLessons.count - 1){
             performSegue(withIdentifier: "quizSegue", sender: self)
         }
         else{
