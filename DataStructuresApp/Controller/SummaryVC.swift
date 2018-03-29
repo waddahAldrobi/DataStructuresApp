@@ -9,9 +9,6 @@ class SummaryVC: UIViewController{
     @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
-//        views.frame.size.height = 1000
-        scrollView.contentSize.height = 2000
-//        scrollView.size
         //This makes the title not flash DO NOT remove, should only be in default Tab
         self.tabBarController?.navigationItem.title = "Summary";
         let subLessonData = DataSingleton.shared.grabSpecific(tab: "Summary")
