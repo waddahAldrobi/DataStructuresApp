@@ -1,7 +1,7 @@
 {
     "LessonTitles" : ["Pointers", "Linked Lists"],
     
-    "SubLessonTitles": [["Single Pointers", "Double Pointers", "Memory Management", "Quiz"], ["Linked Lists vs Arrays", "Singly and Doubly L-Lists", "Circulaurly Linked Lists", "Quiz"]],
+    "SubLessonTitles": [["Single Pointers", "Double Pointers", "Memory Management", "Quiz"], ["Linked Lists vs Arrays", "Singly and Doubly Linked Lists", "Circulaurly Linked Lists", "Quiz"]],
     
     "Content":
     [
