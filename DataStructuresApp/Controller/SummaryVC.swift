@@ -9,7 +9,6 @@ class SummaryVC: UIViewController{
     @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
-        
         //This makes the title not flash DO NOT remove, should only be in default Tab
         self.tabBarController?.navigationItem.title = "Summary";
         let subLessonData = DataSingleton.shared.grabSpecific(tab: "Summary")
@@ -18,6 +17,7 @@ class SummaryVC: UIViewController{
         let parser = MarkupParser()
         parser.parseMarkup(text)
         (views)?.importAttrString(parser.attrString)
+<<<<<<< HEAD
         
 //        views.isHidden = true
 //        scrollView.contentSize = views.frame.size
@@ -27,15 +27,10 @@ class SummaryVC: UIViewController{
 //        scrollView.backgroundColor = UIColor.blue
 //        scrollView.isScrollEnabled = true
 //        scrollView.isUserInteractionEnabled = true
+=======
+>>>>>>> 1cc60b01766db9a6e45f55aa279ae76cd94b3086
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        views.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-        
-    }
-    
-    
    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.tabBarController?.navigationItem.title = "Summary";
