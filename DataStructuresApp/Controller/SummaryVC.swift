@@ -21,6 +21,7 @@ class SummaryVC: UIViewController{
         
 //        views.isHidden = true
 //        scrollView.contentSize = views.frame.size
+    // MARK - Error for waddah
 //        scrollView.addSubview(views)
 //        scrollView.contentSize = CGSize(width: 500, height: 900)
 //        scrollView.backgroundColor = UIColor.blue
