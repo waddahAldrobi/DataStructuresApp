@@ -17,18 +17,7 @@ class SummaryVC: UIViewController{
         let parser = MarkupParser()
         parser.parseMarkup(text)
         (views)?.importAttrString(parser.attrString)
-<<<<<<< HEAD
-        
-//        views.isHidden = true
-//        scrollView.contentSize = views.frame.size
-    // MARK - Error for waddah
-//        scrollView.addSubview(views)
-//        scrollView.contentSize = CGSize(width: 500, height: 900)
-//        scrollView.backgroundColor = UIColor.blue
-//        scrollView.isScrollEnabled = true
-//        scrollView.isUserInteractionEnabled = true
-=======
->>>>>>> 1cc60b01766db9a6e45f55aa279ae76cd94b3086
+
     }
 
    override func viewDidAppear(_ animated: Bool) {

@@ -2,14 +2,15 @@ import Foundation
 import UIKit
 import Highlightr
 
-let data = ["00000000000000","1"]
-
 class CodeVC: UIViewController{
     var myIndex = 5
     var mySecondIndex = 5
     var cellCode : [Any] = []
     var cellRun : [Any] = []
     var cellDesc : [Any] = []
+    var cellCount = 0
+    var tap1 = Array(repeating: false, count: 1)
+    var tap2 = Array(repeating: false, count: 1)
     
     var highlightr = Highlightr()
     let textStorage = CodeAttributedString()
@@ -27,6 +28,11 @@ class CodeVC: UIViewController{
         cellCode = subLessonData["CellCode"] as! [Any]
         cellRun = subLessonData["CellRun"] as! [Any]
         cellDesc = subLessonData["CellDesc"] as! [Any]
+        
+        ////////////// Must change the data.count !!!!!!!
+        cellCount = cellCode.count
+        tap1 = Array(repeating: false, count: cellCount)
+        tap2 = Array(repeating: false, count: cellCount)
         
         //Syntax Highlighting
         textStorage.highlightr.setTheme(to: "solarized-dark")
@@ -56,9 +62,8 @@ class CodeVC: UIViewController{
     
 }
 
-////////////// Must change the data.count !!!!!!!
-var tap1 = Array(repeating: false, count: data.count)
-var tap2 = Array(repeating: false, count: data.count)
+
+
 
 //MARK: -Extension Delegate
 extension CodeVC : UITableViewDelegate{
@@ -93,9 +98,9 @@ extension CodeVC : UITableViewDataSource{
         cell.code.text = cellCode[indexPath.row] as! String
         if (tap1[myIndex] == false && tap2[myIndex] == false){cell.tapLabel.text = nil
             cell.tapLabelBottomConstraint.constant = -33
-            cell.tapLabel.backgroundColor = UIColor.white
-            cell.tapLabel.textColor = UIColor.black
-            cell.tapLabel.font = UIFont.systemFont(ofSize: 14)
+            cell.tapLabel.backgroundColor = UIColor(red: 13/255, green: 42/255, blue: 53/255, alpha: 1)
+            cell.tapLabel.textColor = UIColor(red: 119/255, green: 135/255, blue: 138/255, alpha: 1)
+            cell.tapLabel.font = UIFont(name: "American Typewriter", size: 14)
         }
         else if (tap1[myIndex] == true && tap2[myIndex] == false){
             cell.tapLabel.text = cellRun[indexPath.row] as! String
