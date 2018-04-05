@@ -19,7 +19,7 @@ class SubLessons: UIViewController {
         subLessons = DataSingleton.shared.subLessonTitles[DataSingleton.shared.lessonIdentifier]
         //Everything that has to do with the back button - to be removed or fixed
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SubLessons.back(sender:)))
+        let newBackButton = UIBarButtonItem(title: "Home", style: UIBarButtonItemStyle.plain, target: self, action: #selector(SubLessons.back(sender:)))
         self.navigationItem.leftBarButtonItem = newBackButton
         
         // Makes the text of back button "Back" for the NEXT VC

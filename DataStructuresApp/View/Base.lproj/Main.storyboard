@@ -669,6 +669,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="NXI-RQ-RFY"/>
         <segue reference="VSM-0T-foH"/>
         <segue reference="WTP-sV-Gbf"/>
     </inferredMetricsTieBreakers>
