@@ -107,7 +107,8 @@ extension CodeVC : UITableViewDataSource{
         cell.code.text = cellCode[indexPath.row] as! String
         if (tap1[myIndex] == false && tap2[myIndex] == false){cell.tapLabel.text = nil
             // Hides the cells below them
-            cell.tapLabelBottomConstraint.constant = -33
+            // Change to -35 for optimization
+            cell.tapLabelBottomConstraint.constant = -35
         }
         
         else if (tap1[myIndex] == true && tap2[myIndex] == false){

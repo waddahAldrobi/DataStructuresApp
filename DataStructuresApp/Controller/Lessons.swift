@@ -17,7 +17,7 @@ class Lessons: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //load data from json
-        print(DataSingleton.shared.data)
+        //print(DataSingleton.shared.data)
         lessonNames = DataSingleton.shared.lessonTitles
         // Makes the text of back button "Back" for the NEXT VC
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
@@ -45,7 +45,7 @@ class Lessons: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         DataSingleton.shared.lessonIdentifier = indexPath.row
-        print(DataSingleton.shared.lessonIdentifier)
+        //print(DataSingleton.shared.lessonIdentifier)
         performSegue(withIdentifier: "segue", sender: self)
     }
     
