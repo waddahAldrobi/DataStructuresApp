@@ -16,7 +16,8 @@ class DataSingleton{
     var sublessonIdentifier = 0
     var lessonTitles = [String]()
     var subLessonTitles = [[String]]()
-    var data: [Any] = []
+    var data: [Any] = [] // all json data
+    var quizStartTime = 0.0 // time at start of quiz
     init(){
         print("initialized")
         // MARK: JSON Parsing

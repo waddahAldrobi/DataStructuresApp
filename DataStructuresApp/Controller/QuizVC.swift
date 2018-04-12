@@ -37,6 +37,13 @@ class QuizVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destVC = segue.destination as! QuizQuestionsVC
         destVC.questionNumber = 0
+        
+    
+        let hour = Calendar.current.component(.hour, from: Date())
+        let minutes = Calendar.current.component(.minute, from: Date())
+        
+        DataSingleton.shared.quizStartTime = Double(hour*60 + minutes)
+
     }
     
     
