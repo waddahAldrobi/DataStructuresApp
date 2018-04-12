@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 class QuizFinish: UIViewController {
     
+    @IBOutlet weak var numberCorrect: UITextView!
     @IBOutlet weak var timeField: UITextView!
     @IBOutlet weak var finishButton: UIButton!
     var questions = [Any]()
@@ -24,6 +25,7 @@ class QuizFinish: UIViewController {
         let minutesTaken = (totalTime - DataSingleton.shared.quizStartTime) - floor((totalTime - DataSingleton.shared.quizStartTime)/60)*60
         
         finishButton.layer.cornerRadius = 5
+        numberCorrect.text = "Number Correct: \(DataSingleton.shared.numberCorrect)"
         timeField.text = "Time Taken:\nHours: \(Int(hoursTaken)) Minutes:\(Int(minutesTaken))"
         
     }

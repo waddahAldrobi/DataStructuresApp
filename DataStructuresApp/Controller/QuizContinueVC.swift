@@ -53,9 +53,8 @@ class QuizContinueVC : UIViewController {
                     answerCorrect = true
                 }
         }
-//        self.view.backgroundColor = UIColor(red: 0.0/255, green: 255.0/255, blue: 128/255, alpha: 1)
-//        correctAnswerField.isHidden = true
-        //answer showing
+
+        //show correcr answer
         if !answerCorrect {
             //show correct answer
             self.view.backgroundColor = UIColor(red: 255.0/255, green: 26.0/255, blue: 26.0/255, alpha: 1)
@@ -66,6 +65,8 @@ class QuizContinueVC : UIViewController {
                 temp.append("-\(answers[i])\n")
             }
             correctAnswerField.text = temp
+        } else {
+            DataSingleton.shared.numberCorrect += 1
         }
         print(selectedAnswer)
     

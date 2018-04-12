@@ -453,6 +453,7 @@
                     <navigationItem key="navigationItem" id="Vde-Z3-ISa"/>
                     <connections>
                         <outlet property="finishButton" destination="1un-UV-9Km" id="TdW-JL-2Xs"/>
+                        <outlet property="numberCorrect" destination="gbg-aw-0jc" id="yW2-Ts-L1V"/>
                         <outlet property="timeField" destination="Caz-dY-3wC" id="0oq-DM-yNs"/>
                     </connections>
                 </viewController>

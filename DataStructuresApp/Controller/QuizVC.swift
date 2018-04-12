@@ -16,7 +16,10 @@ class QuizVC: UIViewController {
     
     // Controls orientation
     override func viewDidAppear(_ animated: Bool) {
+        
         super.viewDidAppear(animated)
+        
+        DataSingleton.shared.numberCorrect = 0
         
         //AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
