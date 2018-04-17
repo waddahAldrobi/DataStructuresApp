@@ -411,7 +411,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1un-UV-9Km">
                                 <rect key="frame" x="199" y="718" width="160" height="40"/>
-                                <color key="backgroundColor" red="0.25882352941176467" green="0.5725490196078431" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="CBz-jz-Wkc"/>
                                     <constraint firstAttribute="height" constant="40" id="k63-Cs-9EI"/>
@@ -421,39 +421,44 @@
                                     <segue destination="BYZ-38-t0r" kind="push" id="WTP-sV-Gbf"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="An Analytics page" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-aw-0jc">
-                                <rect key="frame" x="67.666666666666686" y="342" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Congrats!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-aw-0jc">
+                                <rect key="frame" x="36" y="104" width="303" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="RGL-oR-Gv2"/>
-                                    <constraint firstAttribute="width" constant="240" id="XYS-ow-KJh"/>
+                                    <constraint firstAttribute="height" constant="128" id="sZk-EA-isP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="48"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Caz-dY-3wC">
-                                <rect key="frame" x="67" y="505" width="241" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Caz-dY-3wC">
+                                <rect key="frame" x="16" y="272" width="343" height="211"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="afQ-TN-KOW"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.25882352939999997" green="0.57254901960000004" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ccn-0o-mUa" firstAttribute="top" secondItem="1un-UV-9Km" secondAttribute="bottom" constant="20" id="5r1-HD-2J5"/>
-                            <constraint firstItem="gbg-aw-0jc" firstAttribute="centerY" secondItem="LYN-tv-UzM" secondAttribute="centerY" id="MCF-nO-meb"/>
+                            <constraint firstItem="gbg-aw-0jc" firstAttribute="centerX" secondItem="LYN-tv-UzM" secondAttribute="centerX" id="Lpq-4f-evN"/>
                             <constraint firstItem="1un-UV-9Km" firstAttribute="trailing" secondItem="LYN-tv-UzM" secondAttribute="trailingMargin" id="QsF-4q-oBM"/>
-                            <constraint firstItem="gbg-aw-0jc" firstAttribute="centerY" secondItem="LYN-tv-UzM" secondAttribute="centerY" id="TxW-R3-thH"/>
-                            <constraint firstItem="gbg-aw-0jc" firstAttribute="centerX" secondItem="LYN-tv-UzM" secondAttribute="centerX" id="aHe-FJ-8mx"/>
-                            <constraint firstItem="gbg-aw-0jc" firstAttribute="centerX" secondItem="LYN-tv-UzM" secondAttribute="centerX" id="eIZ-3B-M0Y"/>
+                            <constraint firstItem="Caz-dY-3wC" firstAttribute="top" secondItem="gbg-aw-0jc" secondAttribute="bottom" constant="40" id="k26-ot-UFH"/>
+                            <constraint firstItem="Caz-dY-3wC" firstAttribute="trailing" secondItem="LYN-tv-UzM" secondAttribute="trailingMargin" id="kI5-gF-wPs"/>
+                            <constraint firstItem="gbg-aw-0jc" firstAttribute="leading" secondItem="LYN-tv-UzM" secondAttribute="leadingMargin" constant="20" id="mUA-ll-frs"/>
+                            <constraint firstItem="gbg-aw-0jc" firstAttribute="top" secondItem="Cb9-AR-HuC" secondAttribute="bottom" constant="60" id="mpe-EZ-cK8"/>
+                            <constraint firstItem="Caz-dY-3wC" firstAttribute="leading" secondItem="LYN-tv-UzM" secondAttribute="leadingMargin" id="t81-6D-TtK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gbg-aw-0jc" secondAttribute="trailing" constant="20" id="vwO-0v-QYS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vde-Z3-ISa"/>
                     <connections>
                         <outlet property="finishButton" destination="1un-UV-9Km" id="TdW-JL-2Xs"/>
-                        <outlet property="numberCorrect" destination="gbg-aw-0jc" id="yW2-Ts-L1V"/>
                         <outlet property="timeField" destination="Caz-dY-3wC" id="0oq-DM-yNs"/>
                     </connections>
                 </viewController>

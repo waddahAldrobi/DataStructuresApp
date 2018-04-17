@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 class QuizFinish: UIViewController {
-    
-    @IBOutlet weak var numberCorrect: UITextView!
+
     @IBOutlet weak var timeField: UITextView!
     @IBOutlet weak var finishButton: UIButton!
     var questions = [Any]()
@@ -18,20 +17,33 @@ class QuizFinish: UIViewController {
         //get time of finish
         let hour = Calendar.current.component(.hour, from: Date())
         let minutes = Calendar.current.component(.minute, from: Date())
-        let totalTime = Double(hour*60 + minutes)
+        let seconds = Calendar.current.component(.second, from: Date())
+        let totalTime = ceil((Double(hour*3600 + minutes*60 + seconds) - DataSingleton.shared.quizStartTime)/60)
         
-        
-        let hoursTaken = floor((totalTime - DataSingleton.shared.quizStartTime)/60)
-        let minutesTaken = (totalTime - DataSingleton.shared.quizStartTime) - floor((totalTime - DataSingleton.shared.quizStartTime)/60)*60
         
         finishButton.layer.cornerRadius = 5
-        numberCorrect.text = "Number Correct: \(DataSingleton.shared.numberCorrect)"
-        timeField.text = "Time Taken:\nHours: \(Int(hoursTaken)) Minutes:\(Int(minutesTaken))"
+        timeField.text =
+        """
+        Number Correct: \(DataSingleton.shared.numberCorrect)
+        Time Taken: \(Int(totalTime)) minutes
+        """
+        
+        
         
     }
+    
+    
 //    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let restart = segue.destination as! QuizVC
 //        restart.subLessonData = questions
 //    }
+}
+
+extension Double
+{
+    func truncate(places : Int)-> Double
+    {
+        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
+    }
 }

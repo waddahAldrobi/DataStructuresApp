@@ -44,8 +44,9 @@ class QuizVC: UIViewController {
     
         let hour = Calendar.current.component(.hour, from: Date())
         let minutes = Calendar.current.component(.minute, from: Date())
+        let seconds = Calendar.current.component(.second, from: Date())
         
-        DataSingleton.shared.quizStartTime = Double(hour*60 + minutes)
+        DataSingleton.shared.quizStartTime = Double(hour*3600 + minutes*60 + seconds)
 
     }
     

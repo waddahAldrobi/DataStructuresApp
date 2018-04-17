@@ -12,7 +12,6 @@ class SummaryVC: UIViewController{
         //This makes the title not flash DO NOT remove, should only be in default Tab
         self.tabBarController?.navigationItem.title = "Summary";
         let subLessonData = DataSingleton.shared.grabSpecific(tab: "Summary")
-    
         let text = subLessonData as! String
         let parser = MarkupParser()
         parser.parseMarkup(text)
@@ -28,5 +27,14 @@ class SummaryVC: UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+        } else if UIDevice.current.orientation.isPortrait {
+            print("Portrait")
+        }
+    }
+    
 }
 
