@@ -1,11 +1,3 @@
-//
-//  TableViewController.swift
-//  DataStructuresApp
-//
-//  Created by Waddah Aldrobi on 2017-11-13.
-//  Copyright © 2017 Waddah Aldrobi. All rights reserved.
-//
-
 import UIKit
 
 class Lessons: UITableViewController {
@@ -17,7 +9,6 @@ class Lessons: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //load data from json
-        //print(DataSingleton.shared.data)
         lessonNames = DataSingleton.shared.lessonTitles
         // Makes the text of back button "Back" for the NEXT VC
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: nil, action: nil)

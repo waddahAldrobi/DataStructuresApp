@@ -1,11 +1,3 @@
-//
-//  QuizQuestionsVC.swift
-//  DataStructuresApp
-//
-//  Created by Ethan Chan on 2018-02-16.
-//  Copyright © 2018 Waddah Aldrobi. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import Highlightr
@@ -86,8 +78,6 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
         let highlightedCode = textStorage.highlightr.highlight(questionText!, as: "c++")
         self.question.attributedText = highlightedCode
         self.question.font = UIFont(name: "American Typewriter", size: 18)
-//        self.question.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
-
         
         if questionType == "ranking" {
             tableView.isEditing = true
@@ -118,28 +108,8 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell", for: indexPath) as! AnswerCell
-//        cell.question.isEditable = false
-//        cell.question.isSelectable = false
         cell.question.isUserInteractionEnabled = false
         cell.question.text = answers[indexPath.row]
-        
-
-//        cell.accessoryType = UITableViewCellAccessoryType.checkmark
-//        cell.accessoryType = cell.isSelected ? .checkmark : .none
-//        cell.selectionStyle = .none
-//        if cell.isSelected
-//        {
-//            cell.isSelected = false
-//            if cell.accessoryType == UITableViewCellAccessoryType.none
-//            {
-//                cell.accessoryType = UITableViewCellAccessoryType.checkmark
-//            }
-//            else
-//            {
-//                cell.accessoryType = UITableViewCellAccessoryType.none
-//            }
-//        }
-        
         return cell
     }
 
@@ -166,28 +136,11 @@ class QuizQuestionsVC : UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
-//        cell.selectedBackgroundView = UIView(frame: cell.frame)
-//        cell.selectedBackgroundView?.backgroundColor = UIColor.clear
-//        cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.accessoryType = UITableViewCellAccessoryType.checkmark
         selectedAnswer.append(indexPath.row)
-//        if cell.isSelected
-//        {
-//            cell.isSelected = false
-//            if cell.accessoryType == UITableViewCellAccessoryType.none
-//            {
-//                cell.accessoryType = UITableViewCellAccessoryType.checkmark
-//            }
-//            else
-//            {
-//                cell.accessoryType = UITableViewCellAccessoryType.none
-//            }
-//        }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        tableView.cellForRow(at: indexPath)?.accessoryType = .none
-//        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         let cell = tableView.cellForRow(at: indexPath)!
         cell.accessoryType = UITableViewCellAccessoryType.none
         

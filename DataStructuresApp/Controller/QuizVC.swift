@@ -2,12 +2,6 @@ import Foundation
 import UIKit
 
 class QuizVC: UIViewController {
-    //    let highlightr = Highlightr()
-    //    highlightr.setTheme(to: "paraiso-dark")
-    //    let code = "let a = 1"
-    //    // You can omit the second parameter to use automatic language detection.
-    //    let highlightedCode = highlightr.highlight(code, as: "swift")
-    
     @IBOutlet weak var beginButton: UIButton!
     
     override func viewDidLoad() {

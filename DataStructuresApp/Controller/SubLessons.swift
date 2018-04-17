@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  DataStructuresApp
-//
-//  Created by Waddah Aldrobi on 2017-11-13.
-//  Copyright © 2017 Waddah Aldrobi. All rights reserved.
-//
-
 import UIKit
 
 

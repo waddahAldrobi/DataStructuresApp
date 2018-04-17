@@ -1,10 +1,3 @@
-//
-//  DataSingleton.swift
-//  DataStructuresApp
-//
-//  Created by Ethan Chan on 2018-03-15.
-//  Copyright © 2018 Waddah Aldrobi. All rights reserved.
-//
 import UIKit
 import Foundation
 

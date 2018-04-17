@@ -14,16 +14,7 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         let subLessonData = DataSingleton.shared.grabSpecific(tab: "Visualization") as! [String: Any]
         images = subLessonData["Images"] as! [String]
-//        secondScrollView.text = subLessonData["VisulizationCode"] as! String
 
-        //Syntax Highlighting
-//        textStorage.highlightr.setTheme(to: "solarized-dark")
-//        let code = subLessonData["VisulizationCode"] as! String
-        // You can omit the second parameter to use automatic language detection.
-//        let highlightedCode = textStorage.highlightr.highlight(code, as: "c++")
-//        firstScrollView.attributedText = highlightedCode/
-        
-        
         //scrollview
         pageControl.numberOfPages = 0
         scrollView.delegate = self
@@ -38,7 +29,6 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
         }
         
         scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.height-150)
-        
         
     }
     

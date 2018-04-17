@@ -1,11 +1,3 @@
-//
-//  QuizFinish.swift
-//  DataStructuresApp
-//
-//  Created by Ethan Chan on 2018-03-04.
-//  Copyright © 2018 Waddah Aldrobi. All rights reserved.
-//
-
 import Foundation
 import UIKit
 class QuizFinish: UIViewController {
@@ -28,22 +20,7 @@ class QuizFinish: UIViewController {
         Time Taken: \(Int(totalTime)) minutes
         """
         
-        
-        
     }
-    
-    
-//    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let restart = segue.destination as! QuizVC
-//        restart.subLessonData = questions
-//    }
 }
 
-extension Double
-{
-    func truncate(places : Int)-> Double
-    {
-        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
-    }
-}
+
