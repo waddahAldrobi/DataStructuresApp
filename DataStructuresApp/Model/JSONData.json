@@ -32,11 +32,34 @@
        {
        "Summary": "<font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">What is a Double pointer? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•A double pointer is a pointer to a pointer. In C++, pointers can be nested multiple levels but is not suggested for readability. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nCan have triple pointers, quadruple pointers, and so on and so forth? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•Yes! Although, there's typically no need and it's pretty hard to keep track after double pointers. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nWhere is it used? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•Example use cases: a sentence that can be represented by a summation of letters into words and then words into sentences <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nUsing Double Pointers <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•You can use the ** to dereference a double pointer, and *** for a triple pointer and so on",
        "Code": {
-       "CellCode": ["Some Double Pointer Code", "Some more code"],
+       "CellCode": [
+                    "#include <iostream>\nusing namespace std;\n\nint main() { \n\tint var1 = 42; \n\tcout << &var1 << endl << endl;",
+                    "\tint *ptr1; \n\tcout << ptr1 << endl; \n\tcout << &ptr1 << endl << endl;","\tint **Dptr1;\n\tcout << Dptr1 << endl;\n\tcout << &Dptr1 << endl << endl;","\tptr1 = &var1; \n\n\tDptr1 = &ptr1;",
+                    "\tcout << &var1 << endl;\n\tcout << ptr1 << endl;\n\tcout << *Dptr1 << endl << endl;",
+                    "\tcout << &ptr1 << endl;\n\tcout << Dptr1 << endl << endl;\n\n\tcout << &Dptr1 << endl << endl;",
+                    "\tcout << var1 << endl;\n\tcout << *ptr1 << endl;\n\tcout << **Dptr1 << endl; \n}",
+                    "\t*ptr1 = 25;\n\t// OR **Dptr1 = 25;\n\t// OR var1 = 25;\n\n\tcout << var1 << endl;\n\tcout << *ptr1 << endl;\n\tcout << **Dptr1 << endl;"
+                    ],
        
-       "CellRun": ["Some Output", "Some Output"],
+       "CellRun": ["0x78f723c08d0c",
+                   "0x400a10\n0x78f723c08d10",
+                   "0x400916\n0x78f723c08d18",
+                   "No Output",
+                   "0x78f723c08d0c\n0x78f723c08d0c\n0x78f723c08d0c",
+                   "0x78f723c08d10\n0x78f723c08d10\n\n0x78f723c08d18",
+                   "42\n42\n42",
+                   "25\n25\n25"
+                   ],
        
-       "CellDesc": ["Some Description", "Some Description"]
+       "CellDesc": ["The '&' operator outputs the memory address of var1",
+                    "The '*' makes a single pointer \n\nPrinted heap memory ptr1 points to and stack memory of ptr1",
+                    "The '**' makes a double pointer \n\nPrinted heap memory Dptr1 points to and stack memory of Dptr1 \n\nNote: printing *Dptr1 will result with an error, since it does not point to a pointer yet",
+                    "Storing address of var1 in ptr1 \n\nAnd storing address of ptr1 in Dptr1 \n\nWhich results with storing address of var1 in *Dptr1",
+                    "Notice all print the same address",
+                    "Notice &ptr1 and Dptr1 have the same address \n\nHowever, stack memories do not change",
+                    "All store the same value",
+                    "Changing the value of any of the 3 will change the value of all 3"
+                    ]
        },
        "Visualization": {
        "VisulizationCode": "Some visualization}",
@@ -47,11 +70,11 @@
        {
        "Summary": "<font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">What's the point? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•For better or worse, there is no automatic garbage collection in C++. Thus, any memory we use, must be cleaned up by our self. (If you have infinite memory, feel free to ignore this. <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•Pointers created in the stack won’t leave garbage memory because it will always be accessible through some variable. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nGarbage Memory aka. Memory Leak <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•Garbage memory is created when pointers are not deleted before they are reassigned. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nDangling Pointers <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•These are pointers that reference meaningless data because they were not properly deleted.",
        "Code": {
-       "CellCode": ["#include <iostream>\nusing namespace std;\nint main(){\n\tint var1 = 25;\n\t*ptr1 = &var1;\n\tprint(ptr1);\n\tprint(*ptr1); ", "\tint *ptr2 = new int;\n\t*ptr2 = 5;\n\tprint(ptr2);\n\tprint(*ptr2)"],
+       "CellCode": ["Some mem code", "some more code"],
        
-       "CellRun": ["prints memory address of var1 \nprints 25", "prints memory of ptr2 \nprints 5"],
+       "CellRun": ["Some run", "Some run"],
        
-       "CellDesc": ["ptr1 points to memory of var1 \nthe '' prints the value of ptr1", "using '= new int' makes the pointer point to the heap memory"]
+       "CellDesc": ["Some Desc", "Some Desc"]
        },
        "Visualization": {
        "VisulizationCode": "#include <iostream>\nusing namespace std;\nint main(){\nint var1 = 25;   // the “&” accesses memory\nint *ptr1 = &var1;    // pointer in stack \n\n// Both of these methods are pointers in heap \nint *ptr2 = new int;\n*ptr2 = 5;\n// OR\nint *ptr2 = new int(5);\n\n\// Deleting heap pointer\ndelete ptr2 ; \ndelete [] ptr2 ;    // If pointer is an array\n}",
