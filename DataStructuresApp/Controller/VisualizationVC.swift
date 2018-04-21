@@ -24,7 +24,11 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
             let xCoordinate = view.frame.midX + view.frame.width * CGFloat(images.index(of: image)!)
             contentWidth += view.frame.width
             scrollView.addSubview(imageView)
-            imageView.frame = CGRect(x: xCoordinate - (view.frame.width/2), y: (scrollView.frame.height / 2) - (view.frame.width/2), width: view.frame.width , height: ((imageToDisplay?.size.height)! / (imageToDisplay?.size.width)!)*view.frame.width)
+            if (((imageToDisplay?.size.height)! / (imageToDisplay?.size.width)!)*view.frame.width) < view.frame.height{ // decide whether to scale to height or width of screen
+                imageView.frame = CGRect(x: xCoordinate - (view.frame.width/2), y: (scrollView.frame.height / 2) - (view.frame.width/2), width: view.frame.width , height: ((imageToDisplay?.size.height)! / (imageToDisplay?.size.width)!)*view.frame.width)
+            } else {
+                imageView.frame = CGRect(x: xCoordinate - (view.frame.width/2), y: (scrollView.frame.height / 2) - (view.frame.width/2), width: ((imageToDisplay?.size.width)! / (imageToDisplay?.size.height)!)*view.frame.height, height: view.frame.height)
+            }
             pageControl.numberOfPages += 1
         }
         
@@ -32,6 +36,15 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
         
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+            
+        } else if UIDevice.current.orientation.isPortrait {
+            print("Portrait")
+            
+        }
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let width = view.frame.width
         pageControl.currentPage = Int(scrollView.contentOffset.x / CGFloat(width))

@@ -21,11 +21,13 @@ class SummaryVC: UIViewController{
 
    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        AppUtility.lockOrientation(.portrait , andRotateTo: .portrait)
         self.tabBarController?.navigationItem.title = "Summary";
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        AppUtility.lockOrientation(.all)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
