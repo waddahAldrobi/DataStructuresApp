@@ -1,10 +1,59 @@
 {
-    "LessonTitles" : ["Pointers", "Linked Lists"],
+    "LessonTitles" : ["ADT Design", "Pointers", "Linked Lists"],
     
-    "SubLessonTitles": [["Single Pointers", "Double Pointers", "Memory Management", "Quiz"], ["Linked Lists vs Arrays", "Singly and Doubly Linked Lists", "Circulaurly Linked Lists", "Quiz"]],
+    "SubLessonTitles": [["ADTs", "Quiz"], ["Single Pointers", "Double Pointers", "Memory Management", "Quiz"], ["Linked Lists vs Arrays", "Singly and Doubly Linked Lists", "Circulaurly Linked Lists", "Quiz"]],
     
     "Content":
     [
+     [{
+      "Summary": "<font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">What is an ADT? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•ADT stands for abstract data type and is used to model a data structure for a specific application. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nWhy Use an ADT? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•An ADT is an abstraction of something. It simplifies details of a component so that a user only needs to know the interface rather than the complicated details of its implementation. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nWhat are some examples? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•Some ADTs you already know about are classes. For example, a person class is an ADT that attempts to model the behaviours and attributes of a person. In Code, you’ll see an example of a mobile phone and we’ll use encapsulation to show you good and bad techniques for representing data.",
+      "Code": {
+      
+      "CellCode": ["#include <iostream> \nusing namespace std; \nstruct picture{ //some data type that stores an image \n}; \n class mobilePhone{ \n\tmobilePhone(){ \n\t\t//constructor \n\t} \n \npublic: \n \n\t//core attributes \n\tint brightness; \n\tstring currentTextMessage; \n\tint volume; \n \n\t//core functions \n\tvoid callNumber(int phoneNumber); \n\tvoid sendText(int phoneNumber); \n\tvoid browseInternet(); \n\tvoid changeVolume(); \n\tvoid changeBrightness(); \n\tvoid playMusic(); \n \n\t//semi unrelated attributes \n\tbool flashlightOn; \n\tint stepCount; \n\tcoords currentLocation; \n \n\t//some semi unrelated functions \n\tvoid faceID(); \n\tint forceTouch(); \n\tvoid toggleFlashlight(); \n\tint measureHeartRate(); \n\tint countSteps(); \n\tcoords determineLocation(); \n\tpicture takePicture(); //picture is a class of its own \n}",
+                   "class mobilePhone{ \n\tmobilePhone(){ \n\t\t//constructor \n\t} \n \npublic: \n\t//core attributes \n\tint brightness; \n\tstring currentTextMessage; \n\tint volume; \n \n\t//core functions \n\tvoid callNumber(int phoneNumber); \n\tvoid sendText(int phoneNumber); \n\tvoid browseInternet(); \n\tvoid changeVolume(); \n\tvoid changeBrightness(); \n\tvoid playMusic(); \n}",
+                   "class smartPhone: mobilePhone{ \npublic: \n//attributes \n\tbool flashlightOn; \n\tint stepCount; \n\tcoords currentLocation; \n \n//functions \n\tvoid toggleFlashlight(); \n\tint countSteps(); \n\tcoords determineLocation(); \n\tpicture takePicture(); //picture is a class of its own \n};",
+                   "class iPhone: smartPhone { \npublic: \n\tvoid faceID(); \n\tint forceTouch(); \n};\n\nclass androidPhone: smartPhone { \npublic: \n\tint measureHeartRate(); \n};"],
+      
+      "CellRun": ["No Output", "No Output", "No Output", "No Output"],
+      
+      "CellDesc": ["As you can see, this blob class becomes confusing once we add more functions and attributes. Instead, we should divide this into parent and child classes. Perhaps, the core functions of a phone would be the superclass, and more advanced features are under smartphone. We can even divide it into iPhone and Android subclasses for more specificity.",
+                   "Here's our basic mobilePhone class. As you can see, it only has basic functions that every phone should have.",
+                   "Inheriting from our mobile phone class, a smart phone has all the features of its parent and more.",
+                   "Finally, we have two major types of smart phones, each with their own unique functions. Now is this better than one blob class that does anything and everything."]
+      },
+      "Visualization": {
+      "VisulizationCode": "",
+      "Images": []
+      }
+      },
+      {
+      "Quiz": [{
+               "Question": "Why can't we rely on the garbage collector to clean up our dangling pointers?",
+               "Question-Type": "multiple-choice",
+               "Answers": ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
+               "Correct-Answer": [3]
+               },
+               {
+               "Question": "Pointers store the value of a variable",
+               "Question-Type": "true-false",
+               "Answers": ["True", "False", "", ""],
+               "Correct-Answer": [1]
+               },
+               {
+               "Question": "Select all true statements",
+               "Question-Type": "select",
+               "Answers": ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
+               "Correct-Answer": [0, 1, 2, 3]
+               },
+               {
+               "Question": "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
+               "Question-Type": "ranking",
+               "Answers": ["0X0615", "20", "10", "25"],
+               "Correct-Answer": [2, 1, 3, 0]
+               }
+               ]
+      }
+      ],
       [{
        "Summary": "<font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">What is a pointer? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•Definition: A pointer is a data value that is stored in memory and points to only one memory address at a time. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nPointers: Stack vs. Heap <font color=\"gray\" strokeColor=\"gray\" face=\"American Typewriter\">\nMemory Stack: <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•stores variables in direct memory and accesses variables very fast. The variables are reserved in Last In First Out (LIFO) order - the last stored block of memory is the first to be freed. <font color=\"gray\" strokeColor=\"gray\" face=\"American Typewriter\">\nMemory Heap: <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•stores variables in dynamic memory and access variables a bit slower. Variables stored in heap can be accessed randomly at any time. Memory in the heap is limited by virtual memory - it is often used when the data at runtime is not known. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nWhere are pointers stored in memory? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•Pointers are always stored in the stack. The data created using the “new” expression are always stored in the heap, whereas the data that pointers referencing an existing variable are stored in the stack. <font color=\"blue\" strokeColor=\"blue\" face=\"American Typewriter\">\n\nDelete the pointer in stack or heap? <font color=\"black\" strokeColor=\"black\" face=\"American Typewriter\">\n•You cannot delete a pointer stored in stack; however, you MUST delete a pointer whose data is stored in the heap. It is also good practice to set the memory of the pointer to NULL after deleting.",
        "Code": {
