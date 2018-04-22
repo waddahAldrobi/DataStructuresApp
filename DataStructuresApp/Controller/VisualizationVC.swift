@@ -18,6 +18,7 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
         var imageWidth = view.frame.width
         var imageHeight = view.frame.height
         pageControl.numberOfPages = 0
+        contentWidth = 0
         scrollView.delegate = self
         for image in images {
             let imageToDisplay = UIImage(named: "\(image).png")
@@ -31,6 +32,10 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
             } else {
                 imageWidth = ((imageToDisplay?.size.width)! / (imageToDisplay?.size.height)!)*view.frame.height
                 imageHeight = view.frame.height
+            }
+            if view.frame.width > 700{
+                imageWidth *= 0.8
+                imageHeight *= 0.8
             }
             imageView.frame = CGRect(x: xCoordinate - (imageWidth/2), y: (view.frame.height/2) - (imageHeight/2), width: imageWidth, height: imageHeight)
             pageControl.numberOfPages += 1
