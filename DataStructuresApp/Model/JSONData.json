@@ -83,7 +83,8 @@
        "Code": {
        "CellCode": [
                     "#include <iostream>\nusing namespace std;\n\nint main() { \n\tint var1 = 42; \n\tcout << &var1 << endl << endl;",
-                    "\tint *ptr1; \n\tcout << ptr1 << endl; \n\tcout << &ptr1 << endl << endl;","\tint **Dptr1;\n\tcout << Dptr1 << endl;\n\tcout << &Dptr1 << endl << endl;","\tptr1 = &var1; \n\n\tDptr1 = &ptr1;",
+                    "\tint *ptr1; \n\tcout << ptr1 << endl; \n\tcout << &ptr1 << endl << endl;",
+                    "\tint **Dptr1 = new int *;\n\tcout << *Dptr1 << endl;\n\tcout << Dptr1 << endl;\n\tcout << &Dptr1 << endl << endl;","\tptr1 = &var1; \n\n\tDptr1 = &ptr1;",
                     "\tcout << &var1 << endl;\n\tcout << ptr1 << endl;\n\tcout << *Dptr1 << endl << endl;",
                     "\tcout << &ptr1 << endl;\n\tcout << Dptr1 << endl << endl;\n\n\tcout << &Dptr1 << endl << endl;",
                     "\tcout << var1 << endl;\n\tcout << *ptr1 << endl;\n\tcout << **Dptr1 << endl; ",
@@ -92,7 +93,7 @@
        
        "CellRun": ["0x78f723c08d0c",
                    "0x400a10\n0x78f723c08d10",
-                   "0x400916\n0x78f723c08d18",
+                   "0x0\n0x400916\n0x78f723c08d18",
                    "No Output",
                    "0x78f723c08d0c\n0x78f723c08d0c\n0x78f723c08d0c",
                    "0x78f723c08d10\n0x78f723c08d10\n\n0x78f723c08d18",
@@ -102,7 +103,7 @@
        
        "CellDesc": ["The '&' operator outputs the memory address of var1",
                     "The '*' makes a single pointer \n\nPrinted heap memory ptr1 points to and stack memory of ptr1",
-                    "The '**' makes a double pointer \n\nPrinted heap memory Dptr1 points to and stack memory of Dptr1 \n\nNote: printing *Dptr1 will result with an error, since it does not point to a pointer yet",
+                    "The '**' makes a double pointer \n\nPrinted heap memory *Dptr1 points to, heap memory Dptr1 points to, and stack memory of Dptr1 \n\nNote: If Dptr1 were decalred as int ** Dptr1; (without the int), printing *Dptr1 will result with an error, since it does not point to anything yet",
                     "Storing address of var1 in ptr1 \n\nAnd storing address of ptr1 in Dptr1 \n\nWhich results with storing address of var1 in *Dptr1",
                     "Notice all print the same address",
                     "Notice &ptr1 and Dptr1 have the same address \n\nHowever, stack memories do not change",
@@ -128,7 +129,9 @@
        
        "CellRun": ["No Output", "No Output", "No Output", "No Output", "No Output", "No Output"],
        
-       "CellDesc": ["Deleting ", "Some Desc", "Some Desc", "Some Desc", "Some Desc", "Some Desc"]
+       "CellDesc": ["The definition of a single pointer object or a pointer array are quite similar \n\nHowever, it is important to realize in deletion \n\nIt is also convention to set the pointer to a NULL after deleting it",
+                    "It is also important to know not to attempt to delete a pointer that points to a variable in the stack \n\nIt will cause an error",
+                    "Dangling pointers are very common mistakes in practice \n\nNotice that after Ptr is deleted, danglingPtr is now pointing to an address that doesn't exitst \n\nSuch problem could take a long time to identify and resolve when you have many lines of code!", "Some Desc", "Some Desc", "Some Desc"]
        },
        "Visualization": {
        "VisulizationCode": "#include <iostream>\nusing namespace std;\nint main(){\nint var1 = 25;   // the “&” accesses memory\nint *ptr1 = &var1;    // pointer in stack \n\n// Both of these methods are pointers in heap \nint *ptr2 = new int;\n*ptr2 = 5;\n// OR\nint *ptr2 = new int(5);\n\n\// Deleting heap pointer\ndelete ptr2 ; \ndelete [] ptr2 ;    // If pointer is an array\n}",
