@@ -28,13 +28,13 @@
       },
       {
       "Quiz": [{
-               "Question": "Why can't we rely on the garbage collector to clean up our dangling pointers?",
-               "Question-Type": "multiple-choice",
-               "Answers": ["Garbage Collectors are unpredictable", "Garbage Collectors are slow", "Who says you can't", "Garbage collectors dont exist in C"],
-               "Correct-Answer": [3]
+               "Question": "Why split up classes? (select all)",
+               "Question-Type": "select",
+               "Answers": ["We don’t want to overcrowd a class", "It’s hard to read a really long class", "It makes logical sense to delegate functions in a hierarchy", "Certain subcategories may have extra abilities"],
+               "Correct-Answer": [0,1,2,3]
                },
                {
-               "Question": "Pointers store the value of a variable",
+               "Question": "We strictly use ADTs to store real life objects.",
                "Question-Type": "true-false",
                "Answers": ["True", "False", "", ""],
                "Correct-Answer": [1]
@@ -42,14 +42,14 @@
                {
                "Question": "Select all true statements",
                "Question-Type": "select",
-               "Answers": ["Pointers can be nested several levels deep", "Pass by reference is an example of pointer like behaviour", "* is used to dereference a pointer", "Data referenced by a pointer can be stored in the stack or the heap"],
-               "Correct-Answer": [0, 1, 2, 3]
+               "Answers": ["ADT stands for Algorithm Design Type", "Inheritance allows child classes to gain public functionality from its parent", "Polymorphism and Inheritance are the exact same thing", "Encapsulation should be avoided"],
+               "Correct-Answer": [1]
                },
                {
-               "Question": "int b = 10;\nint *c = new int(0);\ncout << b;\nint *d = &b;\n*d += 10 cout << b;\nb += 5;\ncout << *d << c\nSort the output.",
-               "Question-Type": "ranking",
-               "Answers": ["0X0615", "20", "10", "25"],
-               "Correct-Answer": [2, 1, 3, 0]
+               "Question": "Why do we abstract data?",
+               "Question-Type": "multiple-choice",
+               "Answers": ["To simplify the internal components", "To simplify the external interface", "To make the programmer’s life difficult", "To relate other data types to each other"],
+               "Correct-Answer": [1]
                }
                ]
       }
