@@ -37,15 +37,16 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
                 imageWidth *= 0.8
                 imageHeight *= 0.8
             }
-            imageView.frame = CGRect(x: xCoordinate - (imageWidth/2), y: (view.frame.height/2) - (imageHeight/2), width: imageWidth, height: imageHeight)
+            imageView.frame = CGRect(x: xCoordinate - (imageWidth/2), y: (view.frame.height/2) - (imageHeight/2) - self.navigationController!.navigationBar.frame.height, width: imageWidth, height: imageHeight)
             pageControl.numberOfPages += 1
         }
         
         
-        scrollView.contentSize = CGSize(width: contentWidth, height: view.frame.height-150)
+        scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.height)
         
         
     }
+    //Clear scrollView and repopulate images in the correct location
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         for subUIView in scrollView.subviews as [UIView] {
             subUIView.removeFromSuperview()
