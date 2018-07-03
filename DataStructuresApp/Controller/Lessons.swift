@@ -33,8 +33,7 @@ class Lessons: UITableViewController {
     
     
     // Listens to the tap, that segue is necessary for index update
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DataSingleton.shared.lessonIdentifier = indexPath.row
         //print(DataSingleton.shared.lessonIdentifier)
         performSegue(withIdentifier: "segue", sender: self)

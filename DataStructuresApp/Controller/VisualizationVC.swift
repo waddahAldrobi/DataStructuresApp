@@ -45,6 +45,8 @@ class VisualizationVC: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = CGSize(width: contentWidth, height: scrollView.frame.height)
         
         
+        
+        
     }
     //Clear scrollView and repopulate images in the correct location
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
