@@ -1,7 +1,9 @@
 # DataStructuresApp
 
 Lesson Selection:
-![Alt text](preview/lessons.jpg?raw=true "Lesson")
+<p align="center">
+  <img src="preview/lessons.jpg" width="350" title="hover text">
+</p>
 
 Interative Code:
 ![Alt text](preview/code.jpg?raw=true "Code")
